@@ -1,0 +1,118 @@
+1) Gate of Igros Castle
+2) Back Gate of Lesalia Castle
+3) Hall of St. Murond Temple
+4) Lesalia Castle
+5) Roof of Riovanes Castle
+6) Gate of Riovanes Castle
+7) Riovanes Castle
+8) Office of Riovanes Castle
+9) Citadel of Igros Castle
+10) Igros Castle
+11) Office of Igros Castle
+12) Gate of Lionel Castle
+13) Lionel Castle
+14) Office of Lionel Castle
+15) Gate of Limberry Castle
+16) Limberry Castle
+17) Underground Cemetary of Limberry Castle
+18) Office of Limberry Castle
+19) Back Gate of Limberry Castle
+20) Zeltennia Castle
+21) Office of Zeltennia Castle
+22) Magic City Gariland
+23) Beoulve Estate
+24) Military Academy Auditorium
+25) Yardow Fort City
+26) Weapon Storage of Yardow
+27) Goland Coal City
+28) Ridge of Goland Colliery
+29) Slope of Goland Colliery
+30) Floor of Goland Colliery
+31) Dorter Trade City
+32) Slums in Dorter
+33) Hospital in Slums
+34) Cellar of Sand Mouse
+35) Zaland Fort City
+36) Church Outside of Town
+37) Ruins Outside Zaland
+38) Goug Machine City
+39) Underground Passage in Goland
+40) Slums in Goug
+41) Besrodio's House
+42) Warjilis Trade City
+43) Port of Warjilis
+44) Bervenia Free City
+45) Ruins of Zeltennia Castle's Church
+46) Cemetary of Heavenly Knight, Balbanes
+47) Zarghidas Trade City
+48) Slums in Zarghidas
+49) Fort Zeakden
+50) St. Murond Temple
+51) Office of St. Murond Temple
+52) Chapel of St. Murond Temple
+53) Entrance to Death City
+54) Lost Sacred Precincts
+55) Graveyard of Airships
+56) Orbonne Monastery
+57) Underground Book Storage First Floor
+58) Underground Book Storage Second Floor
+59) Underground Book Storage Third Floor
+60) Underground Book Storage Fourth Floor
+61) Underground Book Storage Fifth Floor
+62) Chapel of Orbonne Monastery
+63) Golgorand Execution Site
+64) Sluice of Bethla Garrison
+65) Granary of Bethla Garrison
+66) South Wall of Bethla Garrison
+67) North Wall of Bethla Garrison
+68) Bethla Garrison
+69) Murond Death City
+70) Nelveska Temple
+71) Dolbodar Swamp
+72) Fovoham Plains
+73) Windmill Shed
+74) Sweegy Woods
+75) Bervenia Volcano
+76) Zeklaus Desert
+77) Lenalia Plateau
+78) Zigolis Swamp
+79) Yuguo Woods
+80) Araguay Woods
+81) Grog Hill
+82) Bed Desert
+83) Zirekile Falls
+84) Bariaus Hill
+85) Mandalia Plains
+86) Doguola Pass
+87) Bariaus Valley
+88) Finath River
+89) Poeskas Lake
+90) Germinas Peak
+91) Thieves Fort
+92) Igros Residence
+93) Wooden Shed
+94) Stone Shed
+95) Church
+96) Pub
+97) Lesalia Imperial Capital
+98) Gate of Lesalia Castle
+99) Main Street of Lesalia
+100) Public Cemetary
+101) Tutorial
+102) Tutorial Bridge
+103) Fovoham Windmill
+104) Beoulve Residence
+105) TERMINATE
+106) DELTA
+107) NOGIAS
+108) VOYAGE
+109) BRIDGE
+110) VALKYRIES
+111) MLAPAN
+112) TIGER
+113) HORROR
+114) END
+115) Banished Fort
+116) Arena
+117) Checkerboard Land
+125) Checkerboard Stairs
