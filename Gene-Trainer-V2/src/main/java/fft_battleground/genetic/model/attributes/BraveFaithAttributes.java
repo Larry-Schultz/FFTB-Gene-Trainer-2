@@ -1,4 +1,4 @@
-package fft_battleground.genetic.model;
+package fft_battleground.genetic.model.attributes;
 
 import java.util.Arrays;
 import java.util.List;

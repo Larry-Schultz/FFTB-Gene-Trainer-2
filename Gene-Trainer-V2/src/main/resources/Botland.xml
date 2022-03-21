@@ -608,5 +608,17 @@
 		<param id="RaidBoss">5</param>
 		<param id="MathSkill" description="blank">15</param>
 	</bot>
+	<bot  id="birbetbotsimulator" classname="livesimulatorbot" canPrimary="false" description="A bot that simulates other live bots">
+		<param id="botname">birbbrainsbot</param>
+	</bot>
+	<bot  id="getthemoneyzsimulator" classname="livesimulatorbot" canPrimary="false" description="A bot that simulates other live bots">
+		<param id="botname">getthemoneyz</param>
+	</bot>
+	<bot  id="smokebowlingsimulator" classname="livesimulatorbot" canPrimary="false" description="A bot that simulates other live bots">
+		<param id="botname">smokebowlingbot</param>
+	</bot>
+	<bot  id="datadrivenbotsimulator" classname="livesimulatorbot" canPrimary="false" description="A bot that simulates other live bots">
+		<param id="botname">datadrivenbot</param>
+	</bot>
 	
 </bots>

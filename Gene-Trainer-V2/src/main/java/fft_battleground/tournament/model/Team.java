@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
-import fft_battleground.genetic.model.CompleteBotGenome;
+import fft_battleground.genetic.model.attributes.CompleteBotGenome;
 import fft_battleground.model.BattleGroundTeam;
 import lombok.Data;
 import lombok.NoArgsConstructor;

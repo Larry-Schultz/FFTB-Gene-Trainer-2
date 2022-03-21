@@ -25,7 +25,11 @@ public class Bet {
 	public Bet(BattleGroundTeam team, BetType type) {
 		this.team = team;
 		this.type = type;
-		this.amount = (int) AbstractSimulator.GIL_FLOOR;
+		if(type == BetType.FLOOR) {
+			this.amount = (int) AbstractSimulator.GIL_FLOOR;
+		} else if(type == BetType.ALLIN) {
+			this.amount = (int) AbstractSimulator.BET_MAX;
+		}
 		
 	}
 	

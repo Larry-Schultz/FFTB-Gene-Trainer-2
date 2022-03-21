@@ -11,6 +11,7 @@ import fft_battleground.botland.util.Bet;
 import fft_battleground.exception.BotConfigException;
 import fft_battleground.match.model.EstimatedPlayerBet;
 import fft_battleground.match.model.Match;
+import fft_battleground.model.BattleGroundTeam;
 import fft_battleground.simulation.model.SimulationConfig;
 
 public class DataDrivenBot extends SimulatedBetBot {
@@ -51,45 +52,59 @@ public class DataDrivenBot extends SimulatedBetBot {
 
 	@Override
 	protected Bet generateBetAmount(Match match, long gil) {
-		Pair<List<EstimatedPlayerBet>, List<EstimatedPlayerBet>> playerBetsBySide = new ImmutablePair<>(List.of(match.bets().leftTeamEstimatedBets()), 
-				List.of(match.bets().rightTeamEstimatedBets()));
-		return null;
+		Pair<Float, Float> scoresBySide = new ImmutablePair<>(this.generateLeftScore(match.bets().leftTeamEstimatedBets()), this.generateRightScore(match.bets().rightTeamEstimatedBets()));
+		BattleGroundTeam chosenTeam = null;
+		if(scoresBySide.getLeft() >= scoresBySide.getRight()) {
+			chosenTeam = match.leftTeam().team();
+		} else {
+			chosenTeam = match.rightTeam().team();
+		}
+		
+		int betAmount = 0;
+		if(chosenTeam == match.leftTeam().team()) {
+			float betRatio = scoresBySide.getLeft() / (scoresBySide.getLeft() + scoresBySide.getRight());
+			betAmount = (int) (betRatio * (gil));
+		} else {
+			float betRatio = scoresBySide.getRight() / (scoresBySide.getLeft() + scoresBySide.getRight());
+			betAmount = (int) (betRatio * (gil));
+		}
+		
+		
+		Bet result = new Bet(chosenTeam, betAmount);
+		return result;
 	}
 	
-	protected Float generateLeftScore(List<EstimatedPlayerBet> leftSideBets) {
+	protected Float generateLeftScore(EstimatedPlayerBet[] leftSideBets) {
 		Float score = this.findScoreOfBets(leftSideBets);
 		return score;
 	}
 
-	protected Float generateRightScore(List<EstimatedPlayerBet> rightSideBets) {
+	protected Float generateRightScore(EstimatedPlayerBet[] rightSideBets) {
 		Float score = this.findScoreOfBets(rightSideBets);
 		return score;
 	}
 	
-	protected Float findScoreOfBets(List<EstimatedPlayerBet> bets) {
+	protected Float findScoreOfBets(EstimatedPlayerBet[] bets) {
 		float scoreSum = 0f;
 		for(EstimatedPlayerBet bet: bets) {
-			PlayerRecord playerRecord = null;
-			try {
-				playerRecord = this.playerBetRecords.get(bet.getPlayer());
-			}catch(NullPointerException e) {
-				if(this.playerBetRecords == null) {
-					log.error("this*.playerBetRecords is null");
-				}
-				if(bet == null) {
-					log.error("the current bet is null");
-				}
-				
-			}
-			Integer amount = GambleUtil.getMinimumBetForBettor(this.isBotSubscriber);
-			if(playerRecord != null) {
-				amount = GambleUtil.getBetAmountFromBetString(playerRecord, bet);
-				scoreSum += this.scoreByPlayer(playerRecord.getWins(), playerRecord.getLosses(), amount, playerRecord.getLastKnownAmount());
-			}
+			scoreSum += this.scoreByPlayer(this.playerBetRatios[bet.getPlayerBetId()], bet.getBetAmount(), bet.getBalanceAtTimeOfBet());
 			
 		}
 		
 		return scoreSum;
+	}
+	
+	protected double scoreByPlayer(double winLossRatio, Integer betAmount, Integer totalAmountPlayer) {
+		double score = 1f;
+		if(betAmount != null) {
+			double betRatio = 1f;
+		    if(totalAmountPlayer != null) { 
+		    	betRatio = (float) (betAmount.floatValue() + 1) /(totalAmountPlayer.floatValue() + 1); 
+		    }
+			  
+			score = betAmount.floatValue() * winLossRatio * betRatio;
+		}
+		return score;
 	}
 
 }

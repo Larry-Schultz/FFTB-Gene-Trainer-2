@@ -1,4 +1,4 @@
-package fft_battleground.genetic.model;
+package fft_battleground.genetic.model.attributes;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -18,6 +18,7 @@ public final class MissingGeneAttributes extends GeneAttributes {
 	
 	public MissingGeneAttributes(AtomicInteger idTracker) {
 		this.idTrackerRef = idTracker;
+		this.addAttribute("-Item");
 	}
 	
 	public int addAttribute(String attributeName) {

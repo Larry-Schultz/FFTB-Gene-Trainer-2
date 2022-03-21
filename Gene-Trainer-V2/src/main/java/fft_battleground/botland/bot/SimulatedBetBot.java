@@ -25,7 +25,7 @@ public abstract class SimulatedBetBot extends AbstractSimulator {
 
 	@Override
 	public long gilResultFromSimulation(Genotype<DoubleGene> genotype) {
-		long gil = 0L;
+		long gil = GIL_FLOOR;
 		for(Match match: this.matches) {
 			Bet matchBet = this.generateBetAmount(match, gil);
 			if(inverse) {
@@ -40,7 +40,13 @@ public abstract class SimulatedBetBot extends AbstractSimulator {
 			} else if(matchBet.getTeam() != match.winner() && matchBet.getTeam() != null) {
 				gil -= matchBet.getAmount();
 				gil = Math.max(gil, GIL_FLOOR);
+			} else if(matchBet.getTeam() == BattleGroundTeam.NONE) {
+				gil = gil + 0;
 			}
+		}
+		
+		if(gil < GIL_FLOOR) {
+			gil = GIL_FLOOR;
 		}
 		
 		return gil;

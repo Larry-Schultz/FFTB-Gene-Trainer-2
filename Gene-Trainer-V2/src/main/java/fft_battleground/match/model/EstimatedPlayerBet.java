@@ -6,6 +6,7 @@ import lombok.Value;
 @Value
 public class EstimatedPlayerBet {
 	private int playerBetId;
-	private int value;
+	private int betAmount;
+	private int balanceAtTimeOfBet;
 	private BattleGroundTeam team;
 }

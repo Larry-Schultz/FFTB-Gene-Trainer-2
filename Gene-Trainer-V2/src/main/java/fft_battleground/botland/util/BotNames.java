@@ -10,7 +10,8 @@ public enum BotNames {
 	GENE("genebot"),
 	BRAVEFAITH("bravefaithbot"),
 	TEAMVALUE("teamvalue"),
-	UNIT("unitawarebot");
+	UNIT("unitawarebot"),
+	LIVESIMULATOR("livesimulatorbot");
 	
 	private String botname;
 	

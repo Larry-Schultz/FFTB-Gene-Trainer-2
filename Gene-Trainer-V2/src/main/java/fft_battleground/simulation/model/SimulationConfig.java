@@ -1,9 +1,11 @@
 package fft_battleground.simulation.model;
 
+import java.util.BitSet;
+import java.util.Map;
+
 import fft_battleground.match.model.Match;
 
-public record SimulationConfig(int faithIndex, int braveIndex, int braveFaithIndex, int raidBossIndex, int fightWinRatioIndex, 
-		int betCountIndex, int betRatioIndex, int champStreakIndex, int startOfBetArrayIndex, Match[] matches, 
-		double[] playerBetRatios) {
+public record SimulationConfig(SimulationIndexConfig simulatorIndexConfig, Match[] matches, double[] playerBetRatios, 
+		double[] playerFightRatios, BitSet subscriberBitSet, Map<String, Integer> botBetIndexes, GeneArray geneArray) {
 
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import fft_battleground.genetic.model.ItemGeneAttributes;
+import fft_battleground.genetic.model.attributes.ItemGeneAttributes;
 import lombok.Data;
 
 @Data

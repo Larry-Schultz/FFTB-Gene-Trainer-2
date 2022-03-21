@@ -4,8 +4,12 @@ import fft_battleground.exception.CacheException;
 import fft_battleground.exception.DumpException;
 import fft_battleground.exception.TournamentApiException;
 import fft_battleground.exception.ViewerException;
-import fft_battleground.genetic.model.CompleteBotGenome;
+import fft_battleground.genetic.model.attributes.CompleteBotGenome;
 
 public interface TrainerService {
-	CompleteBotGenome trainBot(int agentCount, long duration) throws TournamentApiException, ViewerException, DumpException, CacheException;
+	public static final int AGENT_COUNT = 300000;
+	public static final int TOURNAMENT_COUNT = 500;
+	public static final int DURATION_IN_HOURS = 7;
+	
+	CompleteBotGenome trainBot(int agentCount, long duration, int tournamentCount) throws TournamentApiException, ViewerException, DumpException, CacheException;
 }

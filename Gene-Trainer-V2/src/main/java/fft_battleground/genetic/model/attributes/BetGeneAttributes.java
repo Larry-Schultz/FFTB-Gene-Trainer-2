@@ -1,4 +1,4 @@
-package fft_battleground.genetic.model;
+package fft_battleground.genetic.model.attributes;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 
 public final class BetGeneAttributes extends GeneAttributes {
 	public static final Long GIL_FLOOR = 200L;
+	public static final Long BET_MIN = 1L;
 	public static final Integer BET_MAX = 1000;
 	
 	public static final String first = "1-bet";

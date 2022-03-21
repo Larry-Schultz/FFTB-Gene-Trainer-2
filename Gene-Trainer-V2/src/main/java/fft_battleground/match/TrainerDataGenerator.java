@@ -2,6 +2,7 @@ package fft_battleground.match;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.BitSet;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,11 +11,17 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
@@ -24,7 +31,8 @@ import org.apache.commons.text.similarity.LevenshteinDistance;
 
 import fft_battleground.cache.model.MatchCacheEntry;
 import fft_battleground.dump.model.DumpData;
-import fft_battleground.genetic.model.CompleteBotGenome;
+import fft_battleground.genetic.model.attributes.CompleteBotGenome;
+import fft_battleground.genetic.model.attributes.PlayerDataGeneAttributes;
 import fft_battleground.match.model.ActualPlayerBet;
 import fft_battleground.match.model.EstimatedPlayerBet;
 import fft_battleground.match.model.Match;
@@ -37,6 +45,7 @@ import fft_battleground.tournament.model.TeamBet;
 import fft_battleground.tournament.model.Tournament;
 import fft_battleground.util.GenericPairing;
 import fft_battleground.viewer.model.BotBetData;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -59,15 +68,19 @@ public class TrainerDataGenerator {
 	private Set<String> playerNames;
 	private Map<String, Integer> playerFightWinRatiosMap;
 	private List<Double> playerFightWinRatioList;
+	private BitSet subscriberBitSet;
+	private Map<String, Integer> botIdMap;
 	
+	private Set<Long> badTournaments;
 	private List<Match> matches;
 	
 	public TrainerDataGenerator(CompleteBotGenome genome, List<MatchCacheEntry> matchCacheData, Map<String, Double> playerBetWinRatios, 
-			Map<String, Double> playerFightWinRatios) {
+			Map<String, Double> playerFightWinRatios, Set<Long> badTournaments, List<String> subscribers, List<String> bots) {
 		this.genome = genome;
 		this.matchCacheData = matchCacheData;
 		this.playerBetWinRatios = playerBetWinRatios;
 		this.playerFightWinRatios = playerFightWinRatios;
+		this.badTournaments = badTournaments;
 		
 		this.teamAttributesCache = new HashMap<>();
 		
@@ -77,6 +90,8 @@ public class TrainerDataGenerator {
 		this.playerFightWinRatiosMap = new HashMap<>();
 		this.playerFightWinRatioList = new LinkedList<>();
 		this.populateWinRatioListAndMap(playerFightWinRatios, this.playerFightWinRatiosMap, this.playerFightWinRatioList);
+		this.populateSubscriberBitSet(this.playerBetWinRatioMap, subscribers);
+		this.populateBotIds(this.playerBetWinRatioMap, bots);
 		
 		this.playerNames = new HashSet<>();
 		this.playerNames.addAll(this.playerBetWinRatioMap.keySet());
@@ -86,31 +101,27 @@ public class TrainerDataGenerator {
 	}
 	
 	public Match[] generateDataset() {
-		List<Match> matches = new ArrayList<>();
-		List<Long> badTournaments = List.of(1639305296545L, 1639281050642L, 1639305296545L, 1639410234093L, 1639436642684L);
+		ExecutorService pool = Executors.newFixedThreadPool(8);
+		this.genome.generateAttributeMap(); // generate the genome so its pre-cached before starting the analysis threads
+		List<Future<Match>> matchFutures = new LinkedList<>();
 		for(int tournamentNumber = 1; tournamentNumber < this.matchCacheData.size(); tournamentNumber++) {
-			try {
-				MatchCacheEntry currentTournamentData = this.matchCacheData.get(tournamentNumber);
-				if(!badTournaments.contains(currentTournamentData.getTournamentId())) {
-					for(int matchNumber = 0; matchNumber <= 7; matchNumber++) {
-						Tournament currentTournament = currentTournamentData.getTournament();
-						MatchPairing matchPairing = this.getMatchByTournamentAndNumber(currentTournament, matchNumber);
-						List<BotBetData> botBetData = currentTournamentData.getBotBetData();
-						DumpData dumpData = currentTournamentData.getDumpData();
+			Future<Match> matchFuture = pool.submit(new TournamentAnalysisCallable(badTournaments, tournamentNumber, this));
+			matchFutures.add(matchFuture);
+		}
 		
-						Match match = this.gatherNecessaryDataAndGenerateMatchData(currentTournament, matchPairing, botBetData, dumpData, matchNumber);
-						matches.add(match);
-					}
-				}
-			} catch(NoSuchElementException e) {
-				
+		List<Match> matchAnalysisResult = new ArrayList<>();
+		for(Future<Match> matchFuture : matchFutures) {
+			try {
+				matchAnalysisResult.add(matchFuture.get());
+			} catch (InterruptedException | ExecutionException e) {
+				log.error("Interruption error performing match analysis", e);
 			}
 		}
 		
-		return matches.toArray(Match[]::new);
+		return matchAnalysisResult.toArray(Match[]::new);
 	}
 	
-	protected Match gatherNecessaryDataAndGenerateMatchData(Tournament currentTournament, MatchPairing matchPairing, List<BotBetData> botBetData, 
+	Match gatherNecessaryDataAndGenerateMatchData(Tournament currentTournament, MatchPairing matchPairing, List<BotBetData> botBetData, 
 			DumpData dumpData, int matchNumber) throws NoSuchElementException {
 		long tournamentId = currentTournament.getID();
 		int map = matchPairing.mapNumber();
@@ -136,7 +147,7 @@ public class TrainerDataGenerator {
 		return result;
 	}
 	
-	protected Match generateMatchData(int map, long tournamentId, Team leftTeam, TeamBet leftTeamPot, Integer leftTeamValue, Team rightTeam, TeamBet rightTeamPot, Integer rightTeamValue, 
+	Match generateMatchData(int map, long tournamentId, Team leftTeam, TeamBet leftTeamPot, Integer leftTeamValue, Team rightTeam, TeamBet rightTeamPot, Integer rightTeamValue, 
 			BotBetData estimatedBetData, Integer champStreak, BattleGroundTeam winner) {
 		
 		TeamAttributes leftTeamAttributes = this.getAttributesForTeam(tournamentId, leftTeamValue, leftTeam, champStreak);
@@ -155,7 +166,7 @@ public class TrainerDataGenerator {
 				actualPlayerBets.getLeft().add(new ActualPlayerBet(playerId, bet.getValue(), bet.getBalance(), leftBattleGroundTeam));
 			}
 		});
-		rightTeamPot.getBets().forEach((bet) -> {
+		rightTeamPot.getBets().forEach(bet -> {
 			String cleanedName = StringUtils.lowerCase(bet.getUser());
 			String closestPlayerName = this.findClosestMatchingName(cleanedName, this.playerNames);
 			Integer playerId = this.playerBetWinRatioMap.get(closestPlayerName);
@@ -170,24 +181,26 @@ public class TrainerDataGenerator {
 		
 		Pair<List<EstimatedPlayerBet>, List<EstimatedPlayerBet>> estimatedPlayerBets = new ImmutablePair<>(new ArrayList<>(), new ArrayList<>());
 		;
-		estimatedBetData.getLeftBets().getBets().forEach((playerName, betAmount) -> {
-			String cleanedName = StringUtils.lowerCase(playerName);
+		estimatedBetData.getLeftBets().getBets().forEach(bet -> {
+			String cleanedName = StringUtils.lowerCase(bet.getPlayer());
 			String closestPlayerName = this.findClosestMatchingName(cleanedName, this.playerNames);
 			Integer playerId = this.playerBetWinRatioMap.get(closestPlayerName);
 			if(playerId == null) {
 				log.error("missing player data for player {}", cleanedName);
 			} else {
-				estimatedPlayerBets.getLeft().add(new EstimatedPlayerBet(playerId, betAmount, leftBattleGroundTeam));
+				estimatedPlayerBets.getLeft().add(new EstimatedPlayerBet(playerId, bet.getBetAmount(), bet.getBalanceAtTimeOfBet(),
+						leftBattleGroundTeam));
 			}
 		});
-		estimatedBetData.getRightBets().getBets().forEach((playerName, betAmount) -> {
-			String cleanedName = StringUtils.lowerCase(playerName);
+		estimatedBetData.getRightBets().getBets().forEach(bet -> {
+			String cleanedName = StringUtils.lowerCase(bet.getPlayer());
 			String closestPlayerName = this.findClosestMatchingName(cleanedName, this.playerNames);
 			Integer playerId = this.playerBetWinRatioMap.get(closestPlayerName);
 			if(playerId == null) {
 				log.error("missing player data for player {}", cleanedName);
 			} else {
-				estimatedPlayerBets.getRight().add(new EstimatedPlayerBet(playerId, betAmount, rightBattleGroundTeam));
+				estimatedPlayerBets.getRight().add(new EstimatedPlayerBet(playerId, bet.getBetAmount(), bet.getBalanceAtTimeOfBet(), 
+						rightBattleGroundTeam));
 			}
 		});
 		
@@ -203,7 +216,7 @@ public class TrainerDataGenerator {
 		return result;
 	}
 	
-	protected TeamAttributes getAttributesForTeam(long tournamentId, int teamValue, Team team, Integer champStreak) {
+	TeamAttributes getAttributesForTeam(long tournamentId, int teamValue, Team team, Integer champStreak) {
 		TeamAttributeCacheKey key = new TeamAttributeCacheKey(tournamentId, team.getTeam());
 		TeamAttributes teamAttributes = this.teamAttributesCache.containsKey(key) ? this.teamAttributesCache.get(key) : 
 			this.getTeamAttributes(team, this.genome, teamValue, champStreak);
@@ -221,8 +234,8 @@ public class TrainerDataGenerator {
 			String closestPlayerName = this.findClosestMatchingName(cleanedName, this.playerNames);
 			Integer playerId = this.playerFightWinRatiosMap.get(closestPlayerName);
 			if(playerId == null) {
-				log.error("missing player data for player {}", cleanedName);
-				return null;
+				log.error("missing fight ratio data for player {}, setting ratio to {}", cleanedName, PlayerDataGeneAttributes.missingFightWinRatioThreshold);
+				return PlayerDataGeneAttributes.missingFightWinRatioThreshold;
 			} else {
 				return this.playerFightWinRatioList.get(this.playerFightWinRatiosMap.get(closestPlayerName));
 			}
@@ -230,7 +243,7 @@ public class TrainerDataGenerator {
 		return new TeamAttributes(battleGroundTeam, team.attributes(completeBotGenome), team.braves(), team.faiths(), team.raidBossCount(), teamValue, fightRatios, champStreakValue);
 	}
 	
-	protected MatchPairing getMatchByTournamentAndNumber(Tournament tournament, int matchNumber) {
+	MatchPairing getMatchByTournamentAndNumber(Tournament tournament, int matchNumber) {
 		MatchPairing match = null;
 		BattleGroundTeam leftTeamName = BattleGroundTeam.NONE;
 		BattleGroundTeam rightTeamName = BattleGroundTeam.NONE;
@@ -296,7 +309,7 @@ public class TrainerDataGenerator {
 		return match;
 	}
 	
-	protected List<String> getRelevantEntries(List<String> winners, int... indexes) {
+	List<String> getRelevantEntries(List<String> winners, int... indexes) {
 		List<String> relevantWinners = new ArrayList<>();
 		for(int index: indexes) {
 			relevantWinners.add(winners.get(index));
@@ -305,7 +318,7 @@ public class TrainerDataGenerator {
 		return relevantWinners;
 	}
 	
-	protected GenericPairing<BattleGroundTeam, BattleGroundTeam> getTeamsByDeterminingSurvivors(List<String> winners, BattleGroundTeam[] possibleSurvivors) {
+	GenericPairing<BattleGroundTeam, BattleGroundTeam> getTeamsByDeterminingSurvivors(List<String> winners, BattleGroundTeam[] possibleSurvivors) {
 		GenericPairing<BattleGroundTeam, BattleGroundTeam> teams = null;
 		
 		List<BattleGroundTeam> winnerTeams = winners.parallelStream().map(winner -> BattleGroundTeam.parse(winner)).collect(Collectors.toList());
@@ -328,13 +341,13 @@ public class TrainerDataGenerator {
 		return teams;
 	}
 	
-	protected static Integer mapNumber(String mapName) {
+	static Integer mapNumber(String mapName) {
 		String numberString = StringUtils.substringBefore(mapName, ")");
 		Integer value = Integer.valueOf(numberString);
 		return value;
 	}
 	
-	protected void populateWinRatioListAndMap(Map<String, Double> playerData, Map<String, Integer> placementMap, List<Double> ratioData) {
+	void populateWinRatioListAndMap(Map<String, Double> playerData, Map<String, Integer> placementMap, List<Double> ratioData) {
 		AtomicInteger i = new AtomicInteger(0);
 		playerData.forEach((playerName, ratio) -> {
 			ratioData.add(ratio);
@@ -343,7 +356,24 @@ public class TrainerDataGenerator {
 		});
 	}
 	
-	protected String findClosestMatchingName(String playerName, Collection<String> entrants) {
+	void populateSubscriberBitSet(Map<String, Integer> placementMap, List<String> subscribers) {
+		this.subscriberBitSet = new BitSet(placementMap.size());
+		for(String subscriber : subscribers) {
+			if(placementMap.containsKey(subscriber)) {
+				int index = placementMap.get(subscriber);
+				this.subscriberBitSet.set(index, false);
+			}
+		}
+		
+	}
+	
+	void populateBotIds(Map<String, Integer> placementMap, List<String> bots) {
+		this.botIdMap = placementMap.entrySet().stream()
+				.filter(entry -> bots.contains(entry.getKey()))
+				.collect(Collectors.toMap(Entry::getKey, Entry::getValue));
+	}
+	
+	String findClosestMatchingName(String playerName, Collection<String> entrants) {
 		List<String> cleanedEntrants = Collections.unmodifiableList(entrants.parallelStream().collect(Collectors.toList()));
 		LevenshteinDistance distanceCalculator = LevenshteinDistance.getDefaultInstance();
 		Map<String, Integer> entrantDistanceMap = new ConcurrentHashMap<>();
@@ -370,4 +400,36 @@ public class TrainerDataGenerator {
 	
 	record MatchPairing(int matchNumber, int mapNumber, BattleGroundTeam leftTeam, Team leftTeamData, BattleGroundTeam rightTeam, Team rightTeamData) {};
 	record TeamAttributeCacheKey(long tournamentId, BattleGroundTeam team) {};
+	
+	@AllArgsConstructor
+	@NoArgsConstructor
+	class TournamentAnalysisCallable implements Callable<Match> {
+		private Collection<Long> badTournaments;
+		private int tournamentNumber;
+		private TrainerDataGenerator generatorRef;
+		
+		public Match call() {
+			Match match = null;
+			try {
+				MatchCacheEntry currentTournamentData = generatorRef.matchCacheData.get(tournamentNumber);
+				if(!badTournaments.contains(currentTournamentData.getTournamentId())) {
+					for(int matchNumber = 0; matchNumber <= 7; matchNumber++) {
+						Tournament currentTournament = currentTournamentData.getTournament();
+						MatchPairing matchPairing = generatorRef.getMatchByTournamentAndNumber(currentTournament, matchNumber);
+						List<BotBetData> botBetData = currentTournamentData.getBotBetData();
+						DumpData dumpData = currentTournamentData.getDumpData();
+		
+						match = generatorRef.gatherNecessaryDataAndGenerateMatchData(currentTournament, matchPairing, botBetData, dumpData, matchNumber);
+						
+					}
+				}
+			} catch(NoSuchElementException e) {
+				
+			}
+			
+			return match;
+		}
+		
+		
+	}
 }

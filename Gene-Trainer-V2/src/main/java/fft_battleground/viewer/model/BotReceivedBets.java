@@ -1,14 +1,14 @@
 package fft_battleground.viewer.model;
 
-import java.util.Map;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class BotReceivedBets {
-	private Map<String, Integer> bets;
+	private List<BotReceivedBet> bets;
 }

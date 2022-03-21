@@ -1,6 +1,6 @@
 package fft_battleground.simulation;
 
-import fft_battleground.genetic.model.CompleteBotGenome;
+import fft_battleground.genetic.model.attributes.CompleteBotGenome;
 import fft_battleground.match.model.MultipleTournamentDataset;
 import fft_battleground.simulation.model.SimulationConfig;
 

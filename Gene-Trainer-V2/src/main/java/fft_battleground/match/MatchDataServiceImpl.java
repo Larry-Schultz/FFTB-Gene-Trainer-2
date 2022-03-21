@@ -1,6 +1,7 @@
 package fft_battleground.match;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,6 +15,7 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fft_battleground.cache.BadTournamentService;
 import fft_battleground.cache.MatchCacheService;
 import fft_battleground.cache.model.MatchCacheEntry;
 import fft_battleground.dump.DumpService;
@@ -44,10 +46,15 @@ public class MatchDataServiceImpl implements MatchDataService {
 	
 	@Autowired
 	private DumpService dumpService;
+	
+	@Autowired
+	private BadTournamentService badTournamentService;
 
 	@Override
 	public List<MatchCacheEntry> getGeneTestData(int count, BotBetData firstTournamentWithBotBetData) throws TournamentApiException, ViewerException, DumpException, CacheException { 
-		List<TournamentInfo> tournamentInfoForCount = this.tournamentService.getLatestTournamentInfo(count);
+		List<TournamentInfo> tournamentInfoForCount = this.tournamentService.getLatestTournamentInfo(count).stream()
+				.filter(tournamentInfo -> !this.badTournamentService.getBadTournamentIds().contains(tournamentInfo.getID()))
+				.collect(Collectors.toList());
 		
 		List<TournamentInfo> tournamentsWithBotBetDataAndComplete = tournamentInfoForCount.stream()
 				.filter(tournamentInfo -> tournamentInfo.getLastMod().after(firstTournamentWithBotBetData.getCreateDateTime()))
@@ -111,8 +118,29 @@ public class MatchDataServiceImpl implements MatchDataService {
 			throw new CacheException(e);
 		}
 		
+		// prep ids to check for bad tournaments
+		Set<Long> tournamentIdsToCollate = this.getAllTournamentIds(tournamentResult, botBetDataResult, tournamentTeamValueMap);
+		
 		List<MatchCacheEntry> newMatchCacheEntries = MatchCacheEntry.collate(tournamentResult, botBetDataResult, tournamentTeamValueMap);
+		
+		Set<Long> matchEntryIds = newMatchCacheEntries.stream().map(MatchCacheEntry::getTournamentId).collect(Collectors.toSet());
+		Set<Long> badIds = tournamentIdsToCollate.stream().filter(id -> !matchEntryIds.contains(id)).collect(Collectors.toSet());
+		this.badTournamentService.addBadTournament(badIds);
+		
 		return new ServiceResult(newMatchCacheEntries, cacheData);
+	}
+	
+	protected Set<Long> getAllTournamentIds(List<Tournament> tournamentResult, List<BotBetData> botBetDataResult, Map<Long, DumpData> tournamentTeamValueMap) {
+		Set<Long> tournamentIdsToCollate = new HashSet<>();
+		
+		Set<Long> tournamentResultIds = tournamentResult.stream().map(Tournament::getID).collect(Collectors.toSet());
+		Set<Long> botBetDataResultIds = botBetDataResult.stream().map(BotBetData::getTournamentId).collect(Collectors.toSet());
+		
+		tournamentIdsToCollate.addAll(tournamentResultIds);
+		tournamentIdsToCollate.addAll(botBetDataResultIds);
+		tournamentIdsToCollate.addAll(tournamentTeamValueMap.keySet());
+		
+		return tournamentIdsToCollate;
 	}
 	
 	record ServiceResult(List<MatchCacheEntry> serviceData, List<MatchCacheEntry> cacheData) {

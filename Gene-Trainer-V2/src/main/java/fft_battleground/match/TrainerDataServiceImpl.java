@@ -1,20 +1,24 @@
 package fft_battleground.match;
 
+import java.util.BitSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
+import fft_battleground.cache.BadTournamentService;
 import fft_battleground.cache.model.MatchCacheEntry;
 import fft_battleground.exception.CacheException;
 import fft_battleground.exception.DumpException;
 import fft_battleground.exception.TournamentApiException;
 import fft_battleground.exception.ViewerException;
-import fft_battleground.genetic.model.CompleteBotGenome;
+import fft_battleground.genetic.model.attributes.CompleteBotGenome;
 import fft_battleground.match.model.Match;
 import fft_battleground.match.model.MultipleTournamentDataset;
 import fft_battleground.viewer.BetCountService;
@@ -30,6 +34,12 @@ public class TrainerDataServiceImpl implements TrainerDataService {
 	
 	@Autowired
 	private BetCountService betCountService;
+	
+	@Autowired
+	private BadTournamentService badTournamentService;
+	
+	@Autowired
+    private SimpMessagingTemplate template;
 	
 	@Override
 	public MultipleTournamentDataset generateDataset(int count, CompleteBotGenome genome) throws TournamentApiException, ViewerException, DumpException, CacheException {
@@ -52,15 +62,22 @@ public class TrainerDataServiceImpl implements TrainerDataService {
 			playerBetWinRatios = playerBetWinRatiosFuture.get();
 			playerFightWinRatios = playerFightWinRatiosFuture.get();
 			subscribers = futuresSubscribers.get();
-			bots = futureBots.get()
+			bots = futureBots.get();
 		} catch (InterruptedException | ExecutionException e) {
 			log.error("Something weird went wrong getting data from viewer");
 			throw new ViewerException(e);
 		}
-		TrainerDataGenerator generator = new TrainerDataGenerator(genome, dataset, playerBetWinRatios, playerFightWinRatios);
+		
+		Set<Long> badTournaments = this.badTournamentService.getBadTournamentIds();
+		TrainerDataGenerator generator = new TrainerDataGenerator(genome, dataset, playerBetWinRatios, playerFightWinRatios, badTournaments, 
+				subscribers, bots);
 		Match[] matchData = generator.generateDataset();
 		double[] playerBetRatios = generator.getPlayerBetWinRatioList().stream().mapToDouble(Double::doubleValue).toArray();
-		MultipleTournamentDataset multipleTournamentDataset = new MultipleTournamentDataset(matchData, playerBetRatios);
+		double[] playerFightRatios = generator.getPlayerFightWinRatioList().stream().mapToDouble(Double::doubleValue).toArray();
+		BitSet subscriberBitSet = generator.getSubscriberBitSet();
+		Map<String, Integer> botIdMap = generator.getBotIdMap();
+		MultipleTournamentDataset multipleTournamentDataset = new MultipleTournamentDataset(matchData, playerBetRatios, playerFightRatios, subscriberBitSet, 
+				botIdMap);
 		return multipleTournamentDataset;
 	}
 

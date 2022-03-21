@@ -4,7 +4,7 @@ import fft_battleground.exception.CacheException;
 import fft_battleground.exception.DumpException;
 import fft_battleground.exception.TournamentApiException;
 import fft_battleground.exception.ViewerException;
-import fft_battleground.genetic.model.CompleteBotGenome;
+import fft_battleground.genetic.model.attributes.CompleteBotGenome;
 import fft_battleground.match.model.MultipleTournamentDataset;
 
 public interface TrainerDataService {

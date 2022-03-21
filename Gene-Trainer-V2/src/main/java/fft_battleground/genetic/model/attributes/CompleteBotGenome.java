@@ -1,9 +1,12 @@
-package fft_battleground.genetic.model;
+package fft_battleground.genetic.model.attributes;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -36,6 +39,9 @@ public class CompleteBotGenome {
 	private MissingGeneAttributes missingGeneAttributes;
 	
 	@JsonIgnore
+	private transient ReadWriteLock geneClassAttributeMapLock = new ReentrantReadWriteLock();
+	
+	@JsonIgnore
 	public transient List<GeneAttributes> geneAttributes;
 	@JsonIgnore
 	public transient Map<Class<? extends GeneAttributes>, GeneAttributes> geneClassGeneAttributeMap;
@@ -45,20 +51,20 @@ public class CompleteBotGenome {
 	public CompleteBotGenome(Tips tips) {
 		AtomicInteger idTracker = new AtomicInteger(0);
 		this.mapGeneAttributes = new MapGeneAttributes(idTracker, "Maps.txt");
-		this.itemGeneAttributes = new ItemGeneAttributes(idTracker, tips);
-		this.abilityGeneAttributes = new AbilityGeneAttributes(idTracker, tips);
-		this.userSkillGeneAttributes = new UserSkillGeneAttributes(idTracker);
-		this.classGeneAttributes = new ClassGeneAttributes(idTracker, tips);
+		this.betGeneAttributes = new BetGeneAttributes(idTracker);
+		//this.itemGeneAttributes = new ItemGeneAttributes(idTracker, tips);
+		//this.abilityGeneAttributes = new AbilityGeneAttributes(idTracker, tips);
+		//this.userSkillGeneAttributes = new UserSkillGeneAttributes(idTracker);
+		//this.classGeneAttributes = new ClassGeneAttributes(idTracker, tips);
 		this.braveFaithAttributes = new BraveFaithAttributes(idTracker);
 		this.potGeneAttributes = new PotGeneAttributes(idTracker);
 		this.playerDataGeneAttributes = new PlayerDataGeneAttributes(idTracker);
 		this.sideGeneAttributes = new SideGeneAttributes(idTracker);
-		this.betGeneAttributes = new BetGeneAttributes(idTracker);
 		this.missingGeneAttributes = new MissingGeneAttributes(idTracker);
 		
-		this.geneAttributes = List.of(this.mapGeneAttributes, this.itemGeneAttributes, this.abilityGeneAttributes, 
-				this.userSkillGeneAttributes, this.classGeneAttributes, this.braveFaithAttributes, this.potGeneAttributes, 
-				this.playerDataGeneAttributes, this.sideGeneAttributes, this.betGeneAttributes, this.missingGeneAttributes);
+		this.geneAttributes = List.of(this.mapGeneAttributes, this.betGeneAttributes, 
+				//this.itemGeneAttributes, this.abilityGeneAttributes, this.userSkillGeneAttributes, this.classGeneAttributes, 
+				this.braveFaithAttributes, this.potGeneAttributes, this.playerDataGeneAttributes, this.sideGeneAttributes, this.missingGeneAttributes);
 		
 		Collector<GeneAttributes, ?, Map<Class<? extends GeneAttributes>, GeneAttributes>> geneClassCollector = 
 				Collectors.<GeneAttributes, Class<? extends GeneAttributes>, GeneAttributes>toMap(GeneAttributes::getClass, Function.identity());
@@ -68,22 +74,42 @@ public class CompleteBotGenome {
 	}
 	
 	public Factory<Genotype<DoubleGene>> generateGenome() {
-		List<DoubleChromosome> chromosomes = this.geneAttributes.stream()
-				.map(attribute -> attribute.generateChromosome())
-				.collect(Collectors.toList());
+		List<DoubleChromosome> chromosomes = this.generateChromosomes();
 		return Genotype.of(chromosomes);
 	}
 	
-	public Map<String, Integer> getAttributeMap() {
-		return this.attributeMapCache != null ? this.attributeMapCache : this.generateAttributeMap();
+	public List<DoubleChromosome> generateChromosomes() {
+		List<DoubleChromosome> chromosomes = this.geneAttributes.stream()
+				.map(attribute -> attribute.generateChromosome())
+				.collect(Collectors.toList());
+		return chromosomes;
 	}
 	
-	protected Map<String, Integer> generateAttributeMap() {
-		Map<String, Integer> attributeMap = new HashMap<>();
-		for(GeneAttributes attribute : this.geneAttributes) {
-			attribute.getIdNameMap().forEach((key, value) -> attributeMap.put(value, key));
+	@JsonIgnore
+	public Map<String, Integer> getAttributeMap() {
+		Lock readLock = this.geneClassAttributeMapLock.readLock();
+		readLock.lock();
+		Map<String, Integer> attributeMap;
+		try {
+			attributeMap = this.attributeMapCache;
+		} finally {
+			readLock.unlock();
 		}
-		this.attributeMapCache = attributeMap;
+		return attributeMap;
+	}
+	
+	public Map<String, Integer> generateAttributeMap() {
+		Lock writeLock = this.geneClassAttributeMapLock.writeLock();
+		writeLock.lock();
+		Map<String, Integer> attributeMap = new HashMap<>();
+		try {
+			for(GeneAttributes attribute : this.geneAttributes) {
+				attribute.getIdNameMap().forEach((key, value) -> attributeMap.put(value, key));
+			}
+			this.attributeMapCache = attributeMap;
+		} finally {
+			writeLock.unlock();
+		}
 		return attributeMap;
 	}
 	
