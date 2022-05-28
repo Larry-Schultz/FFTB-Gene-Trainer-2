@@ -2,7 +2,6 @@ package fft_battleground.tournament.model;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -84,7 +83,7 @@ public class Unit {
 	private String addItemSuffixIfNecessary(final String item) {
 		String result = item;
 		if(ItemGeneAttributes.itemsToPrefix.contains(item)) {
-			result = this.Offhand + ItemGeneAttributes.itemSuffix;
+			result = item + ItemGeneAttributes.itemSuffix;
 		}
 		
 		return result;

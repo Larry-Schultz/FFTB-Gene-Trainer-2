@@ -1,0 +1,1250 @@
+{
+  "creationDate" : "2022-03-25 01:52 AM UTC",
+  "botLeaderboard" : [ {
+    "botName" : "leftallinbot",
+    "gil" : 76568
+  }, {
+    "botName" : "birbetbotsimulator",
+    "gil" : 73168
+  }, {
+    "botName" : "athiestbot",
+    "gil" : 50447
+  }, {
+    "botName" : "inversebravefaithbot",
+    "gil" : 43065
+  }, {
+    "botName" : "randomrandombotinverse",
+    "gil" : 42535
+  }, {
+    "botName" : "allinbetcountbot",
+    "gil" : 36959
+  }, {
+    "botName" : "betcountbet1000ifable",
+    "gil" : 34640
+  }, {
+    "botName" : "cowardbot",
+    "gil" : 34036
+  }, {
+    "botName" : "bravebot",
+    "gil" : 30026
+  }, {
+    "botName" : "bravefaithbot",
+    "gil" : 29705
+  }, {
+    "botName" : "allinrandombot",
+    "gil" : 26610
+  }, {
+    "botName" : "datadrivenbotinverse",
+    "gil" : 25722
+  }, {
+    "botName" : "faithbot",
+    "gil" : 19641
+  }, {
+    "botName" : "datadrivenbotsimulator",
+    "gil" : 19100
+  }, {
+    "botName" : "betcountbet500ifable",
+    "gil" : 17901
+  }, {
+    "botName" : "leftminimumbot",
+    "gil" : 15425
+  }, {
+    "botName" : "lefthalfbot",
+    "gil" : 15425
+  }, {
+    "botName" : "getthemoneyzsimulator",
+    "gil" : 15136
+  }, {
+    "botName" : "smokebowlingsimulator",
+    "gil" : 11231
+  }, {
+    "botName" : "betcount150increment",
+    "gil" : 10999
+  }, {
+    "botName" : "rightallinbot",
+    "gil" : 10330
+  }, {
+    "botName" : "betcount100increment",
+    "gil" : 10072
+  }, {
+    "botName" : "betcount75increment",
+    "gil" : 9797
+  }, {
+    "botName" : "betcount50increment",
+    "gil" : 9045
+  }, {
+    "botName" : "betcount20increment",
+    "gil" : 8167
+  }, {
+    "botName" : "betcount10increment",
+    "gil" : 7851
+  }, {
+    "botName" : "randomrandombot",
+    "gil" : 7688
+  }, {
+    "botName" : "minbetbot",
+    "gil" : 7506
+  }, {
+    "botName" : "minbetbotinverse",
+    "gil" : 7506
+  }, {
+    "botName" : "halfrandombot",
+    "gil" : 5425
+  }, {
+    "botName" : "rightminimumbot",
+    "gil" : 2219
+  }, {
+    "botName" : "righthalfbot",
+    "gil" : 2219
+  }, {
+    "botName" : "betcount10nsquaredincrement",
+    "gil" : 967
+  }, {
+    "botName" : "datadrivenbot",
+    "gil" : 463
+  }, {
+    "botName" : "oddsbot",
+    "gil" : 284
+  }, {
+    "botName" : "betcount40percent",
+    "gil" : 200
+  }, {
+    "botName" : "betcount62percent",
+    "gil" : 200
+  }, {
+    "botName" : "oddsbotinverse",
+    "gil" : 200
+  } ],
+  "matchesAnalyzed" : 297,
+  "gilResult" : 81425,
+  "perfectGil" : 357205,
+  "geneCount" : 1195,
+  "generation" : 0,
+  "genome" : {
+    "mapGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "93-Right",
+          "value" : 99.70023791144379
+        }, {
+          "key" : "23-Left",
+          "value" : 99.57764472814632
+        }, {
+          "key" : "37-Right",
+          "value" : 99.55614657269533
+        }, {
+          "key" : "71-Left",
+          "value" : 99.29236064180486
+        }, {
+          "key" : "48-Right",
+          "value" : 98.26965569246774
+        }, {
+          "key" : "37-Left",
+          "value" : 97.88842207462125
+        }, {
+          "key" : "53-Right",
+          "value" : 97.32477118718566
+        }, {
+          "key" : "31-Left",
+          "value" : 97.27892359300158
+        }, {
+          "key" : "72-Left",
+          "value" : 97.24999258520293
+        }, {
+          "key" : "71-Right",
+          "value" : 97.1294725497237
+        }, {
+          "key" : "29-Left",
+          "value" : 96.55471426477152
+        }, {
+          "key" : "18-Left",
+          "value" : 96.42271897077082
+        }, {
+          "key" : "97-Right",
+          "value" : 96.32747060294716
+        }, {
+          "key" : "77-Left",
+          "value" : 95.25605323339391
+        }, {
+          "key" : "97-Left",
+          "value" : 94.97305564484546
+        }, {
+          "key" : "24-Left",
+          "value" : 94.67471981797132
+        }, {
+          "key" : "109-Left",
+          "value" : 93.88187606938
+        }, {
+          "key" : "12-Left",
+          "value" : 92.93481530353675
+        }, {
+          "key" : "63-Left",
+          "value" : 92.39473180405781
+        }, {
+          "key" : "86-Right",
+          "value" : 92.3206238511267
+        }, {
+          "key" : "63-Right",
+          "value" : 92.26629165518254
+        }, {
+          "key" : "11-Left",
+          "value" : 92.26506609798545
+        }, {
+          "key" : "67-Right",
+          "value" : 91.79266663157263
+        }, {
+          "key" : "62-Left",
+          "value" : 91.67558775388301
+        }, {
+          "key" : "87-Right",
+          "value" : 91.58876523079135
+        }, {
+          "key" : "41-Right",
+          "value" : 91.44269588534796
+        }, {
+          "key" : "7-Right",
+          "value" : 91.40342498658029
+        }, {
+          "key" : "50-Right",
+          "value" : 90.71726739260458
+        }, {
+          "key" : "90-Right",
+          "value" : 90.35918496068193
+        }, {
+          "key" : "60-Right",
+          "value" : 89.99363122827525
+        }, {
+          "key" : "78-Right",
+          "value" : 89.95562829863223
+        }, {
+          "key" : "32-Left",
+          "value" : 89.62742002012278
+        }, {
+          "key" : "80-Left",
+          "value" : 89.10319529928728
+        }, {
+          "key" : "35-Right",
+          "value" : 88.89078670565877
+        }, {
+          "key" : "49-Left",
+          "value" : 88.54946879465217
+        }, {
+          "key" : "67-Left",
+          "value" : 88.47555196846002
+        }, {
+          "key" : "78-Left",
+          "value" : 88.04732967618469
+        }, {
+          "key" : "33-Right",
+          "value" : 87.77869902460365
+        }, {
+          "key" : "45-Left",
+          "value" : 87.55343025433447
+        }, {
+          "key" : "117-Right",
+          "value" : 86.95235595689611
+        }, {
+          "key" : "8-Left",
+          "value" : 86.02012372241067
+        }, {
+          "key" : "45-Right",
+          "value" : 85.15631266695877
+        }, {
+          "key" : "66-Left",
+          "value" : 84.89967864138212
+        }, {
+          "key" : "81-Right",
+          "value" : 84.71125199172288
+        }, {
+          "key" : "21-Left",
+          "value" : 83.29874061437003
+        }, {
+          "key" : "80-Right",
+          "value" : 83.2751440404348
+        }, {
+          "key" : "10-Right",
+          "value" : 81.45022966019565
+        }, {
+          "key" : "52-Left",
+          "value" : 81.44287988724867
+        }, {
+          "key" : "74-Left",
+          "value" : 80.27512108566775
+        }, {
+          "key" : "81-Left",
+          "value" : 80.25985899475155
+        }, {
+          "key" : "105-Right",
+          "value" : 80.14351225423067
+        }, {
+          "key" : "91-Right",
+          "value" : 80.05849879573178
+        }, {
+          "key" : "84-Right",
+          "value" : 79.7203182341382
+        }, {
+          "key" : "114-Right",
+          "value" : 78.38642900455223
+        }, {
+          "key" : "0-Right",
+          "value" : 77.89546232422586
+        }, {
+          "key" : "73-Left",
+          "value" : 77.25328041290638
+        }, {
+          "key" : "95-Right",
+          "value" : 77.21379968165276
+        }, {
+          "key" : "59-Right",
+          "value" : 76.84844399678741
+        }, {
+          "key" : "19-Left",
+          "value" : 76.11334249226361
+        }, {
+          "key" : "14-Right",
+          "value" : 75.5977998348688
+        }, {
+          "key" : "86-Left",
+          "value" : 75.3467604200655
+        }, {
+          "key" : "76-Left",
+          "value" : 74.91919588278998
+        }, {
+          "key" : "2-Right",
+          "value" : 74.1540637820394
+        }, {
+          "key" : "16-Right",
+          "value" : 73.9909506881093
+        }, {
+          "key" : "77-Right",
+          "value" : 73.91838485557906
+        }, {
+          "key" : "47-Right",
+          "value" : 73.63444889332176
+        }, {
+          "key" : "21-Right",
+          "value" : 73.37348898303506
+        }, {
+          "key" : "98-Right",
+          "value" : 72.86729547325987
+        }, {
+          "key" : "110-Right",
+          "value" : 72.35876250821894
+        }, {
+          "key" : "92-Left",
+          "value" : 72.04776994143813
+        }, {
+          "key" : "43-Right",
+          "value" : 71.3454725920418
+        }, {
+          "key" : "100-Right",
+          "value" : 70.16640371065664
+        }, {
+          "key" : "90-Left",
+          "value" : 69.57247020713972
+        }, {
+          "key" : "84-Left",
+          "value" : 68.19981095365839
+        }, {
+          "key" : "104-Right",
+          "value" : 68.12369909876575
+        }, {
+          "key" : "113-Left",
+          "value" : 67.81241771136453
+        }, {
+          "key" : "61-Left",
+          "value" : 67.38582837314092
+        }, {
+          "key" : "68-Right",
+          "value" : 67.03178296759337
+        }, {
+          "key" : "83-Right",
+          "value" : 66.75718542071492
+        }, {
+          "key" : "2-Left",
+          "value" : 65.96555490996371
+        }, {
+          "key" : "59-Left",
+          "value" : 65.79245107877647
+        }, {
+          "key" : "69-Left",
+          "value" : 65.77910556805261
+        }, {
+          "key" : "73-Right",
+          "value" : 64.51935028573807
+        }, {
+          "key" : "56-Left",
+          "value" : 64.41811190954124
+        }, {
+          "key" : "112-Right",
+          "value" : 64.13198938960988
+        }, {
+          "key" : "82-Right",
+          "value" : 64.00516616243223
+        }, {
+          "key" : "110-Left",
+          "value" : 63.775930991411855
+        }, {
+          "key" : "101-Left",
+          "value" : 62.184591132066636
+        }, {
+          "key" : "12-Right",
+          "value" : 61.90085278418501
+        }, {
+          "key" : "46-Left",
+          "value" : 61.729472962175194
+        }, {
+          "key" : "35-Left",
+          "value" : 61.212586069149125
+        }, {
+          "key" : "125-Left",
+          "value" : 60.93395274794035
+        }, {
+          "key" : "3-Left",
+          "value" : 60.76613251294496
+        }, {
+          "key" : "57-Left",
+          "value" : 60.60130897022029
+        }, {
+          "key" : "106-Right",
+          "value" : 60.56802639316139
+        }, {
+          "key" : "24-Right",
+          "value" : 60.4959182503769
+        }, {
+          "key" : "28-Right",
+          "value" : 60.347378106441475
+        }, {
+          "key" : "39-Left",
+          "value" : 60.34455995394092
+        }, {
+          "key" : "15-Left",
+          "value" : 60.1401951960296
+        }, {
+          "key" : "44-Right",
+          "value" : 59.61634894635357
+        }, {
+          "key" : "111-Right",
+          "value" : 57.701545159484205
+        }, {
+          "key" : "25-Left",
+          "value" : 57.495813730772525
+        }, {
+          "key" : "100-Left",
+          "value" : 57.32280080988118
+        }, {
+          "key" : "95-Left",
+          "value" : 57.31686913353455
+        }, {
+          "key" : "34-Right",
+          "value" : 57.08125938447088
+        }, {
+          "key" : "75-Left",
+          "value" : 56.76654028957866
+        }, {
+          "key" : "116-Right",
+          "value" : 56.519192159248846
+        }, {
+          "key" : "17-Left",
+          "value" : 56.49849667608583
+        }, {
+          "key" : "103-Right",
+          "value" : 56.43591608560305
+        }, {
+          "key" : "17-Right",
+          "value" : 56.32818645113527
+        }, {
+          "key" : "40-Left",
+          "value" : 55.93819037917464
+        }, {
+          "key" : "20-Left",
+          "value" : 55.76111625666804
+        }, {
+          "key" : "38-Right",
+          "value" : 55.63389390968345
+        }, {
+          "key" : "38-Left",
+          "value" : 55.143506989790694
+        }, {
+          "key" : "48-Left",
+          "value" : 55.083695957935795
+        }, {
+          "key" : "58-Right",
+          "value" : 54.845791503737196
+        }, {
+          "key" : "74-Right",
+          "value" : 54.66853207291652
+        }, {
+          "key" : "27-Left",
+          "value" : 54.64846701807754
+        }, {
+          "key" : "57-Right",
+          "value" : 54.31344511673763
+        }, {
+          "key" : "85-Right",
+          "value" : 54.21834287994813
+        }, {
+          "key" : "83-Left",
+          "value" : 53.95552994836444
+        }, {
+          "key" : "99-Left",
+          "value" : 53.80650015019697
+        }, {
+          "key" : "26-Left",
+          "value" : 52.17242032303241
+        }, {
+          "key" : "115-Right",
+          "value" : 51.40790161743094
+        }, {
+          "key" : "15-Right",
+          "value" : 51.314303911543725
+        }, {
+          "key" : "65-Left",
+          "value" : 51.12638056181419
+        }, {
+          "key" : "52-Right",
+          "value" : 48.76516473921148
+        }, {
+          "key" : "94-Right",
+          "value" : 48.66355909537794
+        }, {
+          "key" : "7-Left",
+          "value" : 48.47581635755094
+        }, {
+          "key" : "44-Left",
+          "value" : 47.71696147125704
+        }, {
+          "key" : "54-Left",
+          "value" : 46.47429646909637
+        }, {
+          "key" : "70-Left",
+          "value" : 45.85039896656923
+        }, {
+          "key" : "3-Right",
+          "value" : 45.377641168327344
+        }, {
+          "key" : "49-Right",
+          "value" : 44.48822916333803
+        }, {
+          "key" : "40-Right",
+          "value" : 44.2453757106753
+        }, {
+          "key" : "115-Left",
+          "value" : 43.336018254101916
+        }, {
+          "key" : "39-Right",
+          "value" : 43.000783541262955
+        }, {
+          "key" : "55-Left",
+          "value" : 42.59770864897665
+        }, {
+          "key" : "61-Right",
+          "value" : 42.01569554157397
+        }, {
+          "key" : "89-Right",
+          "value" : 41.816286264529204
+        }, {
+          "key" : "54-Right",
+          "value" : 41.70099658768889
+        }, {
+          "key" : "23-Right",
+          "value" : 41.63936786942407
+        }, {
+          "key" : "107-Right",
+          "value" : 41.452463506238566
+        }, {
+          "key" : "105-Left",
+          "value" : 41.10847562628006
+        }, {
+          "key" : "79-Left",
+          "value" : 40.750852658012725
+        }, {
+          "key" : "94-Left",
+          "value" : 40.15474720572219
+        }, {
+          "key" : "88-Right",
+          "value" : 40.133622603468744
+        }, {
+          "key" : "96-Left",
+          "value" : 40.009338213753296
+        }, {
+          "key" : "112-Left",
+          "value" : 39.82159611957824
+        }, {
+          "key" : "108-Left",
+          "value" : 39.785614791318025
+        }, {
+          "key" : "91-Left",
+          "value" : 39.720281773850466
+        }, {
+          "key" : "65-Right",
+          "value" : 38.96236282458246
+        }, {
+          "key" : "9-Right",
+          "value" : 38.880630615405295
+        }, {
+          "key" : "41-Left",
+          "value" : 38.41032894728965
+        }, {
+          "key" : "87-Left",
+          "value" : 38.36262121188059
+        }, {
+          "key" : "108-Right",
+          "value" : 37.99709485274704
+        }, {
+          "key" : "10-Left",
+          "value" : 36.56656304423641
+        }, {
+          "key" : "27-Right",
+          "value" : 36.559391030061526
+        }, {
+          "key" : "13-Right",
+          "value" : 35.246134434359256
+        }, {
+          "key" : "1-Left",
+          "value" : 34.83116314277953
+        }, {
+          "key" : "58-Left",
+          "value" : 33.88789525121339
+        }, {
+          "key" : "69-Right",
+          "value" : 32.91679067112633
+        }, {
+          "key" : "36-Right",
+          "value" : 31.482077939996156
+        }, {
+          "key" : "51-Right",
+          "value" : 31.18633933273096
+        }, {
+          "key" : "111-Left",
+          "value" : 29.941991680901204
+        }, {
+          "key" : "34-Left",
+          "value" : 29.877515535695597
+        }, {
+          "key" : "53-Left",
+          "value" : 29.507175781823015
+        }, {
+          "key" : "75-Right",
+          "value" : 28.17301824296745
+        }, {
+          "key" : "114-Left",
+          "value" : 27.204525511447198
+        }, {
+          "key" : "72-Right",
+          "value" : 27.116508375725534
+        }, {
+          "key" : "26-Right",
+          "value" : 26.932131226179024
+        }, {
+          "key" : "79-Right",
+          "value" : 26.931944468252787
+        }, {
+          "key" : "98-Left",
+          "value" : 25.90057561192505
+        }, {
+          "key" : "6-Right",
+          "value" : 25.59884995730347
+        }, {
+          "key" : "66-Right",
+          "value" : 25.484998914050916
+        }, {
+          "key" : "5-Left",
+          "value" : 25.27458811105595
+        }, {
+          "key" : "116-Left",
+          "value" : 25.125518348754582
+        }, {
+          "key" : "76-Right",
+          "value" : 24.87688569111528
+        }, {
+          "key" : "22-Right",
+          "value" : 24.645518483399353
+        }, {
+          "key" : "46-Right",
+          "value" : 24.62121163992913
+        }, {
+          "key" : "32-Right",
+          "value" : 24.551663048345507
+        }, {
+          "key" : "82-Left",
+          "value" : 24.10553800181465
+        }, {
+          "key" : "93-Left",
+          "value" : 22.50188103714532
+        }, {
+          "key" : "102-Left",
+          "value" : 22.17002208464227
+        }, {
+          "key" : "89-Left",
+          "value" : 21.371043519162747
+        }, {
+          "key" : "30-Left",
+          "value" : 20.46305218237603
+        }, {
+          "key" : "101-Right",
+          "value" : 20.3677103238187
+        }, {
+          "key" : "28-Left",
+          "value" : 19.799776342249288
+        }, {
+          "key" : "1-Right",
+          "value" : 19.02111938783726
+        }, {
+          "key" : "5-Right",
+          "value" : 18.966195610586134
+        }, {
+          "key" : "96-Right",
+          "value" : 18.480384007976337
+        }, {
+          "key" : "68-Left",
+          "value" : 18.303783891113557
+        }, {
+          "key" : "64-Left",
+          "value" : 17.938784450463906
+        }, {
+          "key" : "70-Right",
+          "value" : 17.757985109850672
+        }, {
+          "key" : "22-Left",
+          "value" : 17.750119703489965
+        }, {
+          "key" : "36-Left",
+          "value" : 17.53633271159225
+        }, {
+          "key" : "60-Left",
+          "value" : 17.416694229007625
+        }, {
+          "key" : "20-Right",
+          "value" : 17.34406214964388
+        }, {
+          "key" : "64-Right",
+          "value" : 17.321128796223473
+        }, {
+          "key" : "88-Left",
+          "value" : 16.824715152263682
+        }, {
+          "key" : "31-Right",
+          "value" : 16.36894224689386
+        }, {
+          "key" : "9-Left",
+          "value" : 16.07402961429154
+        }, {
+          "key" : "113-Right",
+          "value" : 15.95577751006041
+        }, {
+          "key" : "85-Left",
+          "value" : 14.95724395728104
+        }, {
+          "key" : "117-Left",
+          "value" : 14.919067895038774
+        }, {
+          "key" : "55-Right",
+          "value" : 13.946042916398948
+        }, {
+          "key" : "50-Left",
+          "value" : 13.81136543776349
+        }, {
+          "key" : "99-Right",
+          "value" : 13.040500901003771
+        }, {
+          "key" : "30-Right",
+          "value" : 11.700393970473455
+        }, {
+          "key" : "56-Right",
+          "value" : 11.032817813144158
+        }, {
+          "key" : "106-Left",
+          "value" : 10.985881375012363
+        }, {
+          "key" : "29-Right",
+          "value" : 10.888402517002781
+        }, {
+          "key" : "18-Right",
+          "value" : 10.163195935232118
+        }, {
+          "key" : "92-Right",
+          "value" : 10.037641405519315
+        }, {
+          "key" : "102-Right",
+          "value" : 9.838084463395768
+        }, {
+          "key" : "16-Left",
+          "value" : 9.307083969821516
+        }, {
+          "key" : "19-Right",
+          "value" : 9.09124001471403
+        }, {
+          "key" : "11-Right",
+          "value" : 8.112285026412136
+        }, {
+          "key" : "47-Left",
+          "value" : 7.226254869894266
+        }, {
+          "key" : "42-Right",
+          "value" : 6.559449511334381
+        }, {
+          "key" : "33-Left",
+          "value" : 6.0913124400545415
+        }, {
+          "key" : "4-Left",
+          "value" : 5.926892390255634
+        }, {
+          "key" : "14-Left",
+          "value" : 5.364289381997212
+        }, {
+          "key" : "103-Left",
+          "value" : 5.299519531347963
+        }, {
+          "key" : "125-Right",
+          "value" : 5.2419460941596885
+        }, {
+          "key" : "25-Right",
+          "value" : 5.126435544202845
+        }, {
+          "key" : "13-Left",
+          "value" : 5.103014194456101
+        }, {
+          "key" : "109-Right",
+          "value" : 4.915768827673961
+        }, {
+          "key" : "51-Left",
+          "value" : 4.700204422250131
+        }, {
+          "key" : "4-Right",
+          "value" : 4.348360573715027
+        }, {
+          "key" : "43-Left",
+          "value" : 4.254671243696784
+        }, {
+          "key" : "107-Left",
+          "value" : 2.7261464545116354
+        }, {
+          "key" : "0-Left",
+          "value" : 2.555771510687044
+        }, {
+          "key" : "6-Left",
+          "value" : 2.1456034516388667
+        }, {
+          "key" : "42-Left",
+          "value" : 1.642804508811413
+        }, {
+          "key" : "62-Right",
+          "value" : 1.4409675180981352
+        }, {
+          "key" : "8-Right",
+          "value" : 1.3346962232319348
+        }, {
+          "key" : "104-Left",
+          "value" : 0.008023603987616923
+        } ]
+      }
+    },
+    "itemGeneAttributes" : null,
+    "abilityGeneAttributes" : null,
+    "userSkillGeneAttributes" : null,
+    "classGeneAttributes" : null,
+    "braveFaithAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "BraveFaith",
+          "value" : 99.03114682638035
+        }, {
+          "key" : "RaidBoss",
+          "value" : 37.53167653714803
+        }, {
+          "key" : "Faith",
+          "value" : 12.145847756280116
+        }, {
+          "key" : "Brave",
+          "value" : 7.230033572211269
+        } ]
+      }
+    },
+    "potGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "odds",
+          "value" : 69.45836165532934
+        }, {
+          "key" : "champStreak",
+          "value" : 41.48874322771894
+        }, {
+          "key" : "potAmount",
+          "value" : 13.18221511945027
+        }, {
+          "key" : "betCount",
+          "value" : 11.42642139234431
+        } ]
+      }
+    },
+    "playerDataGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "CurrentBalanceToBetRatio",
+          "value" : 61.660008642978035
+        }, {
+          "key" : "FightWinRatio",
+          "value" : 31.061638619557485
+        }, {
+          "key" : "MissingFightWinRatio",
+          "value" : 18.860157198607762
+        }, {
+          "key" : "Human",
+          "value" : 13.926077075449417
+        }, {
+          "key" : "Subscriber",
+          "value" : 13.53876318606364
+        }, {
+          "key" : "BetWinRatio",
+          "value" : 7.5839991267715785
+        }, {
+          "key" : "Robot",
+          "value" : 1.7550647866425462
+        } ]
+      }
+    },
+    "sideGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "blue",
+          "value" : 73.05119379333759
+        }, {
+          "key" : "yellow",
+          "value" : 64.28719826289407
+        }, {
+          "key" : "black",
+          "value" : 59.92162737493878
+        }, {
+          "key" : "champion",
+          "value" : 57.70460984835552
+        }, {
+          "key" : "white",
+          "value" : 54.96018254779379
+        }, {
+          "key" : "brown",
+          "value" : 53.26539358661429
+        }, {
+          "key" : "purple",
+          "value" : 50.29854866614406
+        }, {
+          "key" : "right",
+          "value" : 49.846554507709065
+        }, {
+          "key" : "red",
+          "value" : 39.94874459601042
+        }, {
+          "key" : "left",
+          "value" : 27.480288262924233
+        }, {
+          "key" : "green",
+          "value" : 3.2107821954957982
+        } ]
+      }
+    },
+    "betGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "7-bet",
+          "value" : 990.4004057358892
+        }, {
+          "key" : "17-bet",
+          "value" : 982.8327281250727
+        }, {
+          "key" : "32-bet",
+          "value" : 980.392818715268
+        }, {
+          "key" : "3-bet",
+          "value" : 977.3737019331795
+        }, {
+          "key" : "39-bet",
+          "value" : 975.5382663953654
+        }, {
+          "key" : "35-bet",
+          "value" : 975.2710430215527
+        }, {
+          "key" : "12-bet",
+          "value" : 974.6242722152123
+        }, {
+          "key" : "95-bet",
+          "value" : 973.2420704928044
+        }, {
+          "key" : "29-bet",
+          "value" : 973.057234432722
+        }, {
+          "key" : "20-bet",
+          "value" : 972.035730822644
+        }, {
+          "key" : "49-bet",
+          "value" : 960.4716150758079
+        }, {
+          "key" : "9-bet",
+          "value" : 954.3769488311201
+        }, {
+          "key" : "69-bet",
+          "value" : 951.7555897181139
+        }, {
+          "key" : "1-bet",
+          "value" : 949.5071529236312
+        }, {
+          "key" : "10-bet",
+          "value" : 940.8308093528228
+        }, {
+          "key" : "83-bet",
+          "value" : 925.3507133476759
+        }, {
+          "key" : "55-bet",
+          "value" : 895.9185395068151
+        }, {
+          "key" : "6-bet",
+          "value" : 886.2202931358247
+        }, {
+          "key" : "19-bet",
+          "value" : 883.4194772671875
+        }, {
+          "key" : "2-bet",
+          "value" : 863.8089012117053
+        }, {
+          "key" : "66-bet",
+          "value" : 861.8880102251087
+        }, {
+          "key" : "33-bet",
+          "value" : 859.5524438775598
+        }, {
+          "key" : "86-bet",
+          "value" : 841.9900758937277
+        }, {
+          "key" : "4-bet",
+          "value" : 841.3866339594886
+        }, {
+          "key" : "44-bet",
+          "value" : 828.0888846160382
+        }, {
+          "key" : "13-bet",
+          "value" : 813.2017517314227
+        }, {
+          "key" : "70-bet",
+          "value" : 803.6008334030374
+        }, {
+          "key" : "27-bet",
+          "value" : 791.3356496114467
+        }, {
+          "key" : "28-bet",
+          "value" : 785.4743467818352
+        }, {
+          "key" : "74-bet",
+          "value" : 775.7114785954394
+        }, {
+          "key" : "52-bet",
+          "value" : 768.0168153241272
+        }, {
+          "key" : "36-bet",
+          "value" : 763.0486424039638
+        }, {
+          "key" : "40-bet",
+          "value" : 763.0225238024009
+        }, {
+          "key" : "79-bet",
+          "value" : 758.8096029895472
+        }, {
+          "key" : "91-bet",
+          "value" : 748.38854268569
+        }, {
+          "key" : "61-bet",
+          "value" : 693.4845451195823
+        }, {
+          "key" : "65-bet",
+          "value" : 675.2942441048735
+        }, {
+          "key" : "63-bet",
+          "value" : 665.9816796398334
+        }, {
+          "key" : "90-bet",
+          "value" : 657.6305824941412
+        }, {
+          "key" : "38-bet",
+          "value" : 652.0986256110098
+        }, {
+          "key" : "87-bet",
+          "value" : 639.1741736610425
+        }, {
+          "key" : "47-bet",
+          "value" : 638.9717287886592
+        }, {
+          "key" : "77-bet",
+          "value" : 626.9804963339624
+        }, {
+          "key" : "96-bet",
+          "value" : 618.0652007157486
+        }, {
+          "key" : "88-bet",
+          "value" : 611.3472645890893
+        }, {
+          "key" : "94-bet",
+          "value" : 597.6806073261837
+        }, {
+          "key" : "11-bet",
+          "value" : 585.3354345676896
+        }, {
+          "key" : "5-bet",
+          "value" : 581.4725683667968
+        }, {
+          "key" : "30-bet",
+          "value" : 580.3833350843811
+        }, {
+          "key" : "58-bet",
+          "value" : 574.7355893511757
+        }, {
+          "key" : "99-bet",
+          "value" : 539.8015148960835
+        }, {
+          "key" : "46-bet",
+          "value" : 533.0563769228753
+        }, {
+          "key" : "43-bet",
+          "value" : 524.0995558003225
+        }, {
+          "key" : "89-bet",
+          "value" : 491.45178876607145
+        }, {
+          "key" : "97-bet",
+          "value" : 490.1013569010308
+        }, {
+          "key" : "60-bet",
+          "value" : 487.4155206981878
+        }, {
+          "key" : "37-bet",
+          "value" : 480.86009619494627
+        }, {
+          "key" : "18-bet",
+          "value" : 479.4701864499492
+        }, {
+          "key" : "98-bet",
+          "value" : 476.5286239531471
+        }, {
+          "key" : "26-bet",
+          "value" : 468.9496975075653
+        }, {
+          "key" : "54-bet",
+          "value" : 457.2209834235856
+        }, {
+          "key" : "93-bet",
+          "value" : 448.32659168980297
+        }, {
+          "key" : "41-bet",
+          "value" : 447.3131084115844
+        }, {
+          "key" : "75-bet",
+          "value" : 443.073365233848
+        }, {
+          "key" : "34-bet",
+          "value" : 439.52998593769587
+        }, {
+          "key" : "51-bet",
+          "value" : 435.6232162715312
+        }, {
+          "key" : "62-bet",
+          "value" : 435.16216591835655
+        }, {
+          "key" : "8-bet",
+          "value" : 434.4401333310472
+        }, {
+          "key" : "64-bet",
+          "value" : 434.0658642676983
+        }, {
+          "key" : "57-bet",
+          "value" : 426.34354525702565
+        }, {
+          "key" : "84-bet",
+          "value" : 422.9302724205542
+        }, {
+          "key" : "82-bet",
+          "value" : 422.5264820672276
+        }, {
+          "key" : "53-bet",
+          "value" : 398.4895159486948
+        }, {
+          "key" : "25-bet",
+          "value" : 387.0439547362489
+        }, {
+          "key" : "68-bet",
+          "value" : 384.62428438494953
+        }, {
+          "key" : "50-bet",
+          "value" : 384.02284997098604
+        }, {
+          "key" : "71-bet",
+          "value" : 380.60605379502636
+        }, {
+          "key" : "22-bet",
+          "value" : 369.5332657030722
+        }, {
+          "key" : "73-bet",
+          "value" : 363.46706795674476
+        }, {
+          "key" : "16-bet",
+          "value" : 362.2343224352443
+        }, {
+          "key" : "92-bet",
+          "value" : 330.13790131765097
+        }, {
+          "key" : "59-bet",
+          "value" : 327.2492816183523
+        }, {
+          "key" : "80-bet",
+          "value" : 326.696207874633
+        }, {
+          "key" : "48-bet",
+          "value" : 325.1471139891762
+        }, {
+          "key" : "56-bet",
+          "value" : 315.0632818563432
+        }, {
+          "key" : "78-bet",
+          "value" : 311.09665626778417
+        }, {
+          "key" : "14-bet",
+          "value" : 299.5659846789552
+        }, {
+          "key" : "81-bet",
+          "value" : 294.09247776530646
+        }, {
+          "key" : "45-bet",
+          "value" : 294.06756985943264
+        }, {
+          "key" : "24-bet",
+          "value" : 293.68740685060664
+        }, {
+          "key" : "85-bet",
+          "value" : 277.34750965094753
+        }, {
+          "key" : "100-bet",
+          "value" : 274.7560612550309
+        }, {
+          "key" : "23-bet",
+          "value" : 266.06364762991984
+        }, {
+          "key" : "72-bet",
+          "value" : 235.45787703092813
+        }, {
+          "key" : "67-bet",
+          "value" : 230.1986452529567
+        }, {
+          "key" : "21-bet",
+          "value" : 220.91565696671847
+        }, {
+          "key" : "31-bet",
+          "value" : 220.76220522565552
+        }, {
+          "key" : "15-bet",
+          "value" : 217.37295435089098
+        }, {
+          "key" : "42-bet",
+          "value" : 216.84940403815
+        }, {
+          "key" : "76-bet",
+          "value" : 209.9201177411162
+        } ]
+      }
+    },
+    "missingGeneAttributes" : {

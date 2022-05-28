@@ -138,4 +138,11 @@ public class CompleteBotGenome {
 		
 		return newAttributeId;
 	}
+	
+	public int size() {
+		int size = this.geneAttributes.stream()
+				.mapToInt(geneAttribute -> geneAttribute.getGeneAttributes().size())
+				.sum();
+		return size;
+	}
 }

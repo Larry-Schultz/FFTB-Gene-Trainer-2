@@ -26,7 +26,7 @@ public class TournamentServiceImpl implements TournamentService {
 	private static final String tournamentApiBaseUri = "https://fftbg.com/api/tournament/";
 	private static final String tipsApiUrl = "https://fftbg.com/api/tips";
 	
-	private RateLimiter limit = RateLimiter.create(2);
+	private RateLimiter limit = RateLimiter.create(1.000/8.000);
 	
 	public TournamentServiceImpl() {}
 	

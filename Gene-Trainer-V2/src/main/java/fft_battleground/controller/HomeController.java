@@ -1,6 +1,7 @@
 package fft_battleground.controller;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +38,9 @@ public class HomeController {
 				tournamentCount = tournaments.get();
 			}
 			
-			long hours = TrainerService.DURATION_IN_HOURS;
+			long hours = TimeUnit.HOURS.toMillis(TrainerService.DURATION_IN_HOURS);
 			if(duration.isPresent()) {
-				hours = duration.get();
+				hours = TimeUnit.HOURS.toMillis(duration.get());
 			}
 			
 			this.trainerService.trainBot(agentCount, hours, tournamentCount);

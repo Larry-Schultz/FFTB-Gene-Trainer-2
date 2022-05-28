@@ -7,7 +7,7 @@ import fft_battleground.exception.ViewerException;
 import fft_battleground.genetic.model.attributes.CompleteBotGenome;
 
 public interface TrainerService {
-	public static final int AGENT_COUNT = 300000;
+	public static final int AGENT_COUNT = 150000;
 	public static final int TOURNAMENT_COUNT = 500;
 	public static final int DURATION_IN_HOURS = 7;
 	

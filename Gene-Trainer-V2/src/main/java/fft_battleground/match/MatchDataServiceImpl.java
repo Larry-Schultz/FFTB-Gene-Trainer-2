@@ -85,7 +85,6 @@ public class MatchDataServiceImpl implements MatchDataService {
 		
 		List<Long> missingTournamentIds = missingTournaments.stream().map(TournamentInfo::getID).collect(Collectors.toList());
 		Future<List<BotBetData>> botBetCountLookup = pool.submit(() -> this.betCountService.getBetBotDataAfterTournament(missingTournamentIds));
-		Future<Map<Long, DumpData>> teamValueLookup = pool.submit(() -> this.dumpService.getTournamentTeamValueMap(missingTournamentIds));
 		
 		List<Tournament> tournamentResult = null;
 		try {
@@ -103,14 +102,6 @@ public class MatchDataServiceImpl implements MatchDataService {
 			throw new ViewerException("Error calling tournament service", e);
 		}
 		
-		Map<Long, DumpData> tournamentTeamValueMap = null;
-		try {
-			tournamentTeamValueMap = teamValueLookup.get();
-		} catch (InterruptedException | ExecutionException e) {
-			log.error("Error calling dump service", e);
-			throw new DumpException(e, "Error calling dump service");
-		}
-		
 		List<MatchCacheEntry> cacheData;
 		try {
 			cacheData = cacheLookup.get();
@@ -119,9 +110,9 @@ public class MatchDataServiceImpl implements MatchDataService {
 		}
 		
 		// prep ids to check for bad tournaments
-		Set<Long> tournamentIdsToCollate = this.getAllTournamentIds(tournamentResult, botBetDataResult, tournamentTeamValueMap);
+		Set<Long> tournamentIdsToCollate = this.getAllTournamentIds(tournamentResult, botBetDataResult);
 		
-		List<MatchCacheEntry> newMatchCacheEntries = MatchCacheEntry.collate(tournamentResult, botBetDataResult, tournamentTeamValueMap);
+		List<MatchCacheEntry> newMatchCacheEntries = MatchCacheEntry.collate(tournamentResult, botBetDataResult);
 		
 		Set<Long> matchEntryIds = newMatchCacheEntries.stream().map(MatchCacheEntry::getTournamentId).collect(Collectors.toSet());
 		Set<Long> badIds = tournamentIdsToCollate.stream().filter(id -> !matchEntryIds.contains(id)).collect(Collectors.toSet());
@@ -130,7 +121,7 @@ public class MatchDataServiceImpl implements MatchDataService {
 		return new ServiceResult(newMatchCacheEntries, cacheData);
 	}
 	
-	protected Set<Long> getAllTournamentIds(List<Tournament> tournamentResult, List<BotBetData> botBetDataResult, Map<Long, DumpData> tournamentTeamValueMap) {
+	protected Set<Long> getAllTournamentIds(List<Tournament> tournamentResult, List<BotBetData> botBetDataResult) {
 		Set<Long> tournamentIdsToCollate = new HashSet<>();
 		
 		Set<Long> tournamentResultIds = tournamentResult.stream().map(Tournament::getID).collect(Collectors.toSet());
@@ -138,7 +129,6 @@ public class MatchDataServiceImpl implements MatchDataService {
 		
 		tournamentIdsToCollate.addAll(tournamentResultIds);
 		tournamentIdsToCollate.addAll(botBetDataResultIds);
-		tournamentIdsToCollate.addAll(tournamentTeamValueMap.keySet());
 		
 		return tournamentIdsToCollate;
 	}

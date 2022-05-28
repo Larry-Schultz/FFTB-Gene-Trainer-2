@@ -120,9 +120,6 @@ public class Simulator extends AbstractSimulator {
 				score += this.geneArray.get(genotype, this.missingfightWinRatioIndex) * this.geneArray.get(genotype, this.fightWinRatioIndex);
 			}
 		}
-		if(teamAttributes.champStreak() != null) {
-			score += teamAttributes.champStreak() * this.geneArray.get(genotype, this.champStreakIndex);
-		}
 		
 		score+= this.sideIndexes.get(side);
 		score+= this.sideIndexes.get(teamAttributes.team());

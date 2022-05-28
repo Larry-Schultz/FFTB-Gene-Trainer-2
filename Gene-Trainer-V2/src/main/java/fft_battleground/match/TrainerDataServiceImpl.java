@@ -21,6 +21,7 @@ import fft_battleground.exception.ViewerException;
 import fft_battleground.genetic.model.attributes.CompleteBotGenome;
 import fft_battleground.match.model.Match;
 import fft_battleground.match.model.MultipleTournamentDataset;
+import fft_battleground.tournament.TeamAttributeCollector;
 import fft_battleground.viewer.BetCountService;
 import fft_battleground.viewer.model.BotBetData;
 import lombok.extern.slf4j.Slf4j;
@@ -56,6 +57,7 @@ public class TrainerDataServiceImpl implements TrainerDataService {
 		Map<String, Double> playerFightWinRatios = null;
 		List<String> subscribers = null;
 		List<String> bots = null;
+		TeamAttributeCollector collector = new TeamAttributeCollector(this.template);
 		
 		try {
 			dataset = datasetFuture.get();
@@ -70,7 +72,7 @@ public class TrainerDataServiceImpl implements TrainerDataService {
 		
 		Set<Long> badTournaments = this.badTournamentService.getBadTournamentIds();
 		TrainerDataGenerator generator = new TrainerDataGenerator(genome, dataset, playerBetWinRatios, playerFightWinRatios, badTournaments, 
-				subscribers, bots);
+				subscribers, bots, collector);
 		Match[] matchData = generator.generateDataset();
 		double[] playerBetRatios = generator.getPlayerBetWinRatioList().stream().mapToDouble(Double::doubleValue).toArray();
 		double[] playerFightRatios = generator.getPlayerFightWinRatioList().stream().mapToDouble(Double::doubleValue).toArray();

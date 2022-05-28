@@ -3,7 +3,6 @@ package fft_battleground.tournament.model;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -42,28 +41,17 @@ public class Team {
 	@JsonProperty("Units")
 	private List<Unit> Units;
 	
-	public short[] attributes(CompleteBotGenome genome) {
-		List<String> attributeNames = this.teamAbilityElements();
-		short[] attributes = new short[attributeNames.size()];
-		for(int i = 0; i < attributeNames.size(); i++) {
-			String attributeName = attributeNames.get(i);
-			Integer attributeId = genome.getAttributeMap().get(attributeName);
-			if(attributeId == null) {
-				attributeId = genome.addMissingGene(attributeName);
-			}
-			attributes[i] = attributeId.shortValue();
-		}
-		
-		return attributes;
-	}
-	
-	private List<String> teamAbilityElements() {
+	public List<String> teamAbilityElements() {
 		List<String> elements = new ArrayList<>();
 		for(Unit unit : this.Units) {
 			elements.addAll(unit.getUnitGeneAbilityElements());
 		}
 		
-		elements = elements.stream().filter(StringUtils::isNotBlank).collect(Collectors.toList());
+		elements = elements.stream()
+				.map(StringUtils::trim)
+				.filter(StringUtils::isNotBlank)
+				.filter(element -> !StringUtils.equalsAnyIgnoreCase(element, "-Item"))
+				.collect(Collectors.toList());
 		
 		return elements;
 	}

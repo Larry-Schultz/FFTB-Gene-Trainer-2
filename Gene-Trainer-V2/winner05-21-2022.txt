@@ -1,0 +1,3857 @@
+{
+  "creationDate" : "2022-05-21 22:53 PM UTC",
+  "botLeaderboard" : [ {
+    "botName" : "birbetbotsimulator",
+    "gil" : 500032
+  }, {
+    "botName" : "leftallinbot",
+    "gil" : 276512
+  }, {
+    "botName" : "datadrivenbotsimulator",
+    "gil" : 267891
+  }, {
+    "botName" : "athiestbot",
+    "gil" : 254597
+  }, {
+    "botName" : "bravebot",
+    "gil" : 224220
+  }, {
+    "botName" : "bravefaithbot",
+    "gil" : 211790
+  }, {
+    "botName" : "inversebravefaithbot",
+    "gil" : 201932
+  }, {
+    "botName" : "randomrandombotinverse",
+    "gil" : 167971
+  }, {
+    "botName" : "allinbetcountbot",
+    "gil" : 167164
+  }, {
+    "botName" : "faithbot",
+    "gil" : 166973
+  }, {
+    "botName" : "betcountbet1000ifable",
+    "gil" : 165474
+  }, {
+    "botName" : "cowardbot",
+    "gil" : 158129
+  }, {
+    "botName" : "allinrandombot",
+    "gil" : 154608
+  }, {
+    "botName" : "rightallinbot",
+    "gil" : 151452
+  }, {
+    "botName" : "getthemoneyzsimulator",
+    "gil" : 104093
+  }, {
+    "botName" : "smokebowlingsimulator",
+    "gil" : 84566
+  }, {
+    "botName" : "betcountbet500ifable",
+    "gil" : 83173
+  }, {
+    "botName" : "randomrandombot",
+    "gil" : 74101
+  }, {
+    "botName" : "betcount150increment",
+    "gil" : 70623
+  }, {
+    "botName" : "betcount100increment",
+    "gil" : 64915
+  }, {
+    "botName" : "betcount75increment",
+    "gil" : 59019
+  }, {
+    "botName" : "leftminimumbot",
+    "gil" : 55195
+  }, {
+    "botName" : "lefthalfbot",
+    "gil" : 55195
+  }, {
+    "botName" : "betcount50increment",
+    "gil" : 50811
+  }, {
+    "botName" : "betcount20increment",
+    "gil" : 40403
+  }, {
+    "botName" : "betcount10increment",
+    "gil" : 36857
+  }, {
+    "botName" : "minbetbot",
+    "gil" : 33314
+  }, {
+    "botName" : "minbetbotinverse",
+    "gil" : 33314
+  }, {
+    "botName" : "halfrandombot",
+    "gil" : 30696
+  }, {
+    "botName" : "rightminimumbot",
+    "gil" : 29999
+  }, {
+    "botName" : "righthalfbot",
+    "gil" : 29999
+  }, {
+    "botName" : "betcount10nsquaredincrement",
+    "gil" : 29297
+  }, {
+    "botName" : "oddsbotinverse",
+    "gil" : 9663
+  }, {
+    "botName" : "datadrivenbotinverse",
+    "gil" : 878
+  }, {
+    "botName" : "oddsbot",
+    "gil" : 579
+  }, {
+    "botName" : "betcount40percent",
+    "gil" : 200
+  }, {
+    "botName" : "betcount62percent",
+    "gil" : 200
+  }, {
+    "botName" : "datadrivenbot",
+    "gil" : 200
+  } ],
+  "matchesAnalyzed" : 1888,
+  "gilResult" : 288084,
+  "perfectGil" : 2279013,
+  "geneCount" : 1236,
+  "generation" : 0,
+  "genome" : {
+    "mapGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "72-Left",
+          "value" : 99.34990432945116
+        }, {
+          "key" : "72-Right",
+          "value" : 99.09104905122076
+        }, {
+          "key" : "116-Right",
+          "value" : 99.05754418753773
+        }, {
+          "key" : "86-Right",
+          "value" : 98.01834380786381
+        }, {
+          "key" : "62-Left",
+          "value" : 97.7183053521087
+        }, {
+          "key" : "12-Left",
+          "value" : 97.69990722958397
+        }, {
+          "key" : "10-Left",
+          "value" : 97.21344417369534
+        }, {
+          "key" : "109-Left",
+          "value" : 97.0741937360969
+        }, {
+          "key" : "3-Left",
+          "value" : 96.89167005728541
+        }, {
+          "key" : "16-Right",
+          "value" : 95.55213001010372
+        }, {
+          "key" : "80-Right",
+          "value" : 95.5340609731539
+        }, {
+          "key" : "35-Right",
+          "value" : 95.52674448595084
+        }, {
+          "key" : "32-Left",
+          "value" : 95.13104376134753
+        }, {
+          "key" : "48-Right",
+          "value" : 94.51666032554644
+        }, {
+          "key" : "105-Right",
+          "value" : 94.30839444936568
+        }, {
+          "key" : "15-Right",
+          "value" : 94.15341601577481
+        }, {
+          "key" : "56-Left",
+          "value" : 93.97677986847289
+        }, {
+          "key" : "32-Right",
+          "value" : 93.95839813773235
+        }, {
+          "key" : "25-Right",
+          "value" : 93.87109199250317
+        }, {
+          "key" : "11-Left",
+          "value" : 93.86321673527141
+        }, {
+          "key" : "99-Right",
+          "value" : 93.83308874697497
+        }, {
+          "key" : "82-Right",
+          "value" : 93.76907339518138
+        }, {
+          "key" : "19-Left",
+          "value" : 93.37386795282757
+        }, {
+          "key" : "102-Right",
+          "value" : 93.0788728910633
+        }, {
+          "key" : "106-Right",
+          "value" : 92.97393827999679
+        }, {
+          "key" : "14-Right",
+          "value" : 92.43800317866311
+        }, {
+          "key" : "4-Left",
+          "value" : 89.78509339287602
+        }, {
+          "key" : "1-Left",
+          "value" : 89.75794006050563
+        }, {
+          "key" : "31-Left",
+          "value" : 89.64387801769061
+        }, {
+          "key" : "125-Right",
+          "value" : 89.0291248138769
+        }, {
+          "key" : "24-Right",
+          "value" : 87.77867362617812
+        }, {
+          "key" : "97-Left",
+          "value" : 87.5621684009305
+        }, {
+          "key" : "26-Left",
+          "value" : 87.454079029383
+        }, {
+          "key" : "61-Right",
+          "value" : 86.87475065838956
+        }, {
+          "key" : "60-Left",
+          "value" : 86.81188188573363
+        }, {
+          "key" : "78-Left",
+          "value" : 86.13542266129768
+        }, {
+          "key" : "7-Left",
+          "value" : 86.10768812244217
+        }, {
+          "key" : "21-Right",
+          "value" : 85.58631421233738
+        }, {
+          "key" : "22-Right",
+          "value" : 84.91213880096402
+        }, {
+          "key" : "43-Left",
+          "value" : 84.64894209961132
+        }, {
+          "key" : "0-Right",
+          "value" : 84.45381281917975
+        }, {
+          "key" : "88-Left",
+          "value" : 83.98952778949544
+        }, {
+          "key" : "85-Right",
+          "value" : 82.57961472665193
+        }, {
+          "key" : "47-Right",
+          "value" : 81.7615233977768
+        }, {
+          "key" : "3-Right",
+          "value" : 81.35059021022671
+        }, {
+          "key" : "87-Left",
+          "value" : 80.75395086684439
+        }, {
+          "key" : "14-Left",
+          "value" : 80.74796453055365
+        }, {
+          "key" : "115-Right",
+          "value" : 80.57187336895937
+        }, {
+          "key" : "48-Left",
+          "value" : 80.4516686288039
+        }, {
+          "key" : "104-Left",
+          "value" : 80.18076665582174
+        }, {
+          "key" : "27-Right",
+          "value" : 78.81378673733921
+        }, {
+          "key" : "10-Right",
+          "value" : 78.71222876712498
+        }, {
+          "key" : "84-Right",
+          "value" : 78.70541150153288
+        }, {
+          "key" : "54-Right",
+          "value" : 78.45576539739156
+        }, {
+          "key" : "9-Right",
+          "value" : 78.31732934453595
+        }, {
+          "key" : "53-Left",
+          "value" : 77.24796183372675
+        }, {
+          "key" : "105-Left",
+          "value" : 76.7876173252993
+        }, {
+          "key" : "89-Right",
+          "value" : 76.76070778068619
+        }, {
+          "key" : "54-Left",
+          "value" : 76.66683364641577
+        }, {
+          "key" : "87-Right",
+          "value" : 76.32775760270293
+        }, {
+          "key" : "64-Left",
+          "value" : 75.95724398934985
+        }, {
+          "key" : "92-Right",
+          "value" : 75.3718586172739
+        }, {
+          "key" : "42-Right",
+          "value" : 74.7630451083365
+        }, {
+          "key" : "98-Left",
+          "value" : 74.6812824596044
+        }, {
+          "key" : "51-Right",
+          "value" : 74.524483725925
+        }, {
+          "key" : "68-Left",
+          "value" : 73.57300601509527
+        }, {
+          "key" : "103-Right",
+          "value" : 73.43012154706544
+        }, {
+          "key" : "30-Left",
+          "value" : 73.25598365959604
+        }, {
+          "key" : "70-Right",
+          "value" : 71.93455370295005
+        }, {
+          "key" : "66-Left",
+          "value" : 71.82065159572336
+        }, {
+          "key" : "75-Right",
+          "value" : 71.21033786732977
+        }, {
+          "key" : "107-Right",
+          "value" : 71.04433592693528
+        }, {
+          "key" : "61-Left",
+          "value" : 70.87722576391765
+        }, {
+          "key" : "94-Right",
+          "value" : 70.68267206025979
+        }, {
+          "key" : "114-Left",
+          "value" : 70.5477715784257
+        }, {
+          "key" : "59-Left",
+          "value" : 70.35619239851641
+        }, {
+          "key" : "8-Right",
+          "value" : 70.33729664586674
+        }, {
+          "key" : "101-Left",
+          "value" : 70.24166415550788
+        }, {
+          "key" : "79-Right",
+          "value" : 69.94945361093106
+        }, {
+          "key" : "108-Right",
+          "value" : 69.67595906866447
+        }, {
+          "key" : "98-Right",
+          "value" : 68.86384899819667
+        }, {
+          "key" : "70-Left",
+          "value" : 68.2586388310295
+        }, {
+          "key" : "17-Right",
+          "value" : 67.97774900260349
+        }, {
+          "key" : "35-Left",
+          "value" : 66.7625274568589
+        }, {
+          "key" : "63-Left",
+          "value" : 66.4431118289022
+        }, {
+          "key" : "96-Left",
+          "value" : 66.35833791347092
+        }, {
+          "key" : "45-Right",
+          "value" : 64.95197333383045
+        }, {
+          "key" : "116-Left",
+          "value" : 64.23977323963474
+        }, {
+          "key" : "38-Right",
+          "value" : 63.59220305191444
+        }, {
+          "key" : "117-Right",
+          "value" : 62.43923694130049
+        }, {
+          "key" : "67-Right",
+          "value" : 62.348861405671684
+        }, {
+          "key" : "18-Left",
+          "value" : 62.09546812713276
+        }, {
+          "key" : "81-Right",
+          "value" : 61.604218195939694
+        }, {
+          "key" : "104-Right",
+          "value" : 60.004305187815675
+        }, {
+          "key" : "49-Left",
+          "value" : 59.78842967227136
+        }, {
+          "key" : "57-Left",
+          "value" : 58.66888220851227
+        }, {
+          "key" : "17-Left",
+          "value" : 58.348634550075694
+        }, {
+          "key" : "91-Left",
+          "value" : 58.23954520869626
+        }, {
+          "key" : "46-Left",
+          "value" : 58.029756583973914
+        }, {
+          "key" : "79-Left",
+          "value" : 56.84365902812865
+        }, {
+          "key" : "29-Right",
+          "value" : 55.600439221178476
+        }, {
+          "key" : "69-Left",
+          "value" : 55.277148280409726
+        }, {
+          "key" : "51-Left",
+          "value" : 54.773076251286945
+        }, {
+          "key" : "73-Left",
+          "value" : 54.312402644295545
+        }, {
+          "key" : "94-Left",
+          "value" : 54.138450583827726
+        }, {
+          "key" : "125-Left",
+          "value" : 52.83170045548263
+        }, {
+          "key" : "83-Left",
+          "value" : 52.28530123822613
+        }, {
+          "key" : "65-Right",
+          "value" : 52.24012461178016
+        }, {
+          "key" : "31-Right",
+          "value" : 52.05446580046741
+        }, {
+          "key" : "64-Right",
+          "value" : 51.46151687171977
+        }, {
+          "key" : "114-Right",
+          "value" : 51.43578084079813
+        }, {
+          "key" : "6-Right",
+          "value" : 48.46546516874808
+        }, {
+          "key" : "90-Left",
+          "value" : 48.15534923710929
+        }, {
+          "key" : "24-Left",
+          "value" : 48.0837639995223
+        }, {
+          "key" : "83-Right",
+          "value" : 47.59888660857953
+        }, {
+          "key" : "2-Right",
+          "value" : 47.423321183221525
+        }, {
+          "key" : "107-Left",
+          "value" : 47.0481129569256
+        }, {
+          "key" : "42-Left",
+          "value" : 46.768397199237434
+        }, {
+          "key" : "8-Left",
+          "value" : 45.67109003195885
+        }, {
+          "key" : "23-Right",
+          "value" : 44.60356551525659
+        }, {
+          "key" : "57-Right",
+          "value" : 44.43068935244043
+        }, {
+          "key" : "7-Right",
+          "value" : 44.18045948490248
+        }, {
+          "key" : "55-Left",
+          "value" : 44.176655987737
+        }, {
+          "key" : "71-Right",
+          "value" : 44.168270102191
+        }, {
+          "key" : "86-Left",
+          "value" : 43.81218625912746
+        }, {
+          "key" : "4-Right",
+          "value" : 43.45933203258971
+        }, {
+          "key" : "63-Right",
+          "value" : 43.28817323545196
+        }, {
+          "key" : "111-Left",
+          "value" : 43.07168164795196
+        }, {
+          "key" : "25-Left",
+          "value" : 43.00670502655453
+        }, {
+          "key" : "47-Left",
+          "value" : 42.52635322898735
+        }, {
+          "key" : "113-Left",
+          "value" : 42.48077262805773
+        }, {
+          "key" : "37-Left",
+          "value" : 42.140961990369
+        }, {
+          "key" : "9-Left",
+          "value" : 41.918303860266036
+        }, {
+          "key" : "90-Right",
+          "value" : 41.533720300590694
+        }, {
+          "key" : "110-Left",
+          "value" : 40.77889544284251
+        }, {
+          "key" : "49-Right",
+          "value" : 39.97689660719187
+        }, {
+          "key" : "5-Right",
+          "value" : 39.303006977691346
+        }, {
+          "key" : "28-Left",
+          "value" : 38.95869547472438
+        }, {
+          "key" : "78-Right",
+          "value" : 38.421458315052895
+        }, {
+          "key" : "34-Right",
+          "value" : 38.195574461669324
+        }, {
+          "key" : "93-Left",
+          "value" : 37.129741717042734
+        }, {
+          "key" : "110-Right",
+          "value" : 36.52375646033461
+        }, {
+          "key" : "76-Left",
+          "value" : 36.42713562938156
+        }, {
+          "key" : "50-Left",
+          "value" : 35.64839241460199
+        }, {
+          "key" : "33-Right",
+          "value" : 35.1054382779875
+        }, {
+          "key" : "75-Left",
+          "value" : 34.660721403906216
+        }, {
+          "key" : "15-Left",
+          "value" : 34.59348558148041
+        }, {
+          "key" : "18-Right",
+          "value" : 34.56650300402953
+        }, {
+          "key" : "26-Right",
+          "value" : 33.95091156206189
+        }, {
+          "key" : "1-Right",
+          "value" : 32.65350307706365
+        }, {
+          "key" : "45-Left",
+          "value" : 32.434655811967886
+        }, {
+          "key" : "20-Left",
+          "value" : 32.43309116710598
+        }, {
+          "key" : "77-Left",
+          "value" : 32.38785040795425
+        }, {
+          "key" : "56-Right",
+          "value" : 32.04505989260918
+        }, {
+          "key" : "52-Right",
+          "value" : 31.59504719247114
+        }, {
+          "key" : "68-Right",
+          "value" : 31.564390958041898
+        }, {
+          "key" : "55-Right",
+          "value" : 31.418013898791163
+        }, {
+          "key" : "6-Left",
+          "value" : 30.67182302950675
+        }, {
+          "key" : "34-Left",
+          "value" : 30.58497904601756
+        }, {
+          "key" : "44-Left",
+          "value" : 30.5219540293016
+        }, {
+          "key" : "41-Left",
+          "value" : 30.40302446108959
+        }, {
+          "key" : "100-Left",
+          "value" : 30.193730980867283
+        }, {
+          "key" : "41-Right",
+          "value" : 30.184485740892708
+        }, {
+          "key" : "112-Right",
+          "value" : 29.843717518928038
+        }, {
+          "key" : "117-Left",
+          "value" : 29.656453244426594
+        }, {
+          "key" : "13-Left",
+          "value" : 29.492937367263238
+        }, {
+          "key" : "50-Right",
+          "value" : 29.35052312551445
+        }, {
+          "key" : "5-Left",
+          "value" : 29.302386056311402
+        }, {
+          "key" : "38-Left",
+          "value" : 28.95565334234169
+        }, {
+          "key" : "101-Right",
+          "value" : 28.798605427300362
+        }, {
+          "key" : "69-Right",
+          "value" : 28.22383820275177
+        }, {
+          "key" : "103-Left",
+          "value" : 28.017513776953564
+        }, {
+          "key" : "30-Right",
+          "value" : 27.559518260880424
+        }, {
+          "key" : "96-Right",
+          "value" : 26.490199175900052
+        }, {
+          "key" : "52-Left",
+          "value" : 26.339607291182165
+        }, {
+          "key" : "40-Right",
+          "value" : 26.256581672642753
+        }, {
+          "key" : "36-Right",
+          "value" : 26.250015274929094
+        }, {
+          "key" : "11-Right",
+          "value" : 25.826449959620955
+        }, {
+          "key" : "37-Right",
+          "value" : 24.185392551015404
+        }, {
+          "key" : "76-Right",
+          "value" : 23.957521353915034
+        }, {
+          "key" : "28-Right",
+          "value" : 23.284181246322134
+        }, {
+          "key" : "95-Left",
+          "value" : 23.250952396217773
+        }, {
+          "key" : "39-Right",
+          "value" : 22.867902942549623
+        }, {
+          "key" : "80-Left",
+          "value" : 22.707172844454394
+        }, {
+          "key" : "16-Left",
+          "value" : 21.956027969112956
+        }, {
+          "key" : "99-Left",
+          "value" : 21.700844656704454
+        }, {
+          "key" : "65-Left",
+          "value" : 21.61535561282345
+        }, {
+          "key" : "66-Right",
+          "value" : 19.990942404201327
+        }, {
+          "key" : "12-Right",
+          "value" : 19.88517231492848
+        }, {
+          "key" : "58-Left",
+          "value" : 19.188682244168852
+        }, {
+          "key" : "33-Left",
+          "value" : 18.6320252649697
+        }, {
+          "key" : "29-Left",
+          "value" : 18.580168380817273
+        }, {
+          "key" : "88-Right",
+          "value" : 18.470501667701235
+        }, {
+          "key" : "108-Left",
+          "value" : 18.31768383976211
+        }, {
+          "key" : "22-Left",
+          "value" : 17.575090045241794
+        }, {
+          "key" : "13-Right",
+          "value" : 17.422058924712548
+        }, {
+          "key" : "112-Left",
+          "value" : 17.276485191855773
+        }, {
+          "key" : "60-Right",
+          "value" : 16.464023334216073
+        }, {
+          "key" : "115-Left",
+          "value" : 15.780690359123506
+        }, {
+          "key" : "95-Right",
+          "value" : 15.618651474268109
+        }, {
+          "key" : "89-Left",
+          "value" : 15.324498698640998
+        }, {
+          "key" : "97-Right",
+          "value" : 15.28834476533303
+        }, {
+          "key" : "19-Right",
+          "value" : 15.120835711918968
+        }, {
+          "key" : "46-Right",
+          "value" : 14.972486050181955
+        }, {
+          "key" : "74-Left",
+          "value" : 14.045181107420424
+        }, {
+          "key" : "21-Left",
+          "value" : 13.915842564523494
+        }, {
+          "key" : "111-Right",
+          "value" : 13.823442062328528
+        }, {
+          "key" : "102-Left",
+          "value" : 12.46204214626987
+        }, {
+          "key" : "109-Right",
+          "value" : 12.415681905811326
+        }, {
+          "key" : "84-Left",
+          "value" : 11.608633415527848
+        }, {
+          "key" : "0-Left",
+          "value" : 11.306902067172553
+        }, {
+          "key" : "67-Left",
+          "value" : 11.143464387689583
+        }, {
+          "key" : "113-Right",
+          "value" : 11.041587846064981
+        }, {
+          "key" : "20-Right",
+          "value" : 10.401955886985437
+        }, {
+          "key" : "2-Left",
+          "value" : 9.932998014113048
+        }, {
+          "key" : "59-Right",
+          "value" : 9.551199930682008
+        }, {
+          "key" : "91-Right",
+          "value" : 9.06591315344606
+        }, {
+          "key" : "81-Left",
+          "value" : 9.00102664664989
+        }, {
+          "key" : "44-Right",
+          "value" : 7.4774662674686905
+        }, {
+          "key" : "77-Right",
+          "value" : 7.457534124087717
+        }, {
+          "key" : "85-Left",
+          "value" : 6.860066040540458
+        }, {
+          "key" : "58-Right",
+          "value" : 6.746024030053799
+        }, {
+          "key" : "71-Left",
+          "value" : 5.633835960342626
+        }, {
+          "key" : "53-Right",
+          "value" : 5.24900602212125
+        }, {
+          "key" : "39-Left",
+          "value" : 5.121610809327781
+        }, {
+          "key" : "43-Right",
+          "value" : 4.417766346731433
+        }, {
+          "key" : "74-Right",
+          "value" : 4.167112875244872
+        }, {
+          "key" : "62-Right",
+          "value" : 3.943708047976946
+        }, {
+          "key" : "92-Left",
+          "value" : 3.8529526270719927
+        }, {
+          "key" : "27-Left",
+          "value" : 2.9427185773913123
+        }, {
+          "key" : "106-Left",
+          "value" : 2.7689478306081705
+        }, {
+          "key" : "40-Left",
+          "value" : 2.0947239222052327
+        }, {
+          "key" : "36-Left",
+          "value" : 1.918255777611566
+        }, {
+          "key" : "73-Right",
+          "value" : 1.6080617175844525
+        }, {
+          "key" : "100-Right",
+          "value" : 1.3644775321497882
+        }, {
+          "key" : "82-Left",
+          "value" : 0.46934031114919117
+        }, {
+          "key" : "23-Left",
+          "value" : 0.36985475130384415
+        }, {
+          "key" : "93-Right",
+          "value" : 0.20592642549620566
+        } ]
+      }
+    },
+    "itemGeneAttributes" : null,
+    "abilityGeneAttributes" : null,
+    "userSkillGeneAttributes" : null,
+    "classGeneAttributes" : null,
+    "braveFaithAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "RaidBoss",
+          "value" : 88.9297175809017
+        }, {
+          "key" : "Brave",
+          "value" : 68.36105861169341
+        }, {
+          "key" : "BraveFaith",
+          "value" : 29.579563489984206
+        }, {
+          "key" : "Faith",
+          "value" : 20.122982173825665
+        } ]
+      }
+    },
+    "potGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "odds",
+          "value" : 91.39108342371286
+        }, {
+          "key" : "potAmount",
+          "value" : 90.18347401589347
+        }, {
+          "key" : "betCount",
+          "value" : 83.93737850165599
+        }, {
+          "key" : "champStreak",
+          "value" : 80.16904007360922
+        } ]
+      }
+    },
+    "playerDataGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "FightWinRatio",
+          "value" : 61.02026980009484
+        }, {
+          "key" : "Human",
+          "value" : 59.0965694206362
+        }, {
+          "key" : "BetWinRatio",
+          "value" : 57.07109431724091
+        }, {
+          "key" : "Subscriber",
+          "value" : 29.576915590174124
+        }, {
+          "key" : "MissingFightWinRatio",
+          "value" : 5.533925215067859
+        }, {
+          "key" : "CurrentBalanceToBetRatio",
+          "value" : 4.98169411163778
+        }, {
+          "key" : "Robot",
+          "value" : 4.685836082259753
+        } ]
+      }
+    },
+    "sideGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "brown",
+          "value" : 81.89325073903454
+        }, {
+          "key" : "champion",
+          "value" : 73.40613182970353
+        }, {
+          "key" : "right",
+          "value" : 61.896717464210205
+        }, {
+          "key" : "green",
+          "value" : 53.51550181090471
+        }, {
+          "key" : "yellow",
+          "value" : 48.51951948145445
+        }, {
+          "key" : "purple",
+          "value" : 47.66433696539308
+        }, {
+          "key" : "white",
+          "value" : 46.59384190459653
+        }, {
+          "key" : "blue",
+          "value" : 44.80649790215836
+        }, {
+          "key" : "black",
+          "value" : 13.543738962851236
+        }, {
+          "key" : "red",
+          "value" : 10.478267554932042
+        }, {
+          "key" : "left",
+          "value" : 4.160653237273204
+        } ]
+      }
+    },
+    "betGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "99-bet",
+          "value" : 998.7030884206443
+        }, {
+          "key" : "2-bet",
+          "value" : 997.1560212093326
+        }, {
+          "key" : "43-bet",
+          "value" : 992.9952959546191
+        }, {
+          "key" : "8-bet",
+          "value" : 990.9301818192442
+        }, {
+          "key" : "80-bet",
+          "value" : 984.5357325943056
+        }, {
+          "key" : "56-bet",
+          "value" : 963.219719680379
+        }, {
+          "key" : "63-bet",
+          "value" : 955.0423878688395
+        }, {
+          "key" : "12-bet",
+          "value" : 951.0131597361094
+        }, {
+          "key" : "10-bet",
+          "value" : 947.3710322975168
+        }, {
+          "key" : "30-bet",
+          "value" : 943.3973220752631
+        }, {
+          "key" : "3-bet",
+          "value" : 919.134111957615
+        }, {
+          "key" : "44-bet",
+          "value" : 914.5381934975612
+        }, {
+          "key" : "58-bet",
+          "value" : 914.0286042805433
+        }, {
+          "key" : "77-bet",
+          "value" : 912.4020692846459
+        }, {
+          "key" : "16-bet",
+          "value" : 892.0113447474296
+        }, {
+          "key" : "84-bet",
+          "value" : 878.8892359089122
+        }, {
+          "key" : "50-bet",
+          "value" : 852.8897293554168
+        }, {
+          "key" : "94-bet",
+          "value" : 852.3275389285803
+        }, {
+          "key" : "83-bet",
+          "value" : 845.0821898660705
+        }, {
+          "key" : "38-bet",
+          "value" : 823.4318485637203
+        }, {
+          "key" : "55-bet",
+          "value" : 819.8253487296801
+        }, {
+          "key" : "34-bet",
+          "value" : 812.9317154810535
+        }, {
+          "key" : "6-bet",
+          "value" : 812.7414997626778
+        }, {
+          "key" : "78-bet",
+          "value" : 804.1235703333329
+        }, {
+          "key" : "25-bet",
+          "value" : 791.340479980692
+        }, {
+          "key" : "92-bet",
+          "value" : 782.9065534399753
+        }, {
+          "key" : "13-bet",
+          "value" : 781.6158596486068
+        }, {
+          "key" : "89-bet",
+          "value" : 780.8899398271948
+        }, {
+          "key" : "70-bet",
+          "value" : 778.3731267991619
+        }, {
+          "key" : "97-bet",
+          "value" : 770.4023644555111
+        }, {
+          "key" : "72-bet",
+          "value" : 757.381638108541
+        }, {
+          "key" : "17-bet",
+          "value" : 750.2318454940689
+        }, {
+          "key" : "61-bet",
+          "value" : 746.3110518143004
+        }, {
+          "key" : "88-bet",
+          "value" : 745.4603141808087
+        }, {
+          "key" : "5-bet",
+          "value" : 734.3656922415616
+        }, {
+          "key" : "18-bet",
+          "value" : 731.0970169807348
+        }, {
+          "key" : "68-bet",
+          "value" : 728.1186012749293
+        }, {
+          "key" : "86-bet",
+          "value" : 693.6269770176727
+        }, {
+          "key" : "79-bet",
+          "value" : 650.1137483100052
+        }, {
+          "key" : "15-bet",
+          "value" : 639.4190086662052
+        }, {
+          "key" : "42-bet",
+          "value" : 636.4950899383847
+        }, {
+          "key" : "64-bet",
+          "value" : 631.983622999591
+        }, {
+          "key" : "60-bet",
+          "value" : 630.076844342947
+        }, {
+          "key" : "14-bet",
+          "value" : 624.2609486722884
+        }, {
+          "key" : "11-bet",
+          "value" : 608.9486240663066
+        }, {
+          "key" : "46-bet",
+          "value" : 603.7495604365712
+        }, {
+          "key" : "4-bet",
+          "value" : 601.9243650383901
+        }, {
+          "key" : "31-bet",
+          "value" : 589.665959055352
+        }, {
+          "key" : "41-bet",
+          "value" : 585.7782388608227
+        }, {
+          "key" : "22-bet",
+          "value" : 566.0535537352957
+        }, {
+          "key" : "9-bet",
+          "value" : 560.5430492574303
+        }, {
+          "key" : "69-bet",
+          "value" : 558.3854154358478
+        }, {
+          "key" : "51-bet",
+          "value" : 549.79529856811
+        }, {
+          "key" : "81-bet",
+          "value" : 547.9091639972019
+        }, {
+          "key" : "100-bet",
+          "value" : 543.3491258787487
+        }, {
+          "key" : "47-bet",
+          "value" : 532.5875019531243
+        }, {
+          "key" : "95-bet",
+          "value" : 525.6326977013325
+        }, {
+          "key" : "45-bet",
+          "value" : 521.0434274507629
+        }, {
+          "key" : "90-bet",
+          "value" : 517.2489246665715
+        }, {
+          "key" : "37-bet",
+          "value" : 516.7042206267837
+        }, {
+          "key" : "73-bet",
+          "value" : 506.28699585356156
+        }, {
+          "key" : "52-bet",
+          "value" : 497.1209500562308
+        }, {
+          "key" : "7-bet",
+          "value" : 492.03892455077414
+        }, {
+          "key" : "75-bet",
+          "value" : 475.5584513280097
+        }, {
+          "key" : "93-bet",
+          "value" : 467.00574274737585
+        }, {
+          "key" : "67-bet",
+          "value" : 461.5801172984196
+        }, {
+          "key" : "1-bet",
+          "value" : 458.2531858174434
+        }, {
+          "key" : "20-bet",
+          "value" : 442.57218129922506
+        }, {
+          "key" : "21-bet",
+          "value" : 439.86694568454516
+        }, {
+          "key" : "96-bet",
+          "value" : 419.31533514772127
+        }, {
+          "key" : "54-bet",
+          "value" : 397.593719290898
+        }, {
+          "key" : "33-bet",
+          "value" : 395.4104865271306
+        }, {
+          "key" : "76-bet",
+          "value" : 388.423755943037
+        }, {
+          "key" : "48-bet",
+          "value" : 385.1241248023407
+        }, {
+          "key" : "74-bet",
+          "value" : 378.6010651998622
+        }, {
+          "key" : "27-bet",
+          "value" : 376.19446886645756
+        }, {
+          "key" : "59-bet",
+          "value" : 365.939739287266
+        }, {
+          "key" : "49-bet",
+          "value" : 352.6919444401749
+        }, {
+          "key" : "65-bet",
+          "value" : 350.0470050115382
+        }, {
+          "key" : "71-bet",
+          "value" : 349.99237830096706
+        }, {
+          "key" : "29-bet",
+          "value" : 349.434170266194
+        }, {
+          "key" : "39-bet",
+          "value" : 349.1224574718957
+        }, {
+          "key" : "24-bet",
+          "value" : 331.38512561200076
+        }, {
+          "key" : "98-bet",
+          "value" : 324.22545607555156
+        }, {
+          "key" : "35-bet",
+          "value" : 316.6444480711405
+        }, {
+          "key" : "91-bet",
+          "value" : 316.4721741508221
+        }, {
+          "key" : "19-bet",
+          "value" : 314.25265174940364
+        }, {
+          "key" : "57-bet",
+          "value" : 307.97099453672007
+        }, {
+          "key" : "82-bet",
+          "value" : 305.4335453359754
+        }, {
+          "key" : "62-bet",
+          "value" : 298.301703211636
+        }, {
+          "key" : "87-bet",
+          "value" : 289.67069565920934
+        }, {
+          "key" : "40-bet",
+          "value" : 287.46530207641194
+        }, {
+          "key" : "53-bet",
+          "value" : 264.8548208724452
+        }, {
+          "key" : "85-bet",
+          "value" : 259.20002710147213
+        }, {
+          "key" : "66-bet",
+          "value" : 248.72807117322583
+        }, {
+          "key" : "26-bet",
+          "value" : 243.7174858349488
+        }, {
+          "key" : "23-bet",
+          "value" : 239.03623297913006
+        }, {
+          "key" : "28-bet",
+          "value" : 234.2944879479644
+        }, {
+          "key" : "36-bet",
+          "value" : 225.50293748285927
+        }, {
+          "key" : "32-bet",
+          "value" : 212.74191266167878
+        } ]
+      }
+    },
+    "missingGeneAttributes" : {
+      "geneAttributes" : {
+        "attributes" : [ {
+          "key" : "Hellcry Punch",
+          "value" : 99.86322997472948
+        }, {
+          "key" : "Wall",
+          "value" : 99.71680359188949
+        }, {
+          "key" : "Slasher",
+          "value" : 99.64582678430781
+        }, {
+          "key" : "Salamander",
+          "value" : 99.6417348675972
+        }, {
+          "key" : "Ochu",
+          "value" : 99.62107611585726
+        }, {
+          "key" : "Diamond Shield-Item",
+          "value" : 99.29176681417253
+        }, {
+          "key" : "Mimic",
+          "value" : 99.28483899009134
+        }, {
+          "key" : "Elixir",
+          "value" : 99.22901397098268
+        }, {
+          "key" : "Apanda",
+          "value" : 99.16923372612912
+        }, {
+          "key" : "Ulmaguest",
+          "value" : 98.98050351803002
+        }, {
+          "key" : "Air Knife-Item",
+          "value" : 98.95093397310752
+        }, {
+          "key" : "Flame Rod",
+          "value" : 98.86794705076292
+        }, {
+          "key" : "Thunder Rod",
+          "value" : 98.84429934286112
+        }, {
+          "key" : "Charge+5",
+          "value" : 98.70529314453918
+        }, {
+          "key" : "Pummel",
+          "value" : 98.6777194408959
+        }, {
+          "key" : "Obelisk",
+          "value" : 98.59140482571551
+        }, {
+          "key" : "Lifebreak",
+          "value" : 98.53433627303765
+        }, {
+          "key" : "Lightning Bow",
+          "value" : 98.15460700424109
+        }, {
+          "key" : "Spirit Skill",
+          "value" : 98.09896019004256
+        }, {
+          "key" : "Battle Song",
+          "value" : 98.09598184864086
+        }, {
+          "key" : "Explosion Sword",
+          "value" : 97.6176197667495
+        }, {
+          "key" : "Cure 4",
+          "value" : 97.51580086943073
+        }, {
+          "key" : "Bio Sanctus",
+          "value" : 97.47344125299095
+        }, {
+          "key" : "Marsh Skill",
+          "value" : 97.31651209272401
+        }, {
+          "key" : "Academic Tome",
+          "value" : 97.31434613083469
+        }, {
+          "key" : "Witch Hunt",
+          "value" : 97.30389413389405
+        }, {
+          "key" : "Caution",
+          "value" : 97.267901383136
+        }, {
+          "key" : "Holy Dragon",
+          "value" : 97.19281331066695
+        }, {
+          "key" : "Reraise",
+          "value" : 96.89446551110589
+        }, {
+          "key" : "Poison Rod",
+          "value" : 96.68992010320024
+        }, {
+          "key" : "Bronze Armor",
+          "value" : 96.4677062379408
+        }, {
+          "key" : "Slow",
+          "value" : 96.42981241446076
+        }, {
+          "key" : "Foul Skill",
+          "value" : 96.29592907098176
+        }, {
+          "key" : "Midgar Swarm",
+          "value" : 96.16566447200483
+        }, {
+          "key" : "Bow Gun",
+          "value" : 96.1514978470793
+        }, {
+          "key" : "Poison Nail",
+          "value" : 96.1269318034935
+        }, {
+          "key" : "Long Bow",
+          "value" : 95.9884711161206
+        }, {
+          "key" : "Lucavi Skill",
+          "value" : 95.95433115601129
+        }, {
+          "key" : "Thunder Soul",
+          "value" : 95.92938315440328
+        }, {
+          "key" : "Moldball Virus",
+          "value" : 95.86882177391381
+        }, {
+          "key" : "Antidote",
+          "value" : 95.8536728305911
+        }, {
+          "key" : "Holy Lance",
+          "value" : 95.8110435063818
+        }, {
+          "key" : "Staff",
+          "value" : 95.32706314279744
+        }, {
+          "key" : "Musk Rod",
+          "value" : 95.02973992942142
+        }, {
+          "key" : "Secret Fist",
+          "value" : 94.77370953789898
+        }, {
+          "key" : "Immobilize",
+          "value" : 94.50250627044866
+        }, {
+          "key" : "Cure",
+          "value" : 94.45612214771485
+        }, {
+          "key" : "Healing Staff",
+          "value" : 94.23279627567791
+        }, {
+          "key" : "Look of Devil",
+          "value" : 94.06985412361394
+        }, {
+          "key" : "Wish",
+          "value" : 94.04545117324047
+        }, {
+          "key" : "Knife",
+          "value" : 94.04004661854427
+        }, {
+          "key" : "Blind Rage",
+          "value" : 94.01679944076139
+        }, {
+          "key" : "Black Hood",
+          "value" : 93.82682977287544
+        }, {
+          "key" : "Flame Whip-Item",
+          "value" : 93.78033669694975
+        }, {
+          "key" : "Spear",
+          "value" : 93.72114219789214
+        }, {
+          "key" : "Blind",
+          "value" : 93.70962308393412
+        }, {
+          "key" : "Defender-Item",
+          "value" : 93.67917538048304
+        }, {
+          "key" : "Sekhret",
+          "value" : 93.44126929995302
+        }, {
+          "key" : "Raise 2",
+          "value" : 93.33332577609572
+        }, {
+          "key" : "Ice Shield",
+          "value" : 93.23597277965602
+        }, {
+          "key" : "Diamond Helmet",
+          "value" : 92.92629649310048
+        }, {
+          "key" : "Doubt Faith",
+          "value" : 92.40774747193967
+        }, {
+          "key" : "Seal Evil",
+          "value" : 92.2899891753854
+        }, {
+          "key" : "Gather Power",
+          "value" : 92.24122323199755
+        }, {
+          "key" : "Crystal Shield",
+          "value" : 92.1911765336914
+        }, {
+          "key" : "Dracolich Skill",
+          "value" : 92.04952901707286
+        }, {
+          "key" : "Gokuu Rod",
+          "value" : 92.03216230898633
+        }, {
+          "key" : "Compress",
+          "value" : 91.74804274962041
+        }, {
+          "key" : "Eye Gouge",
+          "value" : 91.64802548082463
+        }, {
+          "key" : "Ninja",
+          "value" : 91.592164553812
+        }, {
+          "key" : "Wave Fist",
+          "value" : 91.51107357731063
+        }, {
+          "key" : "Genji Shield",
+          "value" : 91.40345202064593
+        }, {
+          "key" : "Icewolf Bite",
+          "value" : 91.23273152449373
+        }, {
+          "key" : "Odd Soundwave",
+          "value" : 91.15043428062049
+        }, {
+          "key" : "Dark Behemoth",
+          "value" : 91.05799066903431
+        }, {
+          "key" : "Sunken State",
+          "value" : 90.92786963387495
+        }, {
+          "key" : "Jump",
+          "value" : 90.92261503172824
+        }, {
+          "key" : "Genji Helmet",
+          "value" : 90.60334719944171
+        }, {
+          "key" : "Dragon Rod",
+          "value" : 90.56246554401184
+        }, {
+          "key" : "Buckler",
+          "value" : 90.47430019323578
+        }, {
+          "key" : "Giant Skill",
+          "value" : 90.2899063879469
+        }, {
+          "key" : "Shell",
+          "value" : 90.19148419453443
+        }, {
+          "key" : "Cherche",
+          "value" : 90.16517027888764
+        }, {
+          "key" : "Ignore Terrain",
+          "value" : 90.063053954131
+        }, {
+          "key" : "Vertical Jump4",
+          "value" : 89.84771617160709
+        }, {
+          "key" : "Faith Rod",
+          "value" : 89.79777717282796
+        }, {
+          "key" : "Wizard Rod",
+          "value" : 89.72569957793996
+        }, {
+          "key" : "Empower",
+          "value" : 89.54770020890753
+        }, {
+          "key" : "Bard",
+          "value" : 89.50642743002132
+        }, {
+          "key" : "Absorb Used MP",
+          "value" : 89.29387482905553
+        }, {
+          "key" : "Flame Attack",
+          "value" : 89.24306932910818
+        }, {
+          "key" : "Threaten",
+          "value" : 89.1997971382332
+        }, {
+          "key" : "Platinum Armor",
+          "value" : 88.98422905989845
+        }, {
+          "key" : "Ice",
+          "value" : 88.67185543133125
+        }, {
+          "key" : "Ryozan Silk-Item",
+          "value" : 88.65258493089789
+        }, {
+          "key" : "Vertical Jump2",
+          "value" : 88.471339536035
+        }, {
+          "key" : "Earth Clothes",
+          "value" : 88.15432905858991
+        }, {
+          "key" : "5",
+          "value" : 87.97441745641667
+        }, {
+          "key" : "Panther Bag",
+          "value" : 87.86345398536056
+        }, {
+          "key" : "Dragon",
+          "value" : 87.6814837025311
+        }, {
+          "key" : "Gold Helmet",
+          "value" : 87.32953797363822
+        }, {
+          "key" : "Yell",
+          "value" : 87.30675917838768
+        }, {
+          "key" : "Counter Magic",
+          "value" : 87.27439527395929
+        }, {
+          "key" : "Self Destruct",
+          "value" : 87.19733789366138
+        }, {
+          "key" : "Potion",
+          "value" : 87.11437028900484
+        }, {
+          "key" : "Throw Stone",
+          "value" : 87.068310820982
+        }, {
+          "key" : "Charge+20",
+          "value" : 87.01448402695384
+        }, {
+          "key" : "Life Song",
+          "value" : 86.82782373990634
+        }, {
+          "key" : "Thief Hat",
+          "value" : 86.82553022252452
+        }, {
+          "key" : "Bomb",
+          "value" : 86.58390475710902
+        }, {
+          "key" : "Geomancer",
+          "value" : 86.53357393904761
+        }, {
+          "key" : "Invitation",
+          "value" : 86.45647686178786
+        }, {
+          "key" : "HP Restore",
+          "value" : 86.38749004574424
+        }, {
+          "key" : "Gobbledeguck",
+          "value" : 86.27067730769825
+        }, {
+          "key" : "Climhazzard",
+          "value" : 86.2400506782094
+        }, {
+          "key" : "Sleep Sword-Item",
+          "value" : 86.11073614078718
+        }, {
+          "key" : "Auto Potion",
+          "value" : 86.07409945194235
+        }, {
+          "key" : "Glacier Gun",
+          "value" : 85.82323912919071
+        }, {
+          "key" : "Halberd-Item",
+          "value" : 85.74030661159588
+        }, {
+          "key" : "Dragon Pit",
+          "value" : 85.59237479656149
+        }, {
+          "key" : "Triple Thunder",
+          "value" : 85.59149528314911
+        }, {
+          "key" : "Bio",
+          "value" : 85.51747493496319
+        }, {
+          "key" : "Dungeon Skill",
+          "value" : 85.49373163797631
+        }, {
+          "key" : "Power Break",
+          "value" : 85.34908501785775
+        }, {
+          "key" : "Gore Skill",
+          "value" : 85.30329737672582
+        }, {
+          "key" : "Ice Brand-Item",
+          "value" : 85.23898410476747
+        }, {
+          "key" : "White Magic",
+          "value" : 85.14019093032779
+        }, {
+          "key" : "Hydra Bag",
+          "value" : 85.08855843333062
+        }, {
+          "key" : "Flame Rod-Item",
+          "value" : 84.90647396205631
+        }, {
+          "key" : "Brigandine",
+          "value" : 84.90361191412286
+        }, {
+          "key" : "Spear-Item",
+          "value" : 84.83641002450082
+        }, {
+          "key" : "Charge+3",
+          "value" : 84.81656870911308
+        }, {
+          "key" : "Nameless Song",
+          "value" : 84.791800024444
+        }, {
+          "key" : "Waterbreathing",
+          "value" : 84.77528611508927
+        }, {
+          "key" : "Water Ball",
+          "value" : 84.64420672798293
+        }, {
+          "key" : "Bequeath Bacon",
+          "value" : 84.55419718855374
+        }, {
+          "key" : "Bio Tenebris",
+          "value" : 84.40683228253292
+        }, {
+          "key" : "Confusion Song",
+          "value" : 84.38645045272006
+        }, {
+          "key" : "Black Costume",
+          "value" : 84.28012024815898
+        }, {
+          "key" : "Fire",
+          "value" : 84.2448277358061
+        }, {
+          "key" : "Demi 3",
+          "value" : 84.1100992382224
+        }, {
+          "key" : "Glacier Gun-Item",
+          "value" : 83.82152571915874
+        }, {
+          "key" : "Steal Weapon",
+          "value" : 83.74436459072183
+        }, {
+          "key" : "Black Robe",
+          "value" : 83.61295398174308
+        }, {
+          "key" : "Dragon Spirit",
+          "value" : 83.45561032088625
+        }, {
+          "key" : "Elemental",
+          "value" : 83.32664174270288
+        }, {
+          "key" : "Critical Quick",
+          "value" : 83.19798853644313
+        }, {
+          "key" : "Malboro",
+          "value" : 83.1103505256309
+        }, {
+          "key" : "Sing",
+          "value" : 83.01139067808819
+        }, {
+          "key" : "Mediator",
+          "value" : 82.92691873109774
+        }, {
+          "key" : "Level Jump2",
+          "value" : 82.80352299902013
+        }, {
+          "key" : "Justice Sword",
+          "value" : 82.73487259277873
+        }, {
+          "key" : "Rod",
+          "value" : 82.68100253608644
+        }, {
+          "key" : "Ryozan Silk",
+          "value" : 82.37120555829553
+        }, {
+          "key" : "Sword",
+          "value" : 81.94851631214527
+        }, {
+          "key" : "Imp Skill",
+          "value" : 81.72766296895183
+        }, {
+          "key" : "Missile Skill",
+          "value" : 81.6378781287389
+        }, {
+          "key" : "Round Shield",
+          "value" : 81.58638465615876
+        }, {
+          "key" : "Triple Breath",
+          "value" : 81.58150375189858
+        }, {
+          "key" : "Phoenix Down",
+          "value" : 81.53460479125597
+        }, {
+          "key" : "Red Dragon",
+          "value" : 81.45691855787949
+        }, {
+          "key" : "Calm Spirit",
+          "value" : 81.45199126894359
+        }, {
+          "key" : "Bite",
+          "value" : 81.37392970464062
+        }, {
+          "key" : "Silk Robe",
+          "value" : 81.24468049191339
+        }, {
+          "key" : "Flame Shield-Item",
+          "value" : 81.1564442426376
+        }, {
+          "key" : "Zombie",
+          "value" : 81.14084679128536
+        }, {
+          "key" : "Snipe Bow",
+          "value" : 81.13826476814872
+        }, {
+          "key" : "Peck",
+          "value" : 80.60201923245671
+        }, {
+          "key" : "Fairy Harp",
+          "value" : 80.39560340390697
+        }, {
+          "key" : "Taiju",
+          "value" : 80.25019158902967
+        }, {
+          "key" : "Level Jump5",
+          "value" : 80.18826039352902
+        }, {
+          "key" : "Slow Dance",
+          "value" : 80.18220757864167
+        }, {
+          "key" : "Mythril Helmet",
+          "value" : 79.7590536338475
+        }, {
+          "key" : "Death Sentence",
+          "value" : 79.67074769578434
+        }, {
+          "key" : "Ice 4",
+          "value" : 79.61474199995781
+        }, {
+          "key" : "Ninja Edge",
+          "value" : 79.59077460384766
+        }, {
+          "key" : "Linen Robe",
+          "value" : 79.56908901013392
+        }, {
+          "key" : "Bio Insanis",
+          "value" : 79.49827449952893
+        }, {
+          "key" : "King Behemoth",
+          "value" : 79.41332768038369
+        }, {
+          "key" : "Snort",
+          "value" : 79.33497027015294
+        }, {
+          "key" : "Noxious Gas",
+          "value" : 79.24146020333716
+        }, {
+          "key" : "Lava Ball",
+          "value" : 79.18713321137817
+        }, {
+          "key" : "Sleep Touch",
+          "value" : 79.01001146341599
+        }, {
+          "key" : "Beam",
+          "value" : 78.92883746609701
+        }, {
+          "key" : "Black Chocobo",
+          "value" : 78.9244377630909
+        }, {
+          "key" : "Sky Demon",
+          "value" : 78.5863558593316
+        }, {
+          "key" : "Escutcheon",
+          "value" : 78.52893762234804
+        }, {
+          "key" : "Dragon Whisker",
+          "value" : 78.43144686120735
+        }, {
+          "key" : "Small Mantle",
+          "value" : 78.16495225605446
+        }, {
+          "key" : "Tail Swing",
+          "value" : 78.05493563801579
+        }, {
+          "key" : "Titan",
+          "value" : 77.97146848528264
+        }, {
+          "key" : "Prime Number",
+          "value" : 77.93560783110269
+        }, {
+          "key" : "Materia Blade-Item",
+          "value" : 77.16271451593049
+        }, {
+          "key" : "Rune Blade",
+          "value" : 77.02125198850338
+        }, {
+          "key" : "Star Bag-Item",
+          "value" : 76.97562788416211
+        }, {
+          "key" : "Fire 4",
+          "value" : 76.90932017035746
+        }, {
+          "key" : "Mythril Shield",
+          "value" : 76.84996473171279
+        }, {
+          "key" : "White Staff",
+          "value" : 76.67589779963461
+        }, {
+          "key" : "Undeath Skill",
+          "value" : 76.35437327235283
+        }, {
+          "key" : "Praise",
+          "value" : 76.25800898924197
+        }, {
+          "key" : "Manaburn",
+          "value" : 76.1218355629946
+        }, {
+          "key" : "Ancient Sword-Item",
+          "value" : 76.04736262581233
+        }, {
+          "key" : "Wand",
+          "value" : 75.70067521924312
+        }, {
+          "key" : "Hallowed Ground",
+          "value" : 75.50817908564423
+        }, {
+          "key" : "Judo Outfit",
+          "value" : 75.30706988129623
+        }, {
+          "key" : "CT",
+          "value" : 74.96806134146338
+        }, {
+          "key" : "Paralyze",
+          "value" : 74.8129389750856
+        }, {
+          "key" : "Ivory Rod",
+          "value" : 74.63912648216773
+        }, {
+          "key" : "Ninja Sword",
+          "value" : 74.60853410318002
+        }, {
+          "key" : "Shell 2",
+          "value" : 74.57540617786741
+        }, {
+          "key" : "Move+3",
+          "value" : 74.50581311593484
+        }, {
+          "key" : "Choco Esuna",
+          "value" : 74.47891540183824
+        }, {
+          "key" : "Iron Fan-Item",
+          "value" : 74.4780247468079
+        }, {
+          "key" : "Defense Ring",
+          "value" : 74.41643226617927
+        }, {
+          "key" : "Protect 2",
+          "value" : 74.20572499682497
+        }, {
+          "key" : "Braver",
+          "value" : 74.197580410026
+        }, {
+          "key" : "Star Bag",
+          "value" : 74.12025126393371
+        }, {
+          "key" : "Leech Skill",
+          "value" : 74.09081790913987
+        }, {
+          "key" : "Mimic Titan",
+          "value" : 73.93811775194938
+        }, {
+          "key" : "Germinas Boots",
+          "value" : 73.90296253149621
+        }, {
+          "key" : "Choco Cure",
+          "value" : 73.5821969440836
+        }, {
+          "key" : "Koga Knife-Item",
+          "value" : 73.25260845864263
+        }, {
+          "key" : "Ramia Harp",
+          "value" : 73.23749162203977
+        }, {
+          "key" : "Levitate",
+          "value" : 73.23315695404064
+        }, {
+          "key" : "Galaxy Stop",
+          "value" : 73.20098047720464
+        }, {
+          "key" : "Treant",
+          "value" : 72.9948829722965
+        }, {
+          "key" : "Chain Vest",
+          "value" : 72.86594742661148
+        }, {
+          "key" : "Ice Breath",
+          "value" : 72.78994597435728
+        }, {
+          "key" : "Level Jump4",
+          "value" : 72.52790519391363
+        }, {
+          "key" : "Chain Mail",
+          "value" : 72.51368284801453
+        }, {
+          "key" : "Mutilate",
+          "value" : 72.36718056200344
+        }, {
+          "key" : "Robe of Lords",
+          "value" : 72.35334083382763
+        }, {
+          "key" : "Swim",
+          "value" : 72.35026367766604
+        }, {
+          "key" : "Twist Headband",
+          "value" : 72.26557421223899
+        }, {
+          "key" : "Koutetsu Knife",
+          "value" : 72.02604193199004
+        }, {
+          "key" : "Golden Hairpin",
+          "value" : 72.02183020536067
+        }, {
+          "key" : "Stone Gun-Item",
+          "value" : 71.6969338458048
+        }, {
+          "key" : "White Staff-Item",
+          "value" : 71.43656439112438
+        }, {
+          "key" : "Bio Immortuos",
+          "value" : 71.40157439415408
+        }, {
+          "key" : "Slam",
+          "value" : 71.39704439088806
+        }, {
+          "key" : "Meteorain",
+          "value" : 71.39434614169967
+        }, {
+          "key" : "Zodiac",
+          "value" : 71.29280323016843
+        }, {
+          "key" : "Gold Armor",
+          "value" : 71.23403719413236
+        }, {
+          "key" : "Ice 3",
+          "value" : 71.03459119735956
+        }, {
+          "key" : "Iron Helmet",
+          "value" : 70.96036275208772
+        }, {
+          "key" : "Petrify",
+          "value" : 70.81547922901711
+        }, {
+          "key" : "Iron Sword",
+          "value" : 70.7366093628136
+        }, {
+          "key" : "Toxic Frog",
+          "value" : 70.66808761181046
+        }, {
+          "key" : "Steal Shield",
+          "value" : 70.61735352614228
+        }, {
+          "key" : "Ghost",
+          "value" : 70.35834067148438
+        }, {
+          "key" : "Power Sleeve",
+          "value" : 70.28236410543423
+        }, {
+          "key" : "Blood Sword",
+          "value" : 70.20047148974031
+        }, {
+          "key" : "MA Save",
+          "value" : 70.11147633457162
+        }, {
+          "key" : "Mythril Sword-Item",
+          "value" : 70.01525009744826
+        }, {
+          "key" : "Coral Sword-Item",
+          "value" : 69.77426921393608
+        }, {
+          "key" : "Vertical Jump5",
+          "value" : 69.67197525500924
+        }, {
+          "key" : "Bronze Shield",
+          "value" : 69.53697131630153
+        }, {
+          "key" : "Grand Helmet",
+          "value" : 69.49621731521181
+        }, {
+          "key" : "Counter Tackle",
+          "value" : 69.48480600844097
+        }, {
+          "key" : "Cross-Slash",
+          "value" : 69.40735508622112
+        }, {
+          "key" : "Wildfire Skill",
+          "value" : 69.30550484406668
+        }, {
+          "key" : "Weapon Break",
+          "value" : 69.26886525670756
+        }, {
+          "key" : "Faith Save",
+          "value" : 69.26155621478256
+        }, {
+          "key" : "Choco Ball",
+          "value" : 69.19814381365026
+        }, {
+          "key" : "Choco Attack",
+          "value" : 69.16495096171305
+        }, {
+          "key" : "Mystic Vest",
+          "value" : 69.14698160790988
+        }, {
+          "key" : "Platinum Helmet",
+          "value" : 69.13151835374217
+        }, {
+          "key" : "Mythril Spear",
+          "value" : 68.89819339024336
+        }, {
+          "key" : "Despair",
+          "value" : 68.73112143418115
+        }, {
+          "key" : "Nether Skill",
+          "value" : 68.52437384478385
+        }, {
+          "key" : "Giant Axe",
+          "value" : 68.51929388340736
+        }, {
+          "key" : "Scream",
+          "value" : 68.21241207144368
+        }, {
+          "key" : "Arm Aim",
+          "value" : 68.20290838581339
+        }, {
+          "key" : "Cherry Blossom",
+          "value" : 68.03309045434473
+        }, {
+          "key" : "Chicken",
+          "value" : 68.01852739357176
+        }, {
+          "key" : "Cross Helmet",
+          "value" : 68.00429318189286
+        }, {
+          "key" : "Feather Boots",
+          "value" : 67.7642818305024
+        }, {
+          "key" : "Height",
+          "value" : 67.69914708727913
+        }, {
+          "key" : "Battle Folio",
+          "value" : 67.69082131953995
+        }, {
+          "key" : "Cerberus Skill",
+          "value" : 67.66010212021226
+        }, {
+          "key" : "Night Sword",
+          "value" : 67.53919598299466
+        }, {
+          "key" : "Heaven's Cloud-Item",
+          "value" : 67.43933281170965
+        }, {
+          "key" : "Defender",
+          "value" : 67.28655565459363
+        }, {
+          "key" : "Ignore Height",
+          "value" : 66.69210896965384
+        }, {
+          "key" : "Scorpion Tail",
+          "value" : 66.60704198373823
+        }, {
+          "key" : "Nether Demon",
+          "value" : 66.5279292104424
+        }, {
+          "key" : "Steel Giant",
+          "value" : 66.43491719963595
+        }, {
+          "key" : "Mythril Shield-Item",
+          "value" : 66.31244963583816
+        }, {
+          "key" : "Parasite",
+          "value" : 65.9337409819245
+        }, {
+          "key" : "Fire 3",
+          "value" : 65.90782592046092
+        }, {
+          "key" : "Chakra",
+          "value" : 65.56508235596354
+        }, {
+          "key" : "Hidden Knife",
+          "value" : 65.42817760471581
+        }, {
+          "key" : "Sasuke Knife-Item",
+          "value" : 65.20944164221982
+        }, {
+          "key" : "Summon Magic",
+          "value" : 64.84749760645103
+        }, {
+          "key" : "Iron Fan",
+          "value" : 64.6162310502014
+        }, {
+          "key" : "Charge+7",
+          "value" : 64.58454260969744
+        }, {
+          "key" : "Holy Miter",
+          "value" : 64.46397549571466
+        }, {
+          "key" : "Oink",
+          "value" : 64.24719022977361
+        }, {
+          "key" : "Persia-Item",
+          "value" : 64.14922003989564
+        }, {
+          "key" : "Shuriken",
+          "value" : 64.11444489458347
+        }, {
+          "key" : "Giga Flare",
+          "value" : 64.11224395090129
+        }, {
+          "key" : "Reaper",
+          "value" : 64.0153633602099
+        }, {
+          "key" : "Moogle",
+          "value" : 63.715942801014336
+        }, {
+          "key" : "Platinum Shield-Item",
+          "value" : 63.58362330869737
+        }, {
+          "key" : "Omnislash",
+          "value" : 63.566232331917746
+        }, {
+          "key" : "Murasame-Item",
+          "value" : 63.41822891185011
+        }, {
+          "key" : "Save the Queen",
+          "value" : 63.33507870602227
+        }, {
+          "key" : "Earplug",
+          "value" : 63.28505023214738
+        }, {
+          "key" : "Hell Ivy",
+          "value" : 63.27923972754769
+        }, {
+          "key" : "Power Wrist",
+          "value" : 63.05685101526948
+        }, {
+          "key" : "Animal Skill",
+          "value" : 62.97121003545274
+        }, {
+          "key" : "Revenant",
+          "value" : 62.75368049617792
+        }, {
+          "key" : "Hydra",
+          "value" : 62.717189488056334
+        }, {
+          "key" : "Punch Art",
+          "value" : 62.69934439348821
+        }, {
+          "key" : "Setiemson",
+          "value" : 62.65410891561783
+        }, {
+          "key" : "Gastrafitis",
+          "value" : 62.62417871992603
+        }, {
+          "key" : "Shellbust Stab",
+          "value" : 62.549253746965185
+        }, {
+          "key" : "Snipe Bow-Item",
+          "value" : 62.39894618885563
+        }, {
+          "key" : "Parry",
+          "value" : 62.337101148902384
+        }, {
+          "key" : "Coeurl",
+          "value" : 62.26754559076606
+        }, {
+          "key" : "Limit",
+          "value" : 62.20896438404988
+        }, {
+          "key" : "Crystal Mail",
+          "value" : 61.55796541396516
+        }, {
+          "key" : "Chirijiraden",
+          "value" : 61.45018112530609
+        }, {
+          "key" : "Crystal Shield-Item",
+          "value" : 61.41543717457236
+        }, {
+          "key" : "Feather Hat",
+          "value" : 61.16957247707448
+        }, {
+          "key" : "Minotaur",
+          "value" : 61.08396993248849
+        }, {
+          "key" : "Polka Polka",
+          "value" : 61.00170663790937
+        }, {
+          "key" : "Mythril Knife",
+          "value" : 60.98948780254069
+        }, {
+          "key" : "Dragon Whisker-Item",
+          "value" : 60.74532069613397
+        }, {
+          "key" : "Main Gauche-Item",
+          "value" : 60.53332511259607
+        }, {
+          "key" : "Venetian Shield",
+          "value" : 60.52342765019168
+        }, {
+          "key" : "Kaiser Plate",
+          "value" : 60.131489112375014
+        }, {
+          "key" : "Level Jump3",
+          "value" : 60.087821904216156
+        }, {
+          "key" : "Air Knife",
+          "value" : 59.975087828261564
+        }, {
+          "key" : "Nagrarock",
+          "value" : 59.936861000836025
+        }, {
+          "key" : "Maiden's Kiss",
+          "value" : 59.82826355164339
+        }, {
+          "key" : "Silver Bow",
+          "value" : 59.77643940578684
+        }, {
+          "key" : "Ivory Rod-Item",
+          "value" : 59.76970021904038
+        }, {
+          "key" : "Tornado",
+          "value" : 59.73174478941148
+        }, {
+          "key" : "Vampire",
+          "value" : 59.62171550038554
+        }, {
+          "key" : "Great Malboro",
+          "value" : 59.255570621459576
+        }, {
+          "key" : "Ultimus Bow",
+          "value" : 59.17573103915542
+        }, {
+          "key" : "Blind Knife-Item",
+          "value" : 59.020731785366806
+        }, {
+          "key" : "Snake Carrier",
+          "value" : 58.92589073352759
+        }, {
+          "key" : "Holy",
+          "value" : 58.914215940159345
+        }, {
+          "key" : "Golem",
+          "value" : 58.701032477711244
+        }, {
+          "key" : "Ultima",
+          "value" : 58.47468859906143
+        }, {
+          "key" : "Kaiser Plate-Item",
+          "value" : 58.3604188397098
+        }, {
+          "key" : "Bizen Boat-Item",
+          "value" : 58.346712806466705
+        }, {
+          "key" : "Crystal Helmet",
+          "value" : 58.11328546878559
+        }, {
+          "key" : "Monk",
+          "value" : 57.801552495556386
+        }, {
+          "key" : "Soft",
+          "value" : 57.782737623549195
+        }, {
+          "key" : "Aegis Shield-Item",
+          "value" : 57.59670332962986
+        }, {
+          "key" : "Gokuu Rod-Item",
+          "value" : 57.58004427993229
+        }, {
+          "key" : "Chantage",
+          "value" : 57.32185089346057
+        }, {
+          "key" : "Spell Edge",
+          "value" : 57.17157054188038
+        }, {
+          "key" : "Behemoth",
+          "value" : 57.16536447462509
+        }, {
+          "key" : "Battle Axe-Item",
+          "value" : 56.81958011746734
+        }, {
+          "key" : "Short Edge",
+          "value" : 56.802562553260216
+        }, {
+          "key" : "Blaze Gun-Item",
+          "value" : 56.69429634059801
+        }, {
+          "key" : "Elf Mantle",
+          "value" : 56.62036103526912
+        }, {
+          "key" : "Rainbow Staff",
+          "value" : 56.55652156163021
+        }, {
+          "key" : "Genji Shield-Item",
+          "value" : 56.50637299142672
+        }, {
+          "key" : "Octagon Rod-Item",
+          "value" : 56.44784414965245
+        }, {
+          "key" : "Fairy",
+          "value" : 56.269702805189645
+        }, {
+          "key" : "Magic Ring",
+          "value" : 56.22385946349733
+        }, {
+          "key" : "Purification",
+          "value" : 56.19823603379801
+        }, {
+          "key" : "Grease Touch",
+          "value" : 56.159152934982615
+        }, {
+          "key" : "Forest Skill",
+          "value" : 56.11908050932569
+        }, {
+          "key" : "Speed Break",
+          "value" : 56.07056307710152
+        }, {
+          "key" : "Cachusha",
+          "value" : 56.01359915565061
+        }, {
+          "key" : "Plate Mail",
+          "value" : 55.99518815670993
+        }, {
+          "key" : "Finish Touch",
+          "value" : 55.958197083069685
+        }, {
+          "key" : "Cypress Rod-Item",
+          "value" : 55.92708568059549
+        }, {
+          "key" : "Materia Blade",
+          "value" : 55.86396601071774
+        }, {
+          "key" : "Barbuta",
+          "value" : 55.77097079876654
+        }, {
+          "key" : "Chaos Skill",
+          "value" : 55.727610621807976
+        }, {
+          "key" : "Leather Outfit",
+          "value" : 55.58846574147557
+        }, {
+          "key" : "Insult",
+          "value" : 55.53890903184961
+        }, {
+          "key" : "Red Hood",
+          "value" : 55.48791454658376
+        }, {
+          "key" : "Pet Skill",
+          "value" : 55.487801688065666
+        }, {
+          "key" : "-Item",
+          "value" : 55.483905018255875
+        }, {
+          "key" : "Negotiate",
+          "value" : 55.47862269533238
+        }, {
+          "key" : "Diamond Shield",
+          "value" : 55.36993953777588
+        }, {
+          "key" : "Bio Lapis",
+          "value" : 55.365731594356326
+        }, {
+          "key" : "Blind Knife",
+          "value" : 55.26281094277022
+        }, {
+          "key" : "Magic Song",
+          "value" : 55.23501293991355
+        }, {
+          "key" : "Genji Gauntlet",
+          "value" : 54.85555318768402
+        }, {
+          "key" : "Hero Shield-Item",
+          "value" : 54.81722090623061
+        }, {
+          "key" : "Demi",
+          "value" : 54.72386160836157
+        }, {
+          "key" : "Blast Gun-Item",
+          "value" : 54.6649541315861
+        }, {
+          "key" : "Cute Bag-Item",
+          "value" : 54.604123613514645
+        }, {
+          "key" : "Ahriman",
+          "value" : 54.46594628553204
+        }, {
+          "key" : "Thief",
+          "value" : 54.17426852835144
+        }, {
+          "key" : "Hammer",
+          "value" : 54.13521098525085
+        }, {
+          "key" : "Vengeance",
+          "value" : 54.01631171004067
+        }, {
+          "key" : "Drain Touch",
+          "value" : 53.87412978621982
+        }, {
+          "key" : "Blood Sword-Item",
+          "value" : 53.85117884291915
+        }, {
+          "key" : "Gil Taking",
+          "value" : 53.83597556419058
+        }, {
+          "key" : "Serpentarius",
+          "value" : 53.79125876226537
+        }, {
+          "key" : "Protect Spirit",
+          "value" : 53.76015246740775
+        }, {
+          "key" : "Stab Up",
+          "value" : 53.69728149969001
+        }, {
+          "key" : "Heal",
+          "value" : 53.69194501724819
+        }, {
+          "key" : "Shield Break",
+          "value" : 53.65434503931783
+        }, {
+          "key" : "Tendrils",
+          "value" : 53.532055470561815
+        }, {
+          "key" : "Choco Meteor",
+          "value" : 53.47807672805737
+        }, {
+          "key" : "Porky",
+          "value" : 53.33246022814196
+        }, {
+          "key" : "Goblin Punch",
+          "value" : 53.31598024978889
+        }, {
+          "key" : "Pray Faith",
+          "value" : 53.26282097706577
+        }, {
+          "key" : "Oak Staff",
+          "value" : 52.924660334500885
+        }, {
+          "key" : "Romanda Gun",
+          "value" : 52.76035127759086
+        }, {
+          "key" : "Surging Sword",
+          "value" : 52.71559817776067
+        }, {
+          "key" : "Meatbone Slash",
+          "value" : 52.6698425809399
+        }, {
+          "key" : "Time Magic",
+          "value" : 52.596507221881616
+        }, {
+          "key" : "Ultima Demon",
+          "value" : 52.565985410551676
+        }, {
+          "key" : "Spirit of Life",
+          "value" : 52.45763067916101
+        }, {
+          "key" : "Quake",
+          "value" : 52.39568256238988
+        }, {
+          "key" : "Fire 2",
+          "value" : 52.355149967230155
+        }, {
+          "key" : "Holy Water",
+          "value" : 52.33980404704652
+        }, {
+          "key" : "Round Shield-Item",
+          "value" : 52.23719413348711
+        }, {
+          "key" : "Secret Clothes",
+          "value" : 52.176630632133126
+        }, {
+          "key" : "Calculator",
+          "value" : 52.018239739518
+        }, {
+          "key" : "Leather Mantle",
+          "value" : 51.63301647649375
+        }, {
+          "key" : "Leather Armor",
+          "value" : 51.23886322815435
+        }, {
+          "key" : "Sprint Shoes",
+          "value" : 51.149405669660474
+        }, {
+          "key" : "Bronze Shield-Item",
+          "value" : 50.87286074675398
+        }, {
+          "key" : "Look of Fright",
+          "value" : 50.8365970965014
+        }, {
+          "key" : "Reflect",
+          "value" : 50.7807575581376
+        }, {
+          "key" : "Buckler-Item",
+          "value" : 50.780030559358266
+        }, {
+          "key" : "Lick",
+          "value" : 50.6704043661863
+        }, {
+          "key" : "Last Dance",
+          "value" : 50.5548141790552
+        }, {
+          "key" : "Blade Beam",
+          "value" : 50.50364126596871
+        }, {
+          "key" : "Tackle",
+          "value" : 50.49770041010595
+        }, {
+          "key" : "Dagger",
+          "value" : 50.478374213828126
+        }, {
+          "key" : "Spark",
+          "value" : 50.37358739446125
+        }, {
+          "key" : "Hunting Bow",
+          "value" : 50.233074228233534
+        }, {
+          "key" : "Asura Knife-Item",
+          "value" : 50.19067493093512
+        }, {
+          "key" : "Straight Dash",
+          "value" : 50.18821106798743
+        }, {
+          "key" : "Charge+1",
+          "value" : 50.13044154247095
+        }, {
+          "key" : "Reflect Ring",
+          "value" : 49.706649479087716
+        }, {
+          "key" : "Ice Rod",
+          "value" : 49.500403377214234
+        }, {
+          "key" : "Hidden Knife-Item",
+          "value" : 49.39808751622504
+        }, {
+          "key" : "Mythril Armor",
+          "value" : 49.331767784898226
+        }, {
+          "key" : "Gold Shield-Item",
+          "value" : 49.205462061784566
+        }, {
+          "key" : "Mythril Sword",
+          "value" : 49.05040183768426
+        }, {
+          "key" : "Partisan",
+          "value" : 48.906267823231516
+        }, {
+          "key" : "Vertical Jump3",
+          "value" : 48.68857519263622
+        }, {
+          "key" : "Death",
+          "value" : 48.449351342478096
+        }, {
+          "key" : "Kikuichimoji",
+          "value" : 48.40359505959151
+        }, {
+          "key" : "Muramasa",
+          "value" : 48.38470451665435
+        }, {
+          "key" : "Kiyomori",
+          "value" : 48.316113363346304
+        }, {
+          "key" : "Level Blast",
+          "value" : 48.27485286647752
+        }, {
+          "key" : "Swine",
+          "value" : 48.01364343930413
+        }, {
+          "key" : "Zombie Touch",
+          "value" : 47.94412549827938
+        }, {
+          "key" : "Charge+10",
+          "value" : 47.884033551620576
+        }, {
+          "key" : "Cashmere",
+          "value" : 47.6793719750084
+        }, {
+          "key" : "Yoichi Bow",
+          "value" : 47.64036991406591
+        }, {
+          "key" : "Basic Skill",
+          "value" : 47.522201927363504
+        }, {
+          "key" : "Spin Fist",
+          "value" : 47.39599501250621
+        }, {
+          "key" : "Stick",
+          "value" : 47.38180109961804
+        }, {
+          "key" : "Cultist Dagger-Item",
+          "value" : 47.372761889201485
+        }, {
+          "key" : "Iga Knife-Item",
+          "value" : 46.7242290585552
+        }, {
+          "key" : "Octagon Rod",
+          "value" : 46.71730148702916
+        }, {
+          "key" : "Summoner",
+          "value" : 46.503896545737376
+        }, {
+          "key" : "Koutetsu Knife-Item",
+          "value" : 46.37501437428245
+        }, {
+          "key" : "Wizard Mantle",
+          "value" : 46.35054137360037
+        }, {
+          "key" : "Odin",
+          "value" : 46.318102202649925
+        }, {
+          "key" : "Angel Song",
+          "value" : 46.14820410205238
+        }, {
+          "key" : "Wizard Staff-Item",
+          "value" : 45.99134363660005
+        }, {
+          "key" : "Spell Edge-Item",
+          "value" : 45.77606472533987
+        }, {
+          "key" : "Halberd",
+          "value" : 45.7521985751139
+        }, {
+          "key" : "Mind Blast",
+          "value" : 45.64543138001209
+        }, {
+          "key" : "Dryad",
+          "value" : 45.29430629273742
+        }, {
+          "key" : "Math Skill",
+          "value" : 45.28027961436091
+        }, {
+          "key" : "Obelisk-Item",
+          "value" : 45.05901306692187
+        }, {
+          "key" : "Magic Spirit",
+          "value" : 44.96698168706317
+        }, {
+          "key" : "Chameleon Robe",
+          "value" : 44.92772018448359
+        }, {
+          "key" : "Juravis",
+          "value" : 44.709333132936614
+        }, {
+          "key" : "Bolt 2",
+          "value" : 44.61328761748569
+        }, {
+          "key" : "Gold Staff",
+          "value" : 44.54111641927882
+        }, {
+          "key" : "Dance",
+          "value" : 44.15885793956051
+        }, {
+          "key" : "Thunder Breath",
+          "value" : 43.88964643114688
+        }, {
+          "key" : "Obsidian Blade",
+          "value" : 43.86826166213741
+        }, {
+          "key" : "Ramuh",
+          "value" : 43.86364227531686
+        }, {
+          "key" : "Haste 2",
+          "value" : 43.79701906552847
+        }, {
+          "key" : "Knife Hand",
+          "value" : 43.76254789265545
+        }, {
+          "key" : "Pisco Demon",
+          "value" : 43.69342758224717
+        }, {
+          "key" : "Hydra Bag-Item",
+          "value" : 43.59951672823655
+        }, {
+          "key" : "Dracula Mantle",
+          "value" : 43.5480293634583
+        }, {
+          "key" : "Move+1",
+          "value" : 43.37903126602001
+        }, {
+          "key" : "Ifrit",
+          "value" : 43.08771096150979
+        }, {
+          "key" : "Talk Skill",
+          "value" : 43.061456824488296
+        }, {
+          "key" : "Kunai-Item",
+          "value" : 42.997559472813805
+        }, {
+          "key" : "Battle Skill",
+          "value" : 42.8340630175762
+        }, {
+          "key" : "Flail",
+          "value" : 42.57041403352125
+        }, {
+          "key" : "Charge+2",
+          "value" : 42.53777256009784
+        }, {
+          "key" : "Angel Ring",
+          "value" : 42.123378068219544
+        }, {
+          "key" : "3",
+          "value" : 41.91627167111438
+        }, {
+          "key" : "Defense Armlet",
+          "value" : 41.88028082243997
+        }, {
+          "key" : "Lich",
+          "value" : 41.587301122075715
+        }, {
+          "key" : "Reflect Mail",
+          "value" : 41.44370740741897
+        }, {
+          "key" : "Steal Armor",
+          "value" : 41.21958691344534
+        }, {
+          "key" : "4",
+          "value" : 41.2131201042176
+        }, {
+          "key" : "Melt",
+          "value" : 41.09104262487897
+        }, {
+          "key" : "Refute",
+          "value" : 40.832361293363284
+        }, {
+          "key" : "Mythril Knife-Item",
+          "value" : 40.827523070804276
+        }, {
+          "key" : "Goo",
+          "value" : 40.77029163669892
+        }, {
+          "key" : "Kiyomori-Item",
+          "value" : 40.766209768921144
+        }, {
+          "key" : "Morning Star",
+          "value" : 40.606557263905515
+        }, {
+          "key" : "Partisan-Item",
+          "value" : 40.516031279860975
+        }, {
+          "key" : "Blood Suck",
+          "value" : 40.511501517311224
+        }, {
+          "key" : "Will-O-Wisp",
+          "value" : 40.35634959733849
+        }, {
+          "key" : "Venetian Shield-Item",
+          "value" : 40.300472511701415
+        }, {
+          "key" : "Shake Off",
+          "value" : 40.20899776236081
+        }, {
+          "key" : "Draw Out",
+          "value" : 40.03638293463623
+        }, {
+          "key" : "Accumulate",
+          "value" : 39.69085710012492
+        }, {
+          "key" : "Arrow Guard",
+          "value" : 39.67966206492544
+        }, {
+          "key" : "Foxbird",
+          "value" : 39.66798511870222
+        }, {
+          "key" : "Mythril Spear-Item",
+          "value" : 39.42788308538844
+        }, {
+          "key" : "Float",
+          "value" : 39.29432116382275
+        }, {
+          "key" : "Kunai",
+          "value" : 39.22877902915918
+        }, {
+          "key" : "Mana Shield",
+          "value" : 39.09694446411239
+        }, {
+          "key" : "Stone Gun",
+          "value" : 38.932442753920704
+        }, {
+          "key" : "Counter Flood",
+          "value" : 38.47635288406923
+        }, {
+          "key" : "Dragon Skill",
+          "value" : 38.47094546658171
+        }, {
+          "key" : "Faith Rod-Item",
+          "value" : 38.44739077949716
+        }, {
+          "key" : "Ancient Sword",
+          "value" : 38.32058307457756
+        }, {
+          "key" : "Esuna",
+          "value" : 38.18315156894868
+        }, {
+          "key" : "Orichalcum-Item",
+          "value" : 38.106111289351354
+        }, {
+          "key" : "Magic Break",
+          "value" : 37.874466990647726
+        }, {
+          "key" : "Diamond Armor",
+          "value" : 37.8022515955729
+        }, {
+          "key" : "Ranch Skill",
+          "value" : 37.782741971575476
+        }, {
+          "key" : "Sleep",
+          "value" : 37.700593210869684
+        }, {
+          "key" : "Mage Masher",
+          "value" : 37.66545571695268
+        }, {
+          "key" : "Retreat",
+          "value" : 37.573305136485644
+        }, {
+          "key" : "Void Storage",
+          "value" : 37.55875961883146
+        }, {
+          "key" : "Steal",
+          "value" : 37.522488007659206
+        }, {
+          "key" : "Hi-Potion",
+          "value" : 37.52023422313597
+        }, {
+          "key" : "Scratch",
+          "value" : 37.5159344494691
+        }, {
+          "key" : "Windslash Bow",
+          "value" : 37.44348632188594
+        }, {
+          "key" : "Draugr",
+          "value" : 37.431529733086336
+        }, {
+          "key" : "Wizard Staff",
+          "value" : 37.38096931524393
+        }, {
+          "key" : "Cypress Rod",
+          "value" : 37.36008000561737
+        }, {
+          "key" : "Distribute",
+          "value" : 37.30269425643442
+        }, {
+          "key" : "Throw",
+          "value" : 37.27616769188725
+        }, {
+          "key" : "Vertical Jump6",
+          "value" : 37.11233252569961
+        }, {
+          "key" : "Javelin",
+          "value" : 37.09728930135995
+        }, {
+          "key" : "Holy Breath",
+          "value" : 37.03799572498381
+        }, {
+          "key" : "Fire Breath",
+          "value" : 36.912826609604345
+        }, {
+          "key" : "Bestiary-Item",
+          "value" : 36.90200513551496
+        }, {
+          "key" : "Battle Boots",
+          "value" : 36.878596385648464
+        }, {
+          "key" : "Battle Bamboo-Item",
+          "value" : 36.72255775867662
+        }, {
+          "key" : "Fairy Harp-Item",
+          "value" : 36.706968218219686
+        }, {
+          "key" : "Mythril Gun-Item",
+          "value" : 36.69358735497374
+        }, {
+          "key" : "Dark Sword",
+          "value" : 36.607982458363885
+        }, {
+          "key" : "Robosnake Skill",
+          "value" : 36.519684422826316
+        }, {
+          "key" : "Familiar Skill",
+          "value" : 36.345394170755995
+        }, {
+          "key" : "Level Jump7",
+          "value" : 36.34394921688396
+        }, {
+          "key" : "Squire",
+          "value" : 36.27722211197718
+        }, {
+          "key" : "Jump+3",
+          "value" : 36.21684850550905
+        }, {
+          "key" : "Ribbon",
+          "value" : 35.99851050836506
+        }, {
+          "key" : "Cultist Dagger",
+          "value" : 35.97819324580209
+        }, {
+          "key" : "Destroy",
+          "value" : 35.93102745964802
+        }, {
+          "key" : "Preach",
+          "value" : 35.694828096011534
+        }, {
+          "key" : "Romanda Gun-Item",
+          "value" : 35.47712365093217
+        }, {
+          "key" : "Wing Attack",
+          "value" : 35.354776344783446
+        }, {
+          "key" : "Blizzard",
+          "value" : 35.25589369413032
+        }, {
+          "key" : "Heaven's Cloud",
+          "value" : 35.12358609100571
+        }, {
+          "key" : "Gungnir-Item",
+          "value" : 34.95818646377775
+        }, {
+          "key" : "Masamune",
+          "value" : 34.752147790791796
+        }, {
+          "key" : "Fly",
+          "value" : 34.65602474400203
+        }, {
+          "key" : "Oracle",
+          "value" : 34.571108738580705
+        }, {
+          "key" : "Excalibur",
+          "value" : 34.51952182332989
+        }, {
+          "key" : "Jump+2",
+          "value" : 34.458573152109516
+        }, {
+          "key" : "Iga Knife",
+          "value" : 34.39499197903054
+        }, {
+          "key" : "Protect",
+          "value" : 34.32341141128047
+        }, {
+          "key" : "Battle Bamboo",
+          "value" : 34.27597886563865
+        }, {
+          "key" : "Mind Break",
+          "value" : 34.24193987002852
+        }, {
+          "key" : "Hamedo",
+          "value" : 34.0766058494747
+        }, {
+          "key" : "Axe",
+          "value" : 33.94239415402175
+        }, {
+          "key" : "Disillusion",
+          "value" : 33.849143334601685
+        }, {
+          "key" : "Regenerator",
+          "value" : 33.81024221042514
+        }, {
+          "key" : "Red Chocobo",
+          "value" : 33.753124789431546
+        }, {
+          "key" : "Green Beret",
+          "value" : 33.42132246357545
+        }, {
+          "key" : "Bolt 4",
+          "value" : 33.36247750339051
+        }, {
+          "key" : "Dispel Magic",
+          "value" : 33.318824272426625
+        }, {
+          "key" : "Javelin-Item",
+          "value" : 33.30859807034051
+        }, {
+          "key" : "Asura Knife",
+          "value" : 33.2913080639204
+        }, {
+          "key" : "Byblos",
+          "value" : 33.25634029622603
+        }, {
+          "key" : "Move-HP Up",
+          "value" : 33.22303339059257
+        }, {
+          "key" : "Beak",
+          "value" : 32.89772128905166
+        }, {
+          "key" : "Iron Hawk",
+          "value" : 32.76452374613644
+        }, {
+          "key" : "Meteor",
+          "value" : 32.758283842900184
+        }, {
+          "key" : "Leather Helmet",
+          "value" : 32.61974479390539
+        }, {
+          "key" : "Catfish Skill",
+          "value" : 32.61506063928458
+        }, {
+          "key" : "Battle Axe",
+          "value" : 32.43575826444188
+        }, {
+          "key" : "Spike Shoes",
+          "value" : 32.40465324179445
+        }, {
+          "key" : "Damage Split",
+          "value" : 32.387096667436445
+        }, {
+          "key" : "Vertical Jump7",
+          "value" : 32.26643122685109
+        }, {
+          "key" : "Bahamut",
+          "value" : 32.15892163764599
+        }, {
+          "key" : "Blaster",
+          "value" : 31.89051152873743
+        }, {
+          "key" : "Diamond Sword-Item",
+          "value" : 31.886736636959224
+        }, {
+          "key" : "Chemist",
+          "value" : 31.760730762907773
+        }, {
+          "key" : "Grand Cross",
+          "value" : 31.67870014251011
+        }, {
+          "key" : "Mime",
+          "value" : 31.524530733376665
+        }, {
+          "key" : "Wiznaibus",
+          "value" : 31.351678521301597
+        }, {
+          "key" : "Koga Knife",
+          "value" : 31.311544249253288
+        }, {
+          "key" : "Grenade",
+          "value" : 31.22776580702863
+        }, {
+          "key" : "Bloody Strings",
+          "value" : 31.20287095781037
+        }, {
+          "key" : "Mighty Sword",
+          "value" : 31.118754305867004
+        }, {
+          "key" : "Cyclops",
+          "value" : 30.582804824855735
+        }, {
+          "key" : "Pitfall",
+          "value" : 30.564004893555484
+        }, {
+          "key" : "108 Gems",
+          "value" : 30.31606421848708
+        }, {
+          "key" : "Vanish Mantle",
+          "value" : 30.267483649223692
+        }, {
+          "key" : "Maximillian",
+          "value" : 30.150277649703273
+        }, {
+          "key" : "Jump+1",
+          "value" : 30.14573035335919
+        }, {
+          "key" : "Brave Save",
+          "value" : 29.84888747113381
+        }, {
+          "key" : "Black Magic",
+          "value" : 29.778105630671938
+        }, {
+          "key" : "Armor Break",
+          "value" : 29.765455134226904
+        }, {
+          "key" : "Feather Mantle",
+          "value" : 29.72096233592618
+        }, {
+          "key" : "Adaman Vest",
+          "value" : 29.686918156808005
+        }, {
+          "key" : "Abandon",
+          "value" : 29.681856399921568
+        }, {
+          "key" : "Echo Grass",
+          "value" : 29.587824796694406
+        }, {
+          "key" : "Lancer",
+          "value" : 29.5401273059106
+        }, {
+          "key" : "Scorpion Tail-Item",
+          "value" : 29.43059468585839
+        }, {
+          "key" : "Chaos Blade",
+          "value" : 29.384679013209713
+        }, {
+          "key" : "Papyrus Codex-Item",
+          "value" : 29.3530711680404
+        }, {
+          "key" : "Wild Boar",
+          "value" : 29.290216606213725
+        }, {
+          "key" : "Cursed Ring",
+          "value" : 29.26320739254108
+        }, {
+          "key" : "Poison Bow",
+          "value" : 29.251635046122026
+        }, {
+          "key" : "Assassin Dagger",
+          "value" : 29.23460115976194
+        }, {
+          "key" : "Tiamat",
+          "value" : 28.91170907939925
+        }, {
+          "key" : "Time Mage",
+          "value" : 28.908123174757772
+        }, {
+          "key" : "Catch",
+          "value" : 28.778878160703435
+        }, {
+          "key" : "Black Ink",
+          "value" : 28.744126801045343
+        }, {
+          "key" : "Persia",
+          "value" : 28.630327871840354
+        }, {
+          "key" : "Level Jump6",
+          "value" : 28.510506488919894
+        }, {
+          "key" : "Bolt",
+          "value" : 28.398311395975618
+        }, {
+          "key" : "Item",
+          "value" : 28.383735594531668
+        }, {
+          "key" : "Last Song",
+          "value" : 28.215259082612032
+        }, {
+          "key" : "Teleport",
+          "value" : 27.771827243306767
+        }, {
+          "key" : "Ragnarok",
+          "value" : 27.756291429693867
+        }, {
+          "key" : "Hi-Ether",
+          "value" : 27.517282991804194
+        }, {
+          "key" : "Escutcheon-Item",
+          "value" : 27.51555931766991
+        }, {
+          "key" : "Toot",
+          "value" : 27.443561791589445
+        }, {
+          "key" : "Hero Shield",
+          "value" : 27.35831225508584
+        }, {
+          "key" : "Dispose",
+          "value" : 27.104640983925044
+        }, {
+          "key" : "Local Quake",
+          "value" : 27.101059791182035
+        }, {
+          "key" : "Nanoflare",
+          "value" : 26.91630077764855
+        }, {
+          "key" : "Charge",
+          "value" : 26.39152324809597
+        }, {
+          "key" : "Blade Grasp",
+          "value" : 26.310992339931573
+        }, {
+          "key" : "Spell Absorb",
+          "value" : 25.803372203910634
+        }, {
+          "key" : "Demon Skill",
+          "value" : 25.778412138202256
+        }, {
+          "key" : "Speed Save",
+          "value" : 25.75110486200729
+        }, {
+          "key" : "Sleep Sword",
+          "value" : 25.635382013028096
+        }, {
+          "key" : "Bizen Boat",
+          "value" : 25.438317850442772
+        }, {
+          "key" : "Salty Rage",
+          "value" : 25.41850278139841
+        }, {
+          "key" : "Flare 2",
+          "value" : 25.38310578162546
+        }, {
+          "key" : "Quicksand",
+          "value" : 25.306788026458584
+        }, {
+          "key" : "Dancer",
+          "value" : 24.93698858974588
+        }, {
+          "key" : "Blue Dragon",
+          "value" : 24.8999323190775
+        }, {
+          "key" : "Hurricane",
+          "value" : 24.832261876505523
+        }, {
+          "key" : "Diamond Armlet",
+          "value" : 24.66186006897787
+        }, {
+          "key" : "Roc Skill",
+          "value" : 24.439610519314225
+        }, {
+          "key" : "Repair",
+          "value" : 24.354575958665492
+        }, {
+          "key" : "Cockatrice",
+          "value" : 24.341172013411683
+        }, {
+          "key" : "Bestiary",
+          "value" : 24.269858427531542
+        }, {
+          "key" : "Steal Heart",
+          "value" : 24.219308874220303
+        }, {
+          "key" : "MP Restore",
+          "value" : 24.19785653281563
+        }, {
+          "key" : "Rubber Costume",
+          "value" : 24.032961033303668
+        }, {
+          "key" : "Vine Skill",
+          "value" : 23.968142572123675
+        }, {
+          "key" : "Glutton Skill",
+          "value" : 23.88241575002429
+        }, {
+          "key" : "Plague",
+          "value" : 23.702707014157465
+        }, {
+          "key" : "Demi 2",
+          "value" : 23.381050849698248
+        }, {
+          "key" : "Solution",
+          "value" : 23.324268039056882
+        }, {
+          "key" : "Aqua Soul",
+          "value" : 23.301735639466326
+        }, {
+          "key" : "Floating Eye",
+          "value" : 23.286784746919885
+        }, {
+          "key" : "Morning Star-Item",
+          "value" : 23.156458865462206
+        }, {
+          "key" : "Blue Magic",
+          "value" : 23.145196056771045
+        }, {
+          "key" : "Masamune-Item",
+          "value" : 23.137060100410977
+        }, {
+          "key" : "Poison Rod-Item",
+          "value" : 23.06522773834506
+        }, {
+          "key" : "Assassin Dagger-Item",
+          "value" : 22.994424424112125
+        }, {
+          "key" : "Nameless Dance",
+          "value" : 22.974098855469983
+        }, {
+          "key" : "Storm Around",
+          "value" : 22.940846641888136
+        }, {
+          "key" : "Flame Shield",
+          "value" : 22.86261578292602
+        }, {
+          "key" : "Platinum Shield",
+          "value" : 22.699910118769296
+        }, {
+          "key" : "Slow 2",
+          "value" : 22.539531695617754
+        }, {
+          "key" : "Sasuke Knife",
+          "value" : 22.36687693326489
+        }, {
+          "key" : "Teleport 2",
+          "value" : 22.225959171476973
+        }, {
+          "key" : "Ghoul",
+          "value" : 22.161913660866915
+        }, {
+          "key" : "Circlet",
+          "value" : 22.07286555075074
+        }, {
+          "key" : "Ether",
+          "value" : 21.91994299401734
+        }, {
+          "key" : "Sylph",
+          "value" : 21.861290544861276
+        }, {
+          "key" : "Mage Masher-Item",
+          "value" : 21.82772025209231
+        }, {
+          "key" : "Kikuichimoji-Item",
+          "value" : 21.771632217473822
+        }, {
+          "key" : "Counter",
+          "value" : 21.681126113701833
+        }, {
+          "key" : "Static Shock",
+          "value" : 21.45606812673344
+        }, {
+          "key" : "Flare",
+          "value" : 21.379673192687665
+        }, {
+          "key" : "Clothes",
+          "value" : 21.279378875342847
+        }, {
+          "key" : "Rune Axe-Item",
+          "value" : 20.532413154759933
+        }, {
+          "key" : "Waterwalking",
+          "value" : 20.485401947077776
+        }, {
+          "key" : "Rubber Shoes",
+          "value" : 20.465769387128784
+        }, {
+          "key" : "Flame Whip",
+          "value" : 20.40591104030709
+        }, {
+          "key" : "Silence Song",
+          "value" : 20.045634650685308
+        }, {
+          "key" : "Carbunkle",
+          "value" : 19.88796615809966
+        }, {
+          "key" : "Yin Yang Magic",
+          "value" : 19.809033774007588
+        }, {
+          "key" : "Sand Storm",
+          "value" : 19.473143962711713
+        }, {
+          "key" : "Muramasa-Item",
+          "value" : 19.388650547833187
+        }, {
+          "key" : "Eye Drop",
+          "value" : 19.381801246882745
+        }, {
+          "key" : "Black Goblin",
+          "value" : 19.329650679143352
+        }, {
+          "key" : "Leviathan",
+          "value" : 19.077460570100733
+        }, {
+          "key" : "Shiva",
+          "value" : 18.902292235904326
+        }, {
+          "key" : "Jade Armlet",
+          "value" : 18.818294254637458
+        }, {
+          "key" : "Giant Axe-Item",
+          "value" : 18.568977623174575
+        }, {
+          "key" : "Cute Bag",
+          "value" : 18.308041207993075
+        }, {
+          "key" : "Tentacle",
+          "value" : 18.22547510017979
+        }, {
+          "key" : "Platinum Sword-Item",
+          "value" : 17.928104740182594
+        }, {
+          "key" : "Ninja Edge-Item",
+          "value" : 17.81749768717339
+        }, {
+          "key" : "Blaze Gun",
+          "value" : 17.5149296313853
+        }, {
+          "key" : "Cheer Song",
+          "value" : 16.832366746512474
+        }, {
+          "key" : "Main Gauche",
+          "value" : 16.70627191958297
+        }, {
+          "key" : "All-Ultima",
+          "value" : 16.70135715068628
+        }, {
+          "key" : "Dark Holy",
+          "value" : 16.26929825336444
+        }, {
+          "key" : "Wizard Robe",
+          "value" : 16.21264309084275
+        }, {
+          "key" : "Asura",
+          "value" : 16.04005153107295
+        }, {
+          "key" : "Mimic Daravon",
+          "value" : 15.902283298286157
+        }, {
+          "key" : "Frozen Cry",
+          "value" : 15.76920836990563
+        }, {
+          "key" : "Scratch Up",
+          "value" : 15.62183992777858
+        }, {
+          "key" : "Red Shoes",
+          "value" : 15.015163610118964
+        }, {
+          "key" : "Small Bomb",
+          "value" : 14.983967067724569
+        }, {
+          "key" : "Hydra Pit",
+          "value" : 14.810438073251165
+        }, {
+          "key" : "Mythril Vest",
+          "value" : 14.639013815023239
+        }, {
+          "key" : "Earth Slash",
+          "value" : 14.524194818310399
+        }, {
+          "key" : "Shine Lover",
+          "value" : 14.42693855161904
+        }, {
+          "key" : "Space Storage",
+          "value" : 14.365278068818444
+        }, {
+          "key" : "Goblin",
+          "value" : 14.279698287751952
+        }, {
+          "key" : "Cure 3",
+          "value" : 14.155996644391145
+        }, {
+          "key" : "Bad Breath",
+          "value" : 14.05552717930415
+        }, {
+          "key" : "X-Potion",
+          "value" : 13.841028103877917
+        }, {
+          "key" : "Bio Venenum",
+          "value" : 13.840723745616145
+        }, {
+          "key" : "Light Robe",
+          "value" : 13.801062823419386
+        }, {
+          "key" : "Knight",
+          "value" : 13.67702402651021
+        }, {
+          "key" : "Bio Silentium",
+          "value" : 13.50404671558395
+        }, {
+          "key" : "Battle Folio-Item",
+          "value" : 13.3608218680642
+        }, {
+          "key" : "Bow Gun-Item",
+          "value" : 13.317928951280866
+        }, {
+          "key" : "Flash Hat",
+          "value" : 13.19385887103477
+        }, {
+          "key" : "Frog",
+          "value" : 13.179346143600368
+        }, {
+          "key" : "Genji Armor",
+          "value" : 12.723834760854913
+        }, {
+          "key" : "Night Killer",
+          "value" : 12.710908036989077
+        }, {
+          "key" : "Chirijiraden-Item",
+          "value" : 12.708509199238938
+        }, {
+          "key" : "Quick",
+          "value" : 12.699394552877886
+        }, {
+          "key" : "Barette",
+          "value" : 12.6563435089163
+        }, {
+          "key" : "Mace of Zeus",
+          "value" : 12.496358467310397
+        }, {
+          "key" : "Feather Bomb",
+          "value" : 12.456337628261071
+        }, {
+          "key" : "Madlemgen",
+          "value" : 12.125968505897378
+        }, {
+          "key" : "Hunting Bow-Item",
+          "value" : 12.04179529887799
+        }, {
+          "key" : "Archer",
+          "value" : 11.781261798649211
+        }, {
+          "key" : "Rehabilitate",
+          "value" : 11.479094838956271
+        }, {
+          "key" : "Gusty Wind",
+          "value" : 11.401885430748916
+        }, {
+          "key" : "Diamond Blade",
+          "value" : 11.286503911058766
+        }, {
+          "key" : "Mythril Gun",
+          "value" : 11.208463449023775
+        }, {
+          "key" : "Bio Mortem",
+          "value" : 11.186739123629508
+        }, {
+          "key" : "Academic Tome-Item",
+          "value" : 11.141543110341424
+        }, {
+          "key" : "Regen",
+          "value" : 11.094102232655878
+        }, {
+          "key" : "Slasher-Item",
+          "value" : 11.015904891348939
+        }, {
+          "key" : "Headgear",
+          "value" : 10.986009634960824
+        }, {
+          "key" : "Triple Attack",
+          "value" : 10.953840400824
+        }, {
+          "key" : "Ice Shield-Item",
+          "value" : 10.922788443976595
+        }, {
+          "key" : "Murasame",
+          "value" : 10.874205763921573
+        }, {
+          "key" : "Coral Sword",
+          "value" : 10.613959064792244
+        }, {
+          "key" : "Despair 2",
+          "value" : 10.486646685371802
+        }, {
+          "key" : "Rune Axe",
+          "value" : 10.409576725876002
+        }, {
+          "key" : "Steal Accessory",
+          "value" : 10.347927066851403
+        }, {
+          "key" : "Steal Helmet",
+          "value" : 10.09240662206502
+        }, {
+          "key" : "Wind Soul",
+          "value" : 10.072593314683964
+        }, {
+          "key" : "Explosive",
+          "value" : 9.993898857335704
+        }, {
+          "key" : "Ice 2",
+          "value" : 9.912552010833808
+        }, {
+          "key" : "Squidraken",
+          "value" : 9.82001234568296
+        }, {
+          "key" : "Remedy",
+          "value" : 9.713682184190453
+        }, {
+          "key" : "PA Save",
+          "value" : 9.695635423434823
+        }, {
+          "key" : "White Robe",
+          "value" : 9.660176261596643
+        }, {
+          "key" : "Gold Shield",
+          "value" : 9.65739614819261
+        }, {
+          "key" : "Move+2",
+          "value" : 9.416765369645297
+        }, {
+          "key" : "Leather Hat",
+          "value" : 9.39703902493937
+        }, {
+          "key" : "Carabini Mail",
+          "value" : 9.373906617381444
+        }, {
+          "key" : "Steal Status",
+          "value" : 9.260224340317368
+        }, {
+          "key" : "Turn Punch",
+          "value" : 9.20411520130332
+        }, {
+          "key" : "Life Drain",
+          "value" : 9.10688376689932
+        }, {
+          "key" : "Farm Skill",
+          "value" : 9.060260332011328
+        }, {
+          "key" : "Poison",
+          "value" : 9.04381928340886
+        }, {
+          "key" : "Night Killer-Item",
+          "value" : 8.827233139408374
+        }, {
+          "key" : "N-Kai Armlet",
+          "value" : 8.688701297580915
+        }, {
+          "key" : "Orichalcum",
+          "value" : 8.521718247211274
+        }, {
+          "key" : "Magic Barrier",
+          "value" : 8.088519700617425
+        }, {
+          "key" : "Labyrinth Skill",
+          "value" : 7.849921834338969
+        }, {
+          "key" : "Whale Whisker",
+          "value" : 7.787810945760077
+        }, {
+          "key" : "Fury",
+          "value" : 7.680681638453491
+        }, {
+          "key" : "Mythril Bow",
+          "value" : 7.6002836669421985
+        }, {
+          "key" : "Archaic Demon",
+          "value" : 7.385273761272915
+        }, {
+          "key" : "Beast Skill",
+          "value" : 7.037060031993159
+        }, {
+          "key" : "Platinum Sword",
+          "value" : 6.976296235542112
+        }, {
+          "key" : "Bolt 3",
+          "value" : 6.69466738736697
+        }, {
+          "key" : "Wizard Outfit",
+          "value" : 6.205160923017283
+        }, {
+          "key" : "Head Break",
+          "value" : 6.144175473874325
+        }, {
+          "key" : "Dagger-Item",
+          "value" : 6.133195103376199
+        }, {
+          "key" : "Dictionary",
+          "value" : 6.0776749905363525
+        }, {
+          "key" : "Holy Lance-Item",
+          "value" : 6.05353594465986
+        }, {
+          "key" : "Stabilize Time",
+          "value" : 6.05109328862623
+        }, {
+          "key" : "Cheer Up",
+          "value" : 5.835435542573975
+        }, {
+          "key" : "Throw Spirit",
+          "value" : 5.810501537319713
+        }, {
+          "key" : "Curse Skill",
+          "value" : 5.7422029517183
+        }, {
+          "key" : "Aegis Shield",
+          "value" : 5.741950561491271
+        }, {
+          "key" : "Doom",
+          "value" : 5.613447637115543
+        }, {
+          "key" : "Bird Skill",
+          "value" : 5.4445911356092775
+        }, {
+          "key" : "Papyrus Codex",
+          "value" : 5.436322825248663
+        }, {
+          "key" : "Haste",
+          "value" : 5.392158889049958
+        }, {
+          "key" : "Blastar Punch",
+          "value" : 5.366024600826802
+        }, {
+          "key" : "Ice Brand",
+          "value" : 5.0789071074379795
+        }, {
+          "key" : "Triple Flame",
+          "value" : 5.0768910128604965
+        }, {
+          "key" : "Koutetsu",
+          "value" : 5.0261487973917385
+        }, {
+          "key" : "Move-MP Up",
+          "value" : 4.786762367893626
+        }, {
+          "key" : "Red Panther",
+          "value" : 4.655043447735574
+        }, {
+          "key" : "Tickle",
+          "value" : 4.650013604314484
+        }, {
+          "key" : "Energize",
+          "value" : 4.596223030976576
+        }, {
+          "key" : "Disease Skill",
+          "value" : 4.498128761426301
+        }, {
+          "key" : "Samurai",
+          "value" : 4.483138748769089
+        }, {
+          "key" : "Zorlin Shape",
+          "value" : 4.463596408585646
+        }, {
+          "key" : "Skeleton",
+          "value" : 4.316580332814313
+        }, {
+          "key" : "Diamond Sword",
+          "value" : 3.959878587419974
+        }, {
+          "key" : "Ramia Harp-Item",
+          "value" : 3.873183833862026
+        }, {
+          "key" : "Sage Staff",
+          "value" : 3.6579793952591144
+        }, {
+          "key" : "Blow Fire",
+          "value" : 3.6457945781702916
+        }, {
+          "key" : "Leaf Dance",
+          "value" : 3.626293095533628
+        }, {
+          "key" : "Linen Cuirass",
+          "value" : 3.469031258714761
+        }, {
+          "key" : "Short Edge-Item",
+          "value" : 3.432741086029545
+        }, {
+          "key" : "Wizard",
+          "value" : 3.3644349684234798
+        }, {
+          "key" : "Stop",
+          "value" : 3.337083301460231
+        }, {
+          "key" : "Tentacle Skill",
+          "value" : 3.2880785984792493
+        }, {
+          "key" : "Bronze Helmet",
+          "value" : 3.196240438197606
+        }, {
+          "key" : "Revive",
+          "value" : 3.0600514726494943
+        }, {
+          "key" : "Magic Gauntlet",
+          "value" : 3.0516488513002926
+        }, {
+          "key" : "Bull Demon",
+          "value" : 2.9009223631887515
+        }, {
+          "key" : "Flail-Item",
+          "value" : 2.891843380474546
+        }, {
+          "key" : "Gastrafitis-Item",
+          "value" : 2.8696920073101984
+        }, {
+          "key" : "Raise",
+          "value" : 2.843535065576186
+        }, {
+          "key" : "Perseus Bow",
+          "value" : 2.6444461003956365
+        }, {
+          "key" : "Ice Soul",
+          "value" : 2.561609253891961
+        }, {
+          "key" : "Cure 2",
+          "value" : 2.5139733545061826
+        }, {
+          "key" : "Bio Ranae",
+          "value" : 2.1400413330487256
+        }, {
+          "key" : "Wyvern",
+          "value" : 2.047298409438969
+        }, {
+          "key" : "Bio Oleum",
+          "value" : 1.8254248617739166
+        }, {
+          "key" : "Persuade",
+          "value" : 1.7759170309963768
+        }, {
+          "key" : "Mindflayer",
+          "value" : 1.6090807180904387
+        }, {
+          "key" : "Gungnir",
+          "value" : 1.5699775965315577
+        }, {
+          "key" : "Rainbow Staff-Item",
+          "value" : 1.3483719366732094
+        }, {
+          "key" : "Chocobo",
+          "value" : 1.3163470524946375
+        }, {
+          "key" : "Stasis Sword",
+          "value" : 1.188206576026496
+        }, {
+          "key" : "Charge+4",
+          "value" : 0.936731849338146
+        }, {
+          "key" : "Dark Whisper",
+          "value" : 0.8370806131787201
+        }, {
+          "key" : "Blast Gun",
+          "value" : 0.8280506763322482
+        }, {
+          "key" : "Triangle Hat",
+          "value" : 0.7514241184276349
+        }, {
+          "key" : "Rune Blade-Item",
+          "value" : 0.5925833547653192
+        }, {
+          "key" : "Priest",
+          "value" : 0.5896767233060873
+        }, {
+          "key" : "Lava Walking",
+          "value" : 0.443369770806612
+        }, {
+          "key" : "Leg Aim",
+          "value" : 0.40489158677532444
+        }, {
+          "key" : "Dash",
+          "value" : 0.35780139980657877
+        }, {
+          "key" : "Cat Kick",
+          "value" : 0.2531334247051986
+        } ]
+      }
+    }
+  }
+}

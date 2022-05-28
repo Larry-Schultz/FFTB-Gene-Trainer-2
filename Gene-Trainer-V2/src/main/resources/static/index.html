@@ -47,6 +47,9 @@ span {
 					<input id="populationTextbox" type="text"></input>
 					<label for="tournamentsTextbox">Tournaments</label>
 					<input id="tournamentsTextbox" type="text"></input>
+					<label for="durationTextbox">Hours to Run</label>
+					<input id="durationTextbox" type="text"></input>
+					
 				</div>
 				<button id="startButton" class="btn btn-default" type="submit">Send</button>
 				<p id="startText"></p>
@@ -58,9 +61,6 @@ span {
 				<b>Tournaments </b><span id="tournaments"></span>
 				<b>Population </b><span id="population"></span>
 				<b>Thread </b><span id="threads"></span>
-				<b>Max Gene Level </b><span id="maxGeneLevel"></span>
-				<b>Min Gene Level </b><span id="minGeneLevel"></span>
-				<b>Percentage Threshold </b><span id="threshold"></span><span id="thresholdPercentageSign">%</span>
 			</p>
 			<p id="statsLine">
 				<b>CPU Usage:</b> <span id="cpuUsageText"></span> <b>Ram Usage:</b>
@@ -68,15 +68,11 @@ span {
 					id="chainCountText"></span>
 			</p>
 			<p id="scoreLine">
-				<b>Score: </b><span id="score"></span> <b> Correct Matches: </b> <span
-					id="correctMatches"></span> <b> Matches: </b><span id="matchCount"></span>
-				<b> Percentage</b> <span id="percentage"></span><span id="percentageSign">%</span>
+				<b>Score: </b><span id="score"></span> 
+				<b> Matches: </b><span id="matchCount"></span>
 			</p>
 			<p id="geneLine">
-				<b>Max Level: </b><span id="maxLevel"></span>
-				<b> Max Level Genes: </b><span id="maxLevelGeneCount"></span>
-				<b> Min Level: </b><span id="minLevel"></span>
-				<b> Min Level Genes: </b><span id="minLevelGeneCount"></span>
+				<b> Total Unit Genes: </b><span id="totalUnitGenes"></span>
 				<b> Total Genes: </b><span id="totalGenes"></span>
 				<b> Time: </b><span id="highScoreTime"></span>
 			</p>

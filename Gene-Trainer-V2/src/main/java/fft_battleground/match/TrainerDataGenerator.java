@@ -40,6 +40,7 @@ import fft_battleground.match.model.MatchPot;
 import fft_battleground.match.model.TeamAttributes;
 import fft_battleground.match.model.TeamBetData;
 import fft_battleground.model.BattleGroundTeam;
+import fft_battleground.tournament.TeamAttributeCollector;
 import fft_battleground.tournament.model.Team;
 import fft_battleground.tournament.model.TeamBet;
 import fft_battleground.tournament.model.Tournament;
@@ -59,6 +60,7 @@ public class TrainerDataGenerator {
 	private Map<String, Double> playerBetWinRatios;
 	private Map<String, Double> playerFightWinRatios;
 	private CompleteBotGenome genome;
+	private TeamAttributeCollector collector;
 	
 	//cache
 	private Map<TeamAttributeCacheKey, TeamAttributes> teamAttributesCache;
@@ -75,8 +77,9 @@ public class TrainerDataGenerator {
 	private List<Match> matches;
 	
 	public TrainerDataGenerator(CompleteBotGenome genome, List<MatchCacheEntry> matchCacheData, Map<String, Double> playerBetWinRatios, 
-			Map<String, Double> playerFightWinRatios, Set<Long> badTournaments, List<String> subscribers, List<String> bots) {
+			Map<String, Double> playerFightWinRatios, Set<Long> badTournaments, List<String> subscribers, List<String> bots, TeamAttributeCollector collector) {
 		this.genome = genome;
+		this.collector = collector;
 		this.matchCacheData = matchCacheData;
 		this.playerBetWinRatios = playerBetWinRatios;
 		this.playerFightWinRatios = playerFightWinRatios;
@@ -122,16 +125,13 @@ public class TrainerDataGenerator {
 	}
 	
 	Match gatherNecessaryDataAndGenerateMatchData(Tournament currentTournament, MatchPairing matchPairing, List<BotBetData> botBetData, 
-			DumpData dumpData, int matchNumber) throws NoSuchElementException {
+			int matchNumber) throws NoSuchElementException {
 		long tournamentId = currentTournament.getID();
 		int map = matchPairing.mapNumber();
 		Team leftTeam = currentTournament.getTeams().getTeamByBattleGroundTeam(matchPairing.leftTeam);
 		Team rightTeam = currentTournament.getTeams().getTeamByBattleGroundTeam(matchPairing.rightTeam);
 		TeamBet leftTeamPot = currentTournament.getPots().get(matchNumber).getLeft();
 		TeamBet rightTeamPot = currentTournament.getPots().get(matchNumber).getRight();
-		Integer leftTeamValue = dumpData.getTournamentTeamValues().getTeamByBattleGroundTeam(matchPairing.leftTeam);
-		Integer rightTeamValue = dumpData.getTournamentTeamValues().getTeamByBattleGroundTeam(matchPairing.rightTeam);
-		Integer champStreak = dumpData.getChampStreak();
 		BattleGroundTeam winner = BattleGroundTeam.parse(currentTournament.getWinners().get(matchNumber));
 		
 		BotBetData estimatedBetData = null;
@@ -143,15 +143,15 @@ public class TrainerDataGenerator {
 			log.warn("Missing bot bet data for tournament {} left team {} right team {}", currentTournament.getID(), matchPairing.leftTeam, matchPairing.rightTeam, e);
 			throw e;
 		}
-		Match result = this.generateMatchData(map, tournamentId, leftTeam, leftTeamPot, leftTeamValue, rightTeam, rightTeamPot, rightTeamValue, estimatedBetData, champStreak, winner);
+		Match result = this.generateMatchData(map, tournamentId, leftTeam, leftTeamPot, rightTeam, rightTeamPot, estimatedBetData, winner);
 		return result;
 	}
 	
-	Match generateMatchData(int map, long tournamentId, Team leftTeam, TeamBet leftTeamPot, Integer leftTeamValue, Team rightTeam, TeamBet rightTeamPot, Integer rightTeamValue, 
-			BotBetData estimatedBetData, Integer champStreak, BattleGroundTeam winner) {
+	Match generateMatchData(int map, long tournamentId, Team leftTeam, TeamBet leftTeamPot, Team rightTeam, TeamBet rightTeamPot, 
+			BotBetData estimatedBetData, BattleGroundTeam winner) {
 		
-		TeamAttributes leftTeamAttributes = this.getAttributesForTeam(tournamentId, leftTeamValue, leftTeam, champStreak);
-		TeamAttributes rightTeamAttributes = this.getAttributesForTeam(tournamentId, rightTeamValue, rightTeam, champStreak);
+		TeamAttributes leftTeamAttributes = this.getAttributesForTeam(tournamentId, leftTeam);
+		TeamAttributes rightTeamAttributes = this.getAttributesForTeam(tournamentId, rightTeam);
 		
 		BattleGroundTeam leftBattleGroundTeam = leftTeam.getTeam();
 		BattleGroundTeam rightBattleGroundTeam = rightTeam.getTeam();
@@ -216,19 +216,18 @@ public class TrainerDataGenerator {
 		return result;
 	}
 	
-	TeamAttributes getAttributesForTeam(long tournamentId, int teamValue, Team team, Integer champStreak) {
+	TeamAttributes getAttributesForTeam(long tournamentId, Team team) {
 		TeamAttributeCacheKey key = new TeamAttributeCacheKey(tournamentId, team.getTeam());
 		TeamAttributes teamAttributes = this.teamAttributesCache.containsKey(key) ? this.teamAttributesCache.get(key) : 
-			this.getTeamAttributes(team, this.genome, teamValue, champStreak);
+			this.getTeamAttributes(team, this.genome);
 		return teamAttributes;
 	}
 	
-	public TeamAttributes getTeamAttributes(Team team, CompleteBotGenome completeBotGenome, int teamValue, Integer champStreak) {
+	public TeamAttributes getTeamAttributes(Team team, CompleteBotGenome completeBotGenome) {
 		BattleGroundTeam battleGroundTeam = team.getTeam();
 		if(battleGroundTeam == null) {
 			battleGroundTeam = team.getPalettes().getPalettes().getLeft();
 		}
-		Integer champStreakValue = team.getTeam() == BattleGroundTeam.CHAMPION && champStreak != null ? champStreak: null;
 		double[] fightRatios = team.unitPlayerNames().stream().map(player -> {
 			String cleanedName = StringUtils.lowerCase(player);
 			String closestPlayerName = this.findClosestMatchingName(cleanedName, this.playerNames);
@@ -240,7 +239,8 @@ public class TrainerDataGenerator {
 				return this.playerFightWinRatioList.get(this.playerFightWinRatiosMap.get(closestPlayerName));
 			}
 		}).filter(Objects::nonNull).mapToDouble(Double::doubleValue).toArray();
-		return new TeamAttributes(battleGroundTeam, team.attributes(completeBotGenome), team.braves(), team.faiths(), team.raidBossCount(), teamValue, fightRatios, champStreakValue);
+		return new TeamAttributes(battleGroundTeam, this.collector.attributes(team, completeBotGenome), team.braves(), team.faiths(), team.raidBossCount(),
+				fightRatios);
 	}
 	
 	MatchPairing getMatchByTournamentAndNumber(Tournament tournament, int matchNumber) {
@@ -417,9 +417,8 @@ public class TrainerDataGenerator {
 						Tournament currentTournament = currentTournamentData.getTournament();
 						MatchPairing matchPairing = generatorRef.getMatchByTournamentAndNumber(currentTournament, matchNumber);
 						List<BotBetData> botBetData = currentTournamentData.getBotBetData();
-						DumpData dumpData = currentTournamentData.getDumpData();
 		
-						match = generatorRef.gatherNecessaryDataAndGenerateMatchData(currentTournament, matchPairing, botBetData, dumpData, matchNumber);
+						match = generatorRef.gatherNecessaryDataAndGenerateMatchData(currentTournament, matchPairing, botBetData, matchNumber);
 						
 					}
 				}

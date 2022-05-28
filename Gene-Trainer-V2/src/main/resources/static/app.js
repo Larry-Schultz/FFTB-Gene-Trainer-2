@@ -1,8 +1,8 @@
-var stompClient = null;
-var sentencesStompClient = null;
-var channelsStompClient = null;
-var statsStompclient = null;
-var highScore = null;
+let stompClient = null;
+let sentencesStompClient = null;
+let channelsStompClient = null;
+let statsStompclient = null;
+let highScore = null;
 
 function setConnected(connected) {
     $("#connect").prop("disabled", connected);
@@ -18,16 +18,19 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('/gs-guide-websocket');
+    const socket = new SockJS('/gs-guide-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
         //console.log('Connected: ' + frame);
         stompClient.subscribe('/chain/stats', function (chatMessages) {
-			var serverData = JSON.parse(chatMessages.body);
-            showGreeting(serverData);
+			const serverData = JSON.parse(chatMessages.body);
+            logHighScoreData(serverData);
 			showStats(serverData);
         });
+        stompClient.subscribe('/chain/attributes', function (chatMessage) {
+			logAttribute(chatMessage.body);
+		});
     });
 
 }
@@ -40,43 +43,45 @@ function disconnect() {
     console.log("Disconnected");
 }
 
-function showGreeting(message) {
-	var generationString = `generation ${message.generation}`;
-	var timeStatement = '[' + getFormattedTime() + ']';
-	$("#greetings").prepend("<li>" + timeStatement + '  ' + generationString + "</li>");
+function logHighScoreData(message) {
+	const generation = message.generation.toLocaleString();
+	const generationString = `generation ${generation}`;
+	const timeStatement = '[' + getFormattedTime() + ']';
 	
-	if(!highScore || message.highScore.numberOfMatchesCorrect > highScore.numberOfMatchesCorrect) {
-		highScore = message.highScore;
-		var scoreStatement = `Score for this bot is ${message.highScore.highScore}.`;
-		var matchesStatement = `${message.highScore.numberOfMatchesCorrect} out of ${message.highScore.numberOfMatches} matches were guessed correctly (${message.highScore.percentage}%).`;
-		var maxLevelStatement = `Max level ${message.highScore.maxLevel} with ${message.highScore.numberAtMaxLevel} genes of this level.`;
-		var minLevelStatement = `Min level ${message.highScore.minLevel} with ${message.highScore.numberAtMinLevel} genes of this level.`;
-		var totalGenesStatement = `${message.highScore.numberOfGenes} total genes`;
-		var logStatement = scoreStatement + ' ' + matchesStatement + ' ' + maxLevelStatement + ' ' + minLevelStatement + ' ' + totalGenesStatement;
-		
-		$("#greetings").prepend("<li>" + timeStatement + '  ' + logStatement + "</li>");
-		
+	const formattedHighScoreValue = message.data.highScore.toLocaleString();
+	const formattedPerfectScore = message.data.perfectScore.toLocaleString();
+	const scoreStatement = `Score for this bot is ${formattedHighScoreValue}.  Perfect Score: ${formattedPerfectScore}`;
+	const botLeaderboardPlacement = `Botland position: ${message.data.botLeaderboardPlacement}`;
+	const logStatement = scoreStatement + ' ' + botLeaderboardPlacement;
+	
+	$("#greetings").prepend("<li>" + timeStatement + '  ' + generationString + ' ' + logStatement + "</li>");
+	
+	if(!highScore || message.data.highScore > highScore.highScore) {
+		highScore = message.data;
 		setScoreStats(highScore);
 	}
 	
 	
-	var greetingLength = $("#greetings").children().length;
+	const greetingLength = $("#greetings").children().length;
 	if(greetingLength > 50) {
 		$("#greetings").children().slice(50, greetingLength).remove();
 	};
 }
 
+function logAttribute(message) {
+	$("#greetings").prepend("<li>" + message + "</li>");
+	const greetingLength = $("#greetings").children().length;
+	if (greetingLength > 50) {
+		$("#greetings").children().slice(50, greetingLength).remove();
+	};
+}
+
 function setScoreStats(highScoreObj) {
-	$('#score').text(highScoreObj.highScore);
-	$('#correctMatches').text(highScoreObj.numberOfMatchesCorrect);
-	$('#matchCount').text(highScoreObj.numberOfMatches);
-	$('#percentage').text(highScoreObj.percentage);
+	$('#score').text(highScoreObj.highScore.toLocaleString());
+	$('#matchCount').text(highScoreObj.matchesAnalyzed.toLocaleString());
 	
-	$('#maxLevel').text(highScoreObj.maxLevel);
-	$('#maxLevelGeneCount').text(highScoreObj.numberAtMaxLevel);
-	$('#minLevel').text(highScoreObj.minLevel);
-	$('#minLevelGeneCount').text(highScoreObj.numberAtMinLevel);
-	$('#totalGenes').text(highScoreObj.numberOfGenes);
+	$('#totalGenes').text(highScoreObj.numberOfTotalGenes.toLocaleString());
+	$('#totalUnitGenes').text(highScoreObj.numberOfUnitGenes.toLocaleString());
 	$('#highScoreTime').text(highScoreObj.updateDate);
 }
 
@@ -89,13 +94,14 @@ function getFormattedTime() {
 function showStats(message) {
 	$('#cpuUsageText').text(message.cpuUsage);
 	$('#ramUsageText').text(message.ramUsage);
-	$('#chainCountText').text(message.generation);
+	$('#chainCountText').text(message.generation.toLocaleString());
 }
 
 function start() {
 	const population = $('#populationTextbox').val();
 	const tournaments = $('#tournamentsTextbox').val();
-	const url = '/start?population=' + population + '&tournaments=' + tournaments;
+	const duration = $('#durationTextbox').val();
+	const url = '/start?population=' + population + '&tournaments=' + tournaments + '&duration=' + duration;
 	$.getJSON(url, function(data) {
 		var geneStatData = data
 		$('#tournaments').text(geneStatData.tournamentsToAnalyze);

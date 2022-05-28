@@ -59,7 +59,8 @@ permits AbilityGeneAttributes, BraveFaithAttributes, ClassGeneAttributes, ItemGe
 	@JsonGetter("geneAttributes")
 	public GeneAttributeOutput getGeneAttributeStringMap() {
 		Map<String, Double> geneAttributeNameValueMap = this.geneAttributes.keySet().stream()
-				.filter(Objects::nonNull).filter(key -> this.idNameMap.get(key) != null)
+				.filter(Objects::nonNull)
+				.filter(key -> this.idNameMap.get(key) != null)
 				.filter(key -> this.geneAttributes.get(key) != null)
 				.collect(Collectors.toMap(this.idNameMap::get, this.geneAttributes::get));
 		Comparator<GenericPairing<String, Double>> pairSorting = Comparator.comparing(GenericPairing<String, Double>::getRight).reversed();

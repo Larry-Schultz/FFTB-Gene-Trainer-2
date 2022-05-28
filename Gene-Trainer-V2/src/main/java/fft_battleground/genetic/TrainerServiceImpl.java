@@ -49,10 +49,7 @@ public class TrainerServiceImpl implements TrainerService {
 	private SimulatorFactory simulatorFactory;
 	
 	@Autowired
-	private GenomeFileManager genomeFileManager;
-	
-	@Autowired
-    private SimpMessagingTemplate template;
+	private GenomeManager genomeFileManager;
 
 	public void test() {
 		try {
@@ -68,11 +65,11 @@ public class TrainerServiceImpl implements TrainerService {
 	public CompleteBotGenome trainBot(int agentCount, long duration, int tournamentCount)
 			throws TournamentApiException, ViewerException, DumpException, CacheException 
 	{
-		Trainer trainer = this.buildTrainer(agentCount, duration, TOURNAMENT_COUNT);
+		Trainer trainer = this.buildTrainer(agentCount, duration, tournamentCount);
 		CompleteBotGenome genome = trainer.train();
 
 		return genome;
-	}
+	}                           
 	
 	public Trainer buildTrainer(int agentCount, long duration, int tournamentCount) 
 			throws TournamentApiException, ViewerException, DumpException, CacheException 
@@ -83,24 +80,13 @@ public class TrainerServiceImpl implements TrainerService {
 		Simulator simulator = this.simulatorFactory.createSimulatorFromDataset(genome, data);
 		List<BotPlacement> botlandLeaderboard = this.botlandService.getBotleaderboard(genome, data);
 		log.info("Loaded {} matches", data.matches().length);
+		log.info("Loading {} unit genes", genome.getMissingGeneAttributes().getGeneAttributes().size());
+		log.info("Loading {} total genes", genome.size());
 		this.logBotlandLeaderboard(botlandLeaderboard);
 		Trainer trainer = new Trainer(simulator, this.genomeFileManager, genome, botlandLeaderboard, agentCount, duration, 
-				data.matches().length, simulator.getGeneArray().size(), template);
+				data.matches().length, simulator.getGeneArray().size());
 		
 		return trainer;
-	}
-
-	protected void writeWinnerFile(CompleteBotGenome genome) {
-		log.info("Writing genome file");
-		ObjectMapper mapper = new ObjectMapper();
-		File file = new File("winner.txt");
-		try {
-			OutputStream stream = new BufferedOutputStream(new FileOutputStream(file));
-			mapper.writerWithDefaultPrettyPrinter().writeValue(stream, genome);
-			log.info("gneome file written successfully");
-		} catch (IOException e) {
-			log.error("Error writing winner file", e);
-		}
 	}
 
 	protected void logBotlandLeaderboard(List<BotPlacement> botlandLeaderboard) {
