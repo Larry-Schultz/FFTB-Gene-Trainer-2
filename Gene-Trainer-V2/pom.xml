@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>Gene-Trainer-V2</artifactId>
+	<artifactId>GeneTrainerV2</artifactId>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.1</version>
+		<version>2.6.7</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fftbview</groupId>
-	<name>Spring Boot WebSocket Sample</name>
-	<description>Spring Boot WebSocket Sample</description>
-	<version>0.0.1-SNAPSHOT</version>
-	<url>http://projects.spring.io/spring-boot/</url>
-	<organization>
-		<name>Pivotal Software, Inc.</name>
-		<url>http://www.spring.io</url>
-	</organization>
+	<version>0.0.2-SNAPSHOT</version>
 	<properties>
 		<main.basedir>${basedir}/../..</main.basedir>
 		<java.version>17</java.version>
 		<junit.jupiter.version>5.8.1</junit.jupiter.version>
 		<junit.platform.version>1.8.1</junit.platform.version>
+		 <spring-boot.build-image.imageName>gene-trainer-v2:0.0.1-SNAPSHOT.</spring-boot.build-image.imageName>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -46,10 +39,10 @@
 		    <groupId>org.springframework.retry</groupId>
 		    <artifactId>spring-retry</artifactId>
 		</dependency>
-	    <dependency>
+		<dependency>
 	        <groupId>org.springframework.experimental</groupId>
 	        <artifactId>spring-native</artifactId>
-	        <version>0.11.0</version>
+	        <version>0.11.5</version>
 	    </dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
@@ -154,18 +147,18 @@
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 		</repository>
-		<repository>
+	    <repository>
 	        <id>spring-release</id>
 	        <name>Spring release</name>
 	        <url>https://repo.spring.io/release</url>
 	    </repository>
 	</repositories>
 	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</pluginRepository>
+	    <pluginRepository>
+	        <id>spring-release</id>
+	        <name>Spring release</name>
+	        <url>https://repo.spring.io/release</url>
+	    </pluginRepository>
 	</pluginRepositories>
 	<profiles>
 		<profile>
@@ -198,7 +191,7 @@
 			        <plugin>
 			            <groupId>org.springframework.experimental</groupId>
 			            <artifactId>spring-aot-maven-plugin</artifactId>
-			            <version>0.11.0</version>
+			            <version>0.11.5</version>
 			            <executions>
 			                <execution>
 			                    <id>generate</id>
@@ -217,6 +210,9 @@
 					            <env>
 					                <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
 					            </env>
+					            <buildpacks>
+					                <buildpack>gcr.io/paketo-buildpacks/java-native-image:7.1.0</buildpack>
+					            </buildpacks>
 					        </image>
 					    </configuration>
 					</plugin>
