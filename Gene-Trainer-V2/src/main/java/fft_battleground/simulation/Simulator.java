@@ -3,6 +3,7 @@ package fft_battleground.simulation;
 import fft_battleground.genetic.model.attributes.BetGeneAttributes;
 import fft_battleground.match.model.EstimatedPlayerBet;
 import fft_battleground.match.model.Match;
+import fft_battleground.match.model.MatchPot;
 import fft_battleground.match.model.TeamAttributes;
 import fft_battleground.model.BattleGroundTeam;
 import fft_battleground.simulation.model.SimulationConfig;
@@ -60,9 +61,11 @@ public class Simulator extends AbstractSimulator {
 	protected Bet makeBet(Match match, Genotype<DoubleGene> genotype, long gil) {
 		int leftScore = this.scoreTeamAttributes(match.leftTeam(), genotype, match.map(), BattleGroundTeam.LEFT);
 		leftScore += this.scoreTeamBets(match.bets().leftTeamEstimatedBets(), genotype);
+		leftScore += this.scoreLeftTeamPot(match.bets().botEstimatedPot(), genotype);
 		
 		int rightScore = this.scoreTeamAttributes(match.rightTeam(), genotype, match.map(), BattleGroundTeam.RIGHT);
 		rightScore += this.scoreTeamBets(match.bets().rightTeamEstimatedBets(), genotype);
+		rightScore += this.scoreRightTeamPot(match.bets().botEstimatedPot(), genotype);
 		
 		BattleGroundTeam side = null;
 		int winnerScore = 0;
@@ -78,7 +81,6 @@ public class Simulator extends AbstractSimulator {
 		}
 		
 		double scoreRatio = ((double) (winnerScore - loserScore + 1)) / ((double) winnerScore + 1);
-		scoreRatio = scoreRatio;
 		int ratioRounded = (int) Math.round(scoreRatio * 100);
 		if(ratioRounded < 1) {
 			//log.warn("ratio was less than 1! The ratio is {}", ratioRounded);
@@ -130,6 +132,21 @@ public class Simulator extends AbstractSimulator {
 			score+= this.geneArray.get(genotype, this.rightMapStartIndex + mapNumber);
 		}
 		
+		return score;
+	}
+	
+	protected int scoreLeftTeamPot(MatchPot matchPot, Genotype<DoubleGene> genotype) {
+		return scoreTeamPot(genotype, matchPot.leftPot(), matchPot.leftOdds());
+	}
+	
+	protected int scoreRightTeamPot(MatchPot matchPot, Genotype<DoubleGene> genotype) {
+		return scoreTeamPot(genotype, matchPot.rightPot(), matchPot.rightOdds());
+	}
+	
+	protected int scoreTeamPot(Genotype<DoubleGene> genotype, int pot, double odds) {
+		int score = 0;
+		score+= pot * this.geneArray.get(genotype, this.potAmountIndex);
+		score+= odds * this.geneArray.get(genotype, this.oddsIndex);
 		return score;
 	}
 	

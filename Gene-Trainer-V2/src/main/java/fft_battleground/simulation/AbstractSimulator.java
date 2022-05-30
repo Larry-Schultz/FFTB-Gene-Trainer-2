@@ -30,10 +30,11 @@ public abstract class AbstractSimulator {
 	protected int raidBossIndex;
 	protected int fightWinRatioIndex;
 	protected int missingfightWinRatioIndex;
-	protected int champStreakIndex;
 	
 	protected int betCountIndex;
 	protected int betRatioIndex;
+	protected int oddsIndex;
+	protected int potAmountIndex;
 	
 	protected int playerHumanIndex;
 	protected int playerBotIndex;
@@ -53,7 +54,6 @@ public abstract class AbstractSimulator {
 		
 		this.fightWinRatioIndex = simulatorConfig.simulatorIndexConfig().fightWinRatioIndex();
 		this.missingfightWinRatioIndex = simulatorConfig.simulatorIndexConfig().missingFightWinRatioIndex();
-		this.champStreakIndex = simulatorConfig.simulatorIndexConfig().champStreakIndex();
 		this.betCountIndex = simulatorConfig.simulatorIndexConfig().betCountIndex();
 		this.betRatioIndex = simulatorConfig.simulatorIndexConfig().betRatioIndex();
 		

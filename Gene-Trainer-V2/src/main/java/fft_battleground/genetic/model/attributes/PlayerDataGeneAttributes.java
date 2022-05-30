@@ -9,7 +9,8 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper=true)
 public final class PlayerDataGeneAttributes extends GeneAttributes {
-	public static final double missingFightWinRatioThreshold = -5d;
+	//we detect missing ratios by looking for negative fight win ratios, which are impossible for real players
+	public static final double missingFightWinRatioThreshold = -5d; 
 	
 	public static final String BET_WIN_RATIO = "BetWinRatio";
 	public static final String FIGHT_WIN_RATIO = "FightWinRatio";

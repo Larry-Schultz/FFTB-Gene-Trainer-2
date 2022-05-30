@@ -53,7 +53,8 @@ public class SimulatorFactoryImpl implements SimulatorFactory {
 		
 		int betCountIndex = genome.getAttributeMap().get(PotGeneAttributes.BET_COUNT);
 		int betRatioIndex = genome.getAttributeMap().get(PlayerDataGeneAttributes.BET_WIN_RATIO);
-		int champStreakIndex = genome.getAttributeMap().get(PotGeneAttributes.CHAMP_STREAK);
+		int oddsIndex = genome.getAttributeMap().get(PotGeneAttributes.ODDS);
+		int potAmountIndex = genome.getAttributeMap().get(PotGeneAttributes.POT_AMOUNT);
 		
 		int startOfBetArrayIndex = genome.getAttributeMap().get(BetGeneAttributes.first);
 		
@@ -71,8 +72,8 @@ public class SimulatorFactoryImpl implements SimulatorFactory {
 		GeneArray geneArray = new GeneArray(genome);
 		
 		SimulationIndexConfig indexConfig = new SimulationIndexConfig(faithIndex, braveIndex, braveFaithIndex, raidBossIndex, fightWinRatioIndex, 
-				missingFightWinRatioIndex, betCountIndex, betRatioIndex, champStreakIndex, startOfBetArrayIndex, playerHumanIndex, playerBotIndex, 
-				playerSubscriberIndex, playerBalanceBetRatioIndex, sideIndexes, leftMapsStartIndex, rightMapStartIndex); 
+				missingFightWinRatioIndex, betCountIndex, betRatioIndex, startOfBetArrayIndex, playerHumanIndex, playerBotIndex, 
+				playerSubscriberIndex, playerBalanceBetRatioIndex, sideIndexes, leftMapsStartIndex, rightMapStartIndex, oddsIndex, potAmountIndex); 
 		
 		SimulationConfig config = new SimulationConfig(indexConfig, matches, playerBetRatios, playerFightRatios, 
 				subscriberBitSet, botBetIndexes, geneArray);
