@@ -1,21 +1,11 @@
 package fft_battleground.genetic;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fft_battleground.botland.BotlandService;
 import fft_battleground.botland.model.BotPlacement;
@@ -35,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class TrainerServiceImpl implements TrainerService {
+	private static boolean started = false;
 
 	@Autowired
 	private TrainerDataService trainerDataService;
@@ -53,7 +44,14 @@ public class TrainerServiceImpl implements TrainerService {
 
 	public void test() {
 		try {
-			this.trainBot(AGENT_COUNT, TimeUnit.HOURS.toMillis(DURATION_IN_HOURS), TOURNAMENT_COUNT);
+			if(!started) {
+				started = true;
+				this.trainBot(AGENT_COUNT, TimeUnit.HOURS.toMillis(DURATION_IN_HOURS), TOURNAMENT_COUNT);
+			} else {
+				RuntimeException exception = new RuntimeException("The trainer has already been started!!");
+				log.error("The trainer has already been started!!", exception);
+				throw exception;
+			}
 			//this.writeWinnerFile(resultingGenome);
 		} catch (TournamentApiException | ViewerException | DumpException | CacheException e) {
 			log.error("It died :(", e);

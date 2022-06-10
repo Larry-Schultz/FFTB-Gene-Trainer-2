@@ -1,5 +1,12 @@
 package fft_battleground.simulation;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.IntStream;
+
+import com.google.common.math.Quantiles;
+
 import fft_battleground.genetic.model.attributes.BetGeneAttributes;
 import fft_battleground.match.model.EstimatedPlayerBet;
 import fft_battleground.match.model.Match;
@@ -58,26 +65,64 @@ public class Simulator extends AbstractSimulator {
 		return gil;
 	}
 	
+	public Map<Integer, Double> calculatePercentiles(Genotype<DoubleGene> genotype) {
+		List<Integer> scoreDifferences = new LinkedList<>();
+		for(Match match: this.matches) {
+			int leftScore = this.calculateLeftScore(match, genotype);
+			int rightScore = this.calculateRightScore(match, genotype);
+			
+			int difference = Math.abs(leftScore - rightScore);
+			scoreDifferences.add(difference);
+		}
+		
+		Map<Integer, Double> percentiles = Quantiles.percentiles()
+				.indexes(IntStream.range(1, 100).toArray())
+				.compute(scoreDifferences);
+		
+		return percentiles;
+	}
+	
 	protected Bet makeBet(Match match, Genotype<DoubleGene> genotype, long gil) {
+		int leftScore = this.calculateLeftScore(match, genotype);
+		int rightScore = this.calculateRightScore(match, genotype);
+		
+		BattleGroundTeam side = leftScore >= rightScore ? match.leftTeam().team() : match.rightTeam().team();
+		int betAmount = this.calculateBetAmount(leftScore, rightScore, genotype);
+		if(gil < betAmount) {
+			betAmount = (int) gil;
+		}
+		if(betAmount < GIL_FLOOR) {
+			betAmount = (int) GIL_FLOOR;
+		}
+		Bet bet = new Bet(side, betAmount);
+		return bet;
+	}
+	
+	protected int calculateLeftScore(Match match, Genotype<DoubleGene> genotype) {
 		int leftScore = this.scoreTeamAttributes(match.leftTeam(), genotype, match.map(), BattleGroundTeam.LEFT);
 		leftScore += this.scoreTeamBets(match.bets().leftTeamEstimatedBets(), genotype);
 		leftScore += this.scoreLeftTeamPot(match.bets().botEstimatedPot(), genotype);
 		
+		return leftScore;
+	}
+	
+	protected int calculateRightScore(Match match, Genotype<DoubleGene> genotype) {
 		int rightScore = this.scoreTeamAttributes(match.rightTeam(), genotype, match.map(), BattleGroundTeam.RIGHT);
 		rightScore += this.scoreTeamBets(match.bets().rightTeamEstimatedBets(), genotype);
 		rightScore += this.scoreRightTeamPot(match.bets().botEstimatedPot(), genotype);
 		
-		BattleGroundTeam side = null;
+		return rightScore;
+	}
+	
+	protected int calculateBetAmount(int leftScore, int rightScore, Genotype<DoubleGene> genotype) {
 		int winnerScore = 0;
 		int loserScore = 0;
 		if(leftScore >= rightScore) {
 			winnerScore = leftScore;
 			loserScore = rightScore;
-			side = match.leftTeam().team();
 		} else if(rightScore > leftScore) {
 			winnerScore = rightScore;
 			loserScore = leftScore;
-			side = match.rightTeam().team();
 		}
 		
 		double scoreRatio = ((double) (winnerScore - loserScore + 1)) / ((double) winnerScore + 1);
@@ -92,14 +137,7 @@ public class Simulator extends AbstractSimulator {
 		}
 		
 		int betAmount = (int) Math.round(this.geneArray.get(genotype, this.startOfBetArrayIndex + ratioRounded));
-		if(gil < betAmount) {
-			betAmount = (int) gil;
-		}
-		if(betAmount < GIL_FLOOR) {
-			betAmount = (int) GIL_FLOOR;
-		}
-		Bet bet = new Bet(side, betAmount);
-		return bet;
+		return betAmount;
 	}
 	
 	protected int scoreTeamAttributes(TeamAttributes teamAttributes, Genotype<DoubleGene> genotype, int mapNumber, BattleGroundTeam side) {
@@ -160,11 +198,6 @@ public class Simulator extends AbstractSimulator {
 			score+= ((double) bet.getBetAmount()) / ((double) bet.getBalanceAtTimeOfBet()) * this.geneArray.get(genotype, this.playerBalanceBetRatioIndex);
 		}
 		return score;
-	}
-	
-	protected double[] convertGenoTypeToDoubleArray(Genotype<DoubleGene> genotype) {
-		return genotype.stream().flatMap(chromosome -> chromosome.stream())
-				.mapToDouble(DoubleGene::doubleValue).toArray();
 	}
 }
 

@@ -8,6 +8,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
@@ -65,10 +67,13 @@ public class TrainerDataServiceImpl implements TrainerDataService {
 			playerFightWinRatios = playerFightWinRatiosFuture.get();
 			subscribers = futuresSubscribers.get();
 			bots = futureBots.get();
+			pool.shutdown();
+			pool.awaitTermination(1, TimeUnit.HOURS);
 		} catch (InterruptedException | ExecutionException e) {
 			log.error("Something weird went wrong getting data from viewer");
 			throw new ViewerException(e);
 		}
+		
 		
 		Set<Long> badTournaments = this.badTournamentService.getBadTournamentIds();
 		TrainerDataGenerator generator = new TrainerDataGenerator(genome, dataset, playerBetWinRatios, playerFightWinRatios, badTournaments, 

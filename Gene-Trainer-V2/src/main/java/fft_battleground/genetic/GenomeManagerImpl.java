@@ -146,4 +146,6 @@ class ResultChecker implements Runnable {
 		String filename = String.format(GenomeManagerImpl.winnerFilenameTemplate, dateString);
 		return filename;
 	}
+	
+	
 }

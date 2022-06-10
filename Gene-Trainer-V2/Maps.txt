@@ -15,12 +15,12 @@
 14) Office of Lionel Castle
 15) Gate of Limberry Castle
 16) Limberry Castle
-17) Underground Cemetary of Limberry Castle
+17) Underground Cemetery of Limberry Castle
 18) Office of Limberry Castle
 19) Back Gate of Limberry Castle
 20) Zeltennia Castle
 21) Office of Zeltennia Castle
-22) Magic City Gariland
+22) Gariland Magic City
 23) Beoulve Estate
 24) Military Academy Auditorium
 25) Yardow Fort City
@@ -44,7 +44,7 @@
 43) Port of Warjilis
 44) Bervenia Free City
 45) Ruins of Zeltennia Castle's Church
-46) Cemetary of Heavenly Knight, Balbanes
+46) Cemetery of Heavenly Knight, Balbanes
 47) Zarghidas Trade City
 48) Slums in Zarghidas
 49) Fort Zeakden
@@ -98,7 +98,7 @@
 97) Lesalia Imperial Capital
 98) Gate of Lesalia Castle
 99) Main Street of Lesalia
-100) Public Cemetary
+100) Public Cemetery
 101) Tutorial
 102) Tutorial Bridge
 103) Fovoham Windmill
@@ -116,4 +116,13 @@
 115) Banished Fort
 116) Arena
 117) Checkerboard Land
+118) Silas Swamp
+119) Tchechene Bridge
+120) Trebalt Tunnel
+121) Prison
+122) Floating Castle
+123) Mako Reactor
+124) Phantom Train
 125) Checkerboard Stairs
+126) Enhasa Zeal City
+127) Arris Dome

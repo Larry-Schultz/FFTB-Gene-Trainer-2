@@ -35,7 +35,7 @@ public class CompleteBotGenome {
 	private PotGeneAttributes potGeneAttributes;
 	private PlayerDataGeneAttributes playerDataGeneAttributes;
 	private SideGeneAttributes sideGeneAttributes;
-	private BetGeneAttributes betGeneAttributes;
+	//private BetGeneAttributes betGeneAttributes;
 	private MissingGeneAttributes missingGeneAttributes;
 	
 	@JsonIgnore
@@ -51,7 +51,7 @@ public class CompleteBotGenome {
 	public CompleteBotGenome(Tips tips) {
 		AtomicInteger idTracker = new AtomicInteger(0);
 		this.mapGeneAttributes = new MapGeneAttributes(idTracker, "Maps.txt");
-		this.betGeneAttributes = new BetGeneAttributes(idTracker);
+		//this.betGeneAttributes = new BetGeneAttributes(idTracker);
 		//this.itemGeneAttributes = new ItemGeneAttributes(idTracker, tips);
 		//this.abilityGeneAttributes = new AbilityGeneAttributes(idTracker, tips);
 		//this.userSkillGeneAttributes = new UserSkillGeneAttributes(idTracker);
@@ -62,7 +62,7 @@ public class CompleteBotGenome {
 		this.sideGeneAttributes = new SideGeneAttributes(idTracker);
 		this.missingGeneAttributes = new MissingGeneAttributes(idTracker);
 		
-		this.geneAttributes = List.of(this.mapGeneAttributes, this.betGeneAttributes, 
+		this.geneAttributes = List.of(this.mapGeneAttributes, //this.betGeneAttributes, 
 				//this.itemGeneAttributes, this.abilityGeneAttributes, this.userSkillGeneAttributes, this.classGeneAttributes, 
 				this.braveFaithAttributes, this.potGeneAttributes, this.playerDataGeneAttributes, this.sideGeneAttributes, this.missingGeneAttributes);
 		

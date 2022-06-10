@@ -2,6 +2,7 @@ package fft_battleground.genetic.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -22,10 +23,11 @@ public class GenomeFile {
 	long perfectGil;
 	int geneCount;
 	long generation;
+	private List<Percentile> percentiles;
 	private CompleteBotGenome genome;
 	
 	public GenomeFile(List<BotPlacement> botLeaderboard, int matchesAnalyzed, long gilResult, long perfectGil, 
-			int geneCount, long generation, CompleteBotGenome genome) {
+			int geneCount, long generation, CompleteBotGenome genome, Map<Integer, Double> percentiles) {
 		this.creationDate = new Date();
 		this.botLeaderboard = botLeaderboard;
 		this.matchesAnalyzed = matchesAnalyzed;
@@ -33,5 +35,6 @@ public class GenomeFile {
 		this.perfectGil = perfectGil;
 		this.geneCount = geneCount;
 		this.genome = genome;
+		this.percentiles = Percentile.createPercentileListFromMap(percentiles);
 	}
 }

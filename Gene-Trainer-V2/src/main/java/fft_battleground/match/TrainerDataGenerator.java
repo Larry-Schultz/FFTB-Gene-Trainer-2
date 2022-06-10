@@ -22,6 +22,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
@@ -113,12 +114,18 @@ public class TrainerDataGenerator {
 		}
 		
 		List<Match> matchAnalysisResult = new ArrayList<>();
+		pool.shutdown();
 		for(Future<Match> matchFuture : matchFutures) {
 			try {
 				matchAnalysisResult.add(matchFuture.get());
 			} catch (InterruptedException | ExecutionException e) {
 				log.error("Interruption error performing match analysis", e);
 			}
+		}
+		try {
+			pool.awaitTermination(5, TimeUnit.MINUTES);
+		} catch (InterruptedException e) {
+			log.error("Interruption error performing match analysis", e);
 		}
 		
 		return matchAnalysisResult.toArray(Match[]::new);

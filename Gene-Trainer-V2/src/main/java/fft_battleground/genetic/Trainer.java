@@ -2,6 +2,7 @@ package fft_battleground.genetic;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Predicate;
@@ -13,6 +14,7 @@ import fft_battleground.simulation.Simulator;
 
 import io.jenetics.DoubleGene;
 import io.jenetics.Genotype;
+import io.jenetics.Mutator;
 import io.jenetics.StochasticUniversalSelector;
 import io.jenetics.TournamentSelector;
 import io.jenetics.engine.Engine;
@@ -63,7 +65,7 @@ public class Trainer {
             .builder(gt -> this.eval(gt), gtf)
             .survivorsSelector(new TournamentSelector<>())
             .offspringSelector(new StochasticUniversalSelector<>())
-            //.alterers(new UniformCrossover<>(0.2), new Mutator<>(0.15))
+            //.alterers(new Mutator<>(0.5), new Mutator<>(0.15))
             .populationSize(agentCount)
             .executor(geneTrainerThreadPool)
             .build();
@@ -100,9 +102,15 @@ public class Trainer {
 		long currentGil = evolutionResult.bestFitness();
 		long generation = evolutionResult.generation();
 		Genotype<DoubleGene> bestFitnessGenotype = evolutionResult.bestPhenotype().genotype();
+		Map<Integer, Double> percentiles = this.calculatePercentiles(bestFitnessGenotype);
 		this.genome.loadGeneData(bestFitnessGenotype);
 		GenomeFile genomeDate = new GenomeFile(this.botlandLeaderboard, this.matchesAnalyzed, currentGil, this.perfectScore, this.geneCount, 
-				generation, this.genome);
+				generation, this.genome, percentiles);
 		return genomeDate;
+	}
+	
+	private Map<Integer, Double> calculatePercentiles(final Genotype<DoubleGene> bestFitnessGenotype) {
+		Map<Integer, Double> percentiles = this.simulator.calculatePercentiles(bestFitnessGenotype);
+		return percentiles;
 	}
 }
