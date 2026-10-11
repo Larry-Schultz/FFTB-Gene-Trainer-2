@@ -9,6 +9,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import fft_battleground.model.BattleGroundTeam;
 import fft_battleground.tournament.model.Tournament;
 import fft_battleground.viewer.model.BotBetData;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,8 @@ public class MatchCacheEntry implements Comparable<MatchCacheEntry> {
 	private Long tournamentId;
 	private Tournament tournament;
 	private List<BotBetData> botBetData;
+	//gil spent to join the tournament, per team; null in cache files written before this field existed
+	private Map<BattleGroundTeam, Integer> teamValues;
 	
 	public static List<MatchCacheEntry> collate(List<Tournament> tournaments, List<BotBetData> botBetData) {
 		//group data by tournament id
@@ -52,7 +55,7 @@ public class MatchCacheEntry implements Comparable<MatchCacheEntry> {
 				.collect(Collectors.toSet());
 		
 		List<MatchCacheEntry> matchCacheEntries = allTournamentIdsInBothDatasets.stream()
-				.map(tournamentId -> new MatchCacheEntry(tournamentId, tournamentIdMap.get(tournamentId), filterdBotBetDataByTournamentId.get(tournamentId)))
+				.map(tournamentId -> new MatchCacheEntry(tournamentId, tournamentIdMap.get(tournamentId), filterdBotBetDataByTournamentId.get(tournamentId), null))
 				.collect(Collectors.toList());
 		return matchCacheEntries;
 	}

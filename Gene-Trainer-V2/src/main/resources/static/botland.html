@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simulated Botland</title>
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="/botland.js"></script>
+</head>
+<body>
+	<noscript>
+		<h2 style="color: #ff0000">Seems your browser doesn't support
+			Javascript! This page relies on Javascript being enabled. Please
+			enable Javascript and reload this page!</h2>
+	</noscript>
+	<div class="container">
+		<div class="page-header">
+			<h1>Simulated Botland</h1>
+			<p class="text-muted">Runs the trainer's botland simulation over the
+				most recent completed matches and shows which bot comes out on top.</p>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<form class="form-inline">
+					<div class="form-group">
+						<label for="matchesTextbox">Past matches to simulate</label> <input
+							id="matchesTextbox" type="number" min="1" value="200"
+							class="form-control">
+						<button id="startButton" class="btn btn-primary" type="submit">Run
+							Botland</button>
+					</div>
+				</form>
+				<p id="startText"></p>
+			</div>
+			<div class="col-md-6">
+				<div class="progress">
+					<div id="progressBar" class="progress-bar" role="progressbar"
+						aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+						style="width: 0%">
+						<span id="progressPercentText">0%</span>
+					</div>
+				</div>
+				<p id="progressPhaseText"></p>
+				<p id="progressDetailText" class="text-muted"></p>
+			</div>
+		</div>
+		<br />
+		<div id="resultSummary" class="alert alert-success" style="display: none">
+			<b>Winner:</b> <span id="winnerName"></span> with <span id="winnerGil"></span> gil
+			&nbsp;|&nbsp; <span id="matchSummary"></span> <span
+				id="runDuration" class="text-muted"></span>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<table class="table table-striped" id="leaderboardTable">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Bot</th>
+							<th class="text-right">Final Gil</th>
+						</tr>
+					</thead>
+					<tbody id="leaderboardBody">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

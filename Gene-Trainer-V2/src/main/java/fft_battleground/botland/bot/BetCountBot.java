@@ -38,6 +38,9 @@ public class BetCountBot extends SimulatedBetBot {
 		if(parameters.containsKey(BET_AMOUNT_EXPRESSION_PARAMETER)) {
 			this.betAmountExpression = parameters.get(BET_AMOUNT_EXPRESSION_PARAMETER).getValue();
 		}
+		if(parameters.containsKey(INVERSE_PARAM)) {
+			this.inverse = Boolean.valueOf(parameters.get(INVERSE_PARAM).getValue());
+		}
 	}
 
 	@Override

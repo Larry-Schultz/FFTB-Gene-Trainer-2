@@ -12,6 +12,9 @@ import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Value;
+import javax.annotation.PostConstruct;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -32,10 +35,25 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class BetCountServiceImpl implements BetCountService {
-	
-	String preprodUrl = "https://fftbview.com:9443/betcount/";
-	
+
+	@Value("${fftb.viewer.url}")
+	private String viewerBaseUrl;
+
+	private String preprodUrl;
+
 	private RateLimiter limit = RateLimiter.create(1);
+
+	@PostConstruct
+	protected void normalizeViewerUrl() {
+		this.preprodUrl = this.viewerBaseUrl;
+		if(!this.preprodUrl.endsWith("/")) {
+			this.preprodUrl = this.preprodUrl + "/";
+		}
+		if(!this.preprodUrl.endsWith("betcount/")) {
+			this.preprodUrl = this.preprodUrl + "betcount/";
+		}
+		log.info("Using viewer betcount api at {}", this.preprodUrl);
+	}
 
 	@Override
 	public BotBetData getFirstTrackedTournament() {

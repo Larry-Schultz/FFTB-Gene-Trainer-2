@@ -37,7 +37,7 @@ public class SecondaryBotConfig {
 	@SneakyThrows
 	public List<BotData> parseXmlFile() {
 		List<BotData> botData = new ArrayList<>();
-		Resource resource = (Resource) new ClassPathResource("Botland.xml");
+		Resource resource = this.configFileResouce;
 		String line;
 		StringBuilder xmlData = new StringBuilder("");
 		try(BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {

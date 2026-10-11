@@ -112,9 +112,22 @@ public class DumpServiceImpl implements DumpService {
 		} catch (IOException e) {
 			throw new DumpException(e);
 		}
-		
-		
+
+
 		return streak;
+	}
+
+	@Override
+	public Map<Long, Map<BattleGroundTeam, Integer>> getTeamValuesForTournaments(List<Long> tournamentIds) {
+		Map<Long, Map<BattleGroundTeam, Integer>> teamValuesByTournamentId = new HashMap<>();
+		for(Long tournamentId : tournamentIds) {
+			try {
+				teamValuesByTournamentId.put(tournamentId, this.parseTeamValueFile(tournamentId));
+			} catch(DumpException e) {
+				log.warn("unable to poll team value data from dump for tournament {}", tournamentId, e);
+			}
+		}
+		return teamValuesByTournamentId;
 	}
 	
 	public BufferedReader openDumpResource(Resource resource) throws DumpException {

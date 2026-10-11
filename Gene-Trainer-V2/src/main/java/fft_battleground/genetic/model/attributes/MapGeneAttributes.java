@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -53,10 +55,9 @@ public final class MapGeneAttributes extends GeneAttributes {
 	
 	private static List<Integer> mapNumbers(String mapFileLocation) {
 		List<Integer> mapNumbers = new LinkedList<>();
-		File mapFile = new File(mapFileLocation);
-		try(BufferedReader reader = new BufferedReader(new FileReader(mapFile))) {
+		try (BufferedReader reader = createMapReader(mapFileLocation)) {
 			String line;
-			while((line = reader.readLine()) != null) {
+			while ((line = reader.readLine()) != null) {
 				Integer mapNumber = mapNumber(line);
 				mapNumbers.add(mapNumber);
 			}
@@ -67,6 +68,15 @@ public final class MapGeneAttributes extends GeneAttributes {
 		}
 		
 		return mapNumbers;
+	}
+
+	private static BufferedReader createMapReader(String mapFileLocation) throws IOException {
+		if (mapFileLocation.startsWith("http://") || mapFileLocation.startsWith("https://")) {
+			URL mapUrl = new URL(mapFileLocation);
+			return new BufferedReader(new InputStreamReader(mapUrl.openStream()));
+		}
+		File mapFile = new File(mapFileLocation);
+		return new BufferedReader(new FileReader(mapFile));
 	}
 	
 	private static Integer mapNumber(String mapName) {

@@ -75,8 +75,8 @@ public class SimulatorFactoryImpl implements SimulatorFactory {
 				missingFightWinRatioIndex, betCountIndex, betRatioIndex, startOfBetArrayIndex, playerHumanIndex, playerBotIndex, 
 				playerSubscriberIndex, playerBalanceBetRatioIndex, sideIndexes, leftMapsStartIndex, rightMapStartIndex, oddsIndex, potAmountIndex); 
 		
-		SimulationConfig config = new SimulationConfig(indexConfig, matches, playerBetRatios, playerFightRatios, 
-				subscriberBitSet, botBetIndexes, geneArray);
+		SimulationConfig config = new SimulationConfig(indexConfig, matches, playerBetRatios, playerFightRatios,
+				subscriberBitSet, botBetIndexes, geneArray, genome);
 		return config;
 	}
 	

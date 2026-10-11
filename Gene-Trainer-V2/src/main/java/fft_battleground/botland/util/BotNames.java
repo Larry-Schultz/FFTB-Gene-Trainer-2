@@ -8,10 +8,12 @@ public enum BotNames {
 	ODDS("oddsbot"),
 	ARBITRARY("arbitrarybot"),
 	GENE("genebot"),
+	GENEV2("genebotv2"),
 	BRAVEFAITH("bravefaithbot"),
 	TEAMVALUE("teamvalue"),
 	UNIT("unitawarebot"),
-	LIVESIMULATOR("livesimulatorbot");
+	LIVESIMULATOR("livesimulatorbot"),
+	REFERENCE("reference");
 	
 	private String botname;
 	

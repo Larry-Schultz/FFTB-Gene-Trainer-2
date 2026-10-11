@@ -46,13 +46,19 @@ public class TrainerDataServiceImpl implements TrainerDataService {
 	
 	@Override
 	public MultipleTournamentDataset generateDataset(int count, CompleteBotGenome genome) throws TournamentApiException, ViewerException, DumpException, CacheException {
+		return this.generateDataset(count, genome, message -> {});
+	}
+
+	@Override
+	public MultipleTournamentDataset generateDataset(int count, CompleteBotGenome genome, java.util.function.Consumer<String> progress) throws TournamentApiException, ViewerException, DumpException, CacheException {
 		BotBetData firstTournamentWithBotBetData = this.betCountService.getFirstTrackedTournament();
 		ExecutorService pool = Executors.newFixedThreadPool(3);
-		Future<List<MatchCacheEntry>> datasetFuture = pool.submit(() -> this.matchDataService.getGeneTestData(count, firstTournamentWithBotBetData));
+		Future<List<MatchCacheEntry>> datasetFuture = pool.submit(() -> this.matchDataService.getGeneTestData(count, firstTournamentWithBotBetData, progress));
 		Future<Map<String, Double>> playerBetWinRatiosFuture = pool.submit(() -> this.betCountService.getPlayerBetWinRatios(firstTournamentWithBotBetData.getCreateDateTime()));
 		Future<Map<String, Double>> playerFightWinRatiosFuture = pool.submit(() -> this.betCountService.getFightWinRatios(firstTournamentWithBotBetData.getCreateDateTime()));
 		Future<List<String>> futuresSubscribers = pool.submit(() -> this.betCountService.getSubscribers(firstTournamentWithBotBetData.getCreateDateTime()));
 		Future<List<String>> futureBots = pool.submit(() -> this.betCountService.getBots());
+		progress.accept("loading player analytics");
 		
 		List<MatchCacheEntry> dataset = null;
 		Map<String, Double> playerBetWinRatios = null;
@@ -76,9 +82,11 @@ public class TrainerDataServiceImpl implements TrainerDataService {
 		
 		
 		Set<Long> badTournaments = this.badTournamentService.getBadTournamentIds();
-		TrainerDataGenerator generator = new TrainerDataGenerator(genome, dataset, playerBetWinRatios, playerFightWinRatios, badTournaments, 
+		TrainerDataGenerator generator = new TrainerDataGenerator(genome, dataset, playerBetWinRatios, playerFightWinRatios, badTournaments,
 				subscribers, bots, collector);
+		progress.accept("building match dataset from " + dataset.size() + " tournaments");
 		Match[] matchData = generator.generateDataset();
+		progress.accept("match dataset ready with " + matchData.length + " matches");
 		double[] playerBetRatios = generator.getPlayerBetWinRatioList().stream().mapToDouble(Double::doubleValue).toArray();
 		double[] playerFightRatios = generator.getPlayerFightWinRatioList().stream().mapToDouble(Double::doubleValue).toArray();
 		BitSet subscriberBitSet = generator.getSubscriberBitSet();

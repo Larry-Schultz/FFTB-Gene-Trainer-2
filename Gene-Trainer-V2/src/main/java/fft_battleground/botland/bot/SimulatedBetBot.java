@@ -53,7 +53,7 @@ public abstract class SimulatedBetBot extends AbstractSimulator {
 	}
 	
 	public abstract void initParams(Map<String, BotParam> map) throws BotConfigException;
-	public abstract void init();
+	public abstract void init() throws BotConfigException;
 	public abstract String getName();
 	public abstract void setName(String name);
 	protected abstract Bet generateBetAmount(Match match, long gil);

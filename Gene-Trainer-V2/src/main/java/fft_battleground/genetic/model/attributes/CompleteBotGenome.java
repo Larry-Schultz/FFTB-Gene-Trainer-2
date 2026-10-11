@@ -35,7 +35,7 @@ public class CompleteBotGenome {
 	private PotGeneAttributes potGeneAttributes;
 	private PlayerDataGeneAttributes playerDataGeneAttributes;
 	private SideGeneAttributes sideGeneAttributes;
-	//private BetGeneAttributes betGeneAttributes;
+	private BetGeneAttributes betGeneAttributes;
 	private MissingGeneAttributes missingGeneAttributes;
 	
 	@JsonIgnore
@@ -49,9 +49,13 @@ public class CompleteBotGenome {
 	private Map<String, Integer> attributeMapCache;
 	
 	public CompleteBotGenome(Tips tips) {
+		this(tips, "https://www.fftbattleground.com/fftbg/Maps.txt");
+	}
+
+	public CompleteBotGenome(Tips tips, String mapsFileLocation) {
 		AtomicInteger idTracker = new AtomicInteger(0);
-		this.mapGeneAttributes = new MapGeneAttributes(idTracker, "Maps.txt");
-		//this.betGeneAttributes = new BetGeneAttributes(idTracker);
+		this.mapGeneAttributes = new MapGeneAttributes(idTracker, mapsFileLocation);
+		this.betGeneAttributes = new BetGeneAttributes(idTracker);
 		//this.itemGeneAttributes = new ItemGeneAttributes(idTracker, tips);
 		//this.abilityGeneAttributes = new AbilityGeneAttributes(idTracker, tips);
 		//this.userSkillGeneAttributes = new UserSkillGeneAttributes(idTracker);
@@ -61,9 +65,9 @@ public class CompleteBotGenome {
 		this.playerDataGeneAttributes = new PlayerDataGeneAttributes(idTracker);
 		this.sideGeneAttributes = new SideGeneAttributes(idTracker);
 		this.missingGeneAttributes = new MissingGeneAttributes(idTracker);
-		
-		this.geneAttributes = List.of(this.mapGeneAttributes, //this.betGeneAttributes, 
-				//this.itemGeneAttributes, this.abilityGeneAttributes, this.userSkillGeneAttributes, this.classGeneAttributes, 
+
+		this.geneAttributes = List.of(this.mapGeneAttributes, this.betGeneAttributes,
+				//this.itemGeneAttributes, this.abilityGeneAttributes, this.userSkillGeneAttributes, this.classGeneAttributes,
 				this.braveFaithAttributes, this.potGeneAttributes, this.playerDataGeneAttributes, this.sideGeneAttributes, this.missingGeneAttributes);
 		
 		Collector<GeneAttributes, ?, Map<Class<? extends GeneAttributes>, GeneAttributes>> geneClassCollector = 

@@ -12,7 +12,9 @@ import fft_battleground.match.model.ActualPlayerBet;
 import fft_battleground.match.model.Match;
 import fft_battleground.model.BattleGroundTeam;
 import fft_battleground.simulation.model.SimulationConfig;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class LiveBettingBotSimulator extends SimulatedBetBot {
 
 	public LiveBettingBotSimulator(SimulationConfig simulatorConfig) {
@@ -23,7 +25,7 @@ public class LiveBettingBotSimulator extends SimulatedBetBot {
 	private static final String BOT_NAME_KEY = "botname";
 	
 	private String botName;
-	private int botPlayerBetId;
+	private Integer botPlayerBetId;
 	
 	@Override
 	public void initParams(Map<String, BotParam> map) throws BotConfigException {
@@ -35,6 +37,9 @@ public class LiveBettingBotSimulator extends SimulatedBetBot {
 	@Override
 	public void init() {
 		this.botPlayerBetId = super.botBetIndexes.get(this.botName);
+		if(this.botPlayerBetId == null) {
+			log.warn("Bot {} not found in the known bot list; it will sit out every match", this.botName);
+		}
 	}
 
 	@Override
@@ -49,6 +54,9 @@ public class LiveBettingBotSimulator extends SimulatedBetBot {
 
 	@Override
 	protected Bet generateBetAmount(Match match, long gil) {
+		if(this.botPlayerBetId == null) {
+			return new Bet(BattleGroundTeam.NONE, 0);
+		}
 		Optional<ActualPlayerBet> botBet = Stream.of(match.bets().leftTeamActualBets(), match.bets().rightTeamActualBets())
 				.flatMap(Arrays::stream).filter(bet -> bet.playerBetId()== this.botPlayerBetId).findFirst();
 		if(botBet.isEmpty()) {

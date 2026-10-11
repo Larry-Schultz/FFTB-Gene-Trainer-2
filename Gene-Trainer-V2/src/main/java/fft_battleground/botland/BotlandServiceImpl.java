@@ -12,9 +12,15 @@ import fft_battleground.botland.bot.ArbitraryBot;
 import fft_battleground.botland.bot.BetCountBot;
 import fft_battleground.botland.bot.BraveFaithBot;
 import fft_battleground.botland.bot.DataDrivenBot;
+import fft_battleground.botland.bot.GeneticBot;
+import fft_battleground.botland.bot.GeneticBotV2;
 import fft_battleground.botland.bot.LiveBettingBotSimulator;
 import fft_battleground.botland.bot.OddsBot;
+import fft_battleground.botland.bot.ReferenceBot;
 import fft_battleground.botland.bot.SimulatedBetBot;
+import fft_battleground.botland.bot.TeamValueBot;
+import fft_battleground.botland.bot.UnitAwareBot;
+import fft_battleground.botland.genedata.GeneFileService;
 import fft_battleground.botland.model.BotData;
 import fft_battleground.botland.model.BotPlacement;
 import fft_battleground.botland.util.BotNames;
@@ -28,9 +34,12 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class BotlandServiceImpl implements BotlandService {
-	
+
 	@Autowired
 	private SimulatorFactory simulatorFactory;
+
+	@Autowired
+	private GeneFileService geneFileService;
 	
 	@Override
 	public List<BotPlacement> getBotleaderboard(CompleteBotGenome genome, MultipleTournamentDataset dataset) {
@@ -46,6 +55,10 @@ public class BotlandServiceImpl implements BotlandService {
 	private SimulatedBetBot findBestFit(BotData botData, SimulationConfig config) {
 		SimulatedBetBot betBot = null;
 		BotNames currentBot = BotNames.parseBotname(botData.getClassname());
+		if(currentBot == null) {
+			log.warn("Bot {} has unknown classname {}, skipping it", botData.getName(), botData.getClassname());
+			return null;
+		}
 		try {
 			switch(currentBot) {
 			case BETCOUNT:
@@ -72,14 +85,34 @@ public class BotlandServiceImpl implements BotlandService {
 				betBot = new LiveBettingBotSimulator(config);
 				this.setupBot(betBot, botData);
 				break;
+			case GENE:
+				betBot = new GeneticBot(config, this.geneFileService);
+				this.setupBot(betBot, botData);
+				break;
+			case GENEV2:
+				betBot = new GeneticBotV2(config, this.geneFileService);
+				this.setupBot(betBot, botData);
+				break;
+			case TEAMVALUE:
+				betBot = new TeamValueBot(config);
+				this.setupBot(betBot, botData);
+				break;
+			case UNIT:
+				betBot = new UnitAwareBot(config);
+				this.setupBot(betBot, botData);
+				break;
+			case REFERENCE:
+				betBot = new ReferenceBot(config);
+				this.setupBot(betBot, botData);
+				break;
 			default:
-				//log.error("botData with data: {} failed", botData);
+				log.warn("Bot {} has unhandled classname {}, skipping it", botData.getName(), botData.getClassname());
 				break;
 			}
 		} catch(BotConfigException e) {
-			log.error("Error with {}'s bot config", botData.getName());
+			log.error("Error with {}'s bot config", botData.getName(), e);
 		}
-		
+
 		return betBot;
 	}
 	
