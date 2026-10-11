@@ -22,9 +22,11 @@ import io.jenetics.DoubleGene;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Data
-public abstract sealed class GeneAttributes 
+@Slf4j
+public abstract sealed class GeneAttributes
 implements Cloneable 
 permits AbilityGeneAttributes, BraveFaithAttributes, ClassGeneAttributes, ItemGeneAttributes, 
 		MapGeneAttributes, PlayerDataGeneAttributes, PotGeneAttributes, SideGeneAttributes, 
@@ -58,11 +60,22 @@ permits AbilityGeneAttributes, BraveFaithAttributes, ClassGeneAttributes, ItemGe
 	
 	@JsonGetter("geneAttributes")
 	public GeneAttributeOutput getGeneAttributeStringMap() {
-		Map<String, Double> geneAttributeNameValueMap = this.geneAttributes.keySet().stream()
+		Map<String, Double> geneAttributeNameValueMap = new HashMap<>();
+		this.geneAttributes.keySet().stream()
 				.filter(Objects::nonNull)
 				.filter(key -> this.idNameMap.get(key) != null)
 				.filter(key -> this.geneAttributes.get(key) != null)
-				.collect(Collectors.toMap(this.idNameMap::get, this.geneAttributes::get));
+				.forEach(key -> {
+					String name = this.idNameMap.get(key);
+					Double value = this.geneAttributes.get(key);
+					geneAttributeNameValueMap.merge(name, value, (firstValue, secondValue) -> {
+						Double kept = Math.abs(secondValue) > Math.abs(firstValue) ? secondValue : firstValue;
+						Double discarded = kept.equals(firstValue) ? secondValue : firstValue;
+						log.warn("Duplicate gene attribute key \"{}\" found during serialization; keeping larger absolute value {} and discarding {}",
+								name, kept, discarded);
+						return kept;
+					});
+				});
 		Comparator<GenericPairing<String, Double>> pairSorting = Comparator.comparing(GenericPairing<String, Double>::getRight).reversed();
 		List<GenericPairing<String, Double>> genericPairing = GenericPairing.convertMapToGenericPairList(geneAttributeNameValueMap)
 				.stream().sorted(pairSorting)
@@ -73,6 +86,11 @@ permits AbilityGeneAttributes, BraveFaithAttributes, ClassGeneAttributes, ItemGe
 	
 	protected void populateMapsFromAttributeList(AtomicInteger attributeNumber, List<String> attributeNames) {
 		for(String attribute: attributeNames) {
+			if(this.idNameMap.inverse().containsKey(attribute)) {
+				log.warn("Duplicate attribute name \"{}\" found while building {}; skipping it so no gene slot is wasted",
+						attribute, this.getClass().getSimpleName());
+				continue;
+			}
 			int attributeId = attributeNumber.getAndIncrement();
 			this.idNameMap.put(attributeId, attribute);
 			this.geneAttributes.put(attributeId, Double.valueOf(0));

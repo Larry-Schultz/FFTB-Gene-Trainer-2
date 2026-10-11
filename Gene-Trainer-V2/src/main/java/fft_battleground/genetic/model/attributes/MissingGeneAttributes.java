@@ -21,16 +21,17 @@ public final class MissingGeneAttributes extends GeneAttributes {
 		this.addAttribute("-Item");
 	}
 	
-	public int addAttribute(String attributeName) {
+	public synchronized int addAttribute(String attributeName) {
+		Integer existingId = super.getIdNameMap().inverse().get(attributeName);
+		if(existingId != null) {
+			//this name is already tracked; return the existing id so a duplicate never burns a gene slot
+			return existingId;
+		}
 		int newId = idTrackerRef.getAndIncrement();
 		super.getAttributeOrderArray().add(attributeName);
-		try {
-			super.getIdNameMap().put(newId, attributeName);
-		} catch(IllegalArgumentException e) {
-			log.error("The attribute {} is already in MissingGeneAttributes.", attributeName, e);
-		}
+		super.getIdNameMap().put(newId, attributeName);
 		super.geneAttributes.put(newId, Double.valueOf(0));
-		
+
 		return newId;
 	}
 }

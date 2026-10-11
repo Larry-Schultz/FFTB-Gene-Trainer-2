@@ -104,7 +104,12 @@ public class CompleteBotGenome {
 		Map<String, Integer> attributeMap = new HashMap<>();
 		try {
 			for(GeneAttributes attribute : this.geneAttributes) {
-				attribute.getIdNameMap().forEach((key, value) -> attributeMap.put(value, key));
+				attribute.getIdNameMap().forEach((key, value) -> {
+					Integer previousId = attributeMap.put(value, key);
+					if(previousId != null && !previousId.equals(key)) {
+						log.warn("Attribute name \"{}\" appears in more than one gene attribute section (ids {} and {})", value, previousId, key);
+					}
+				});
 			}
 			this.attributeMapCache = attributeMap;
 		} finally {
