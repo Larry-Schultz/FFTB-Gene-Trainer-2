@@ -30,6 +30,22 @@ public class GeneFileServiceTest {
 	}
 
 	@Test
+	public void testLoadViewerJuneGenome() throws Exception {
+		V2GeneData june = this.service.loadV2GeneData("winner06-09-2022.txt");
+
+		//256 map + 4 bravefaith + 3 pot + 7 playerdata + 11 side + 100 bet + 772 missing genes; the file's top-level
+		//percentiles table is NOT part of the genome and must not leak into the gene values
+		assertEquals(1153, june.geneValues().size(), "the June 2022 viewer genome has 1153 clean, duplicate-free gene values");
+		assertTrue(june.geneValuesBySection().containsKey("mapGeneAttributes"));
+		assertTrue(june.geneValuesBySection().containsKey("braveFaithAttributes"));
+		assertTrue(june.geneValuesBySection().containsKey("betGeneAttributes"));
+		assertTrue(june.geneValuesBySection().containsKey("missingGeneAttributes"));
+		long betGeneCount = june.geneValuesBySection().get("betGeneAttributes").keySet().stream()
+				.filter(name -> name.endsWith("-bet")).count();
+		assertEquals(100, betGeneCount, "the bet gene section must be fully populated");
+	}
+
+	@Test
 	public void testLoadV1GeneFiles() throws Exception {
 		V1GeneData winner100 = this.service.loadV1GeneData("winner-100.txt");
 		assertTrue(winner100.geneticAttributes().size() > 100, "winner-100.txt should have hundreds of attributes");

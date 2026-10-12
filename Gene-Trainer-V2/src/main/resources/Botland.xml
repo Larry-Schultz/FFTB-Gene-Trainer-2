@@ -651,6 +651,31 @@
 		<param id="inverse" description="reverse team chosen">true</param>
 		<param id="use_bet_genes">false</param>
 	</bot>
+	<bot id="genebotv20609" classname="genebotV2"
+		canPrimary="true"
+		description="Bot that uses genetic attributes to find a winner (June 2022 genome from the viewer, kept for testing)">
+		<param id="geneFile"
+			description="file location that contains the genes">winner06-09-2022.txt</param>
+		<param id="personality" description="personality of bot">nerd</param>
+		<param id="use_bet_genes">false</param>
+	</bot>
+	<bot id="genebotv20609smartbet" classname="genebotV2"
+		canPrimary="true"
+		description="Bot that uses genetic attributes to find a winner (June 2022 genome from the viewer, kept for testing)">
+		<param id="geneFile"
+			description="file location that contains the genes">winner06-09-2022.txt</param>
+		<param id="personality" description="personality of bot">nerd</param>
+		<param id="use_bet_genes">true</param>
+	</bot>
+	<bot id="genebotv20609inverse" classname="genebotV2"
+		canPrimary="true"
+		description="Bot that uses genetic attributes to find a winner (June 2022 genome from the viewer, kept for testing)">
+		<param id="geneFile"
+			description="file location that contains the genes">winner06-09-2022.txt</param>
+		<param id="personality" description="personality of bot">inverse</param>
+		<param id="inverse" description="reverse team chosen">true</param>
+		<param id="use_bet_genes">false</param>
+	</bot>
 	<bot id="birbbrainsbotreference" classname="reference"
 		canPrimary="true"
 		description="Bot that mimics birbbrainsbot">

@@ -31,7 +31,8 @@ public class BotlandOfflineSimulationTest {
 
 		List<BotPlacement> leaderboard = service.getBotleaderboard(genome, dataset);
 
-		assertEquals(58, leaderboard.size(), "every bot in Botland.xml must simulate, none silently dropped");
+		//58 viewer-parity bots plus the 3 June-2022-genome testing bots
+		assertEquals(61, leaderboard.size(), "every bot in Botland.xml must simulate, none silently dropped");
 
 		for(int i = 1; i < leaderboard.size(); i++) {
 			assertTrue(leaderboard.get(i - 1).gil() >= leaderboard.get(i).gil(), "leaderboard must be sorted by gil descending");
@@ -48,6 +49,8 @@ public class BotlandOfflineSimulationTest {
 		assertTrue(botNames.contains("genebotv1-4-17-26"), "the revived April 2026 gene bot");
 		assertTrue(botNames.contains("genebotv2"), "genebotV2");
 		assertTrue(botNames.contains("genebotv2smartbet"), "genebotV2 with bet genes");
+		assertTrue(botNames.contains("genebotv20609"), "June 2022 genome bot");
+		assertTrue(botNames.contains("genebotv20609smartbet"), "June 2022 genome bot with bet genes");
 		assertTrue(botNames.contains("teamvaluebot"), "teamvalue");
 		assertTrue(botNames.contains("chemistbot"), "unitAwareBot");
 		assertTrue(botNames.contains("pokemonmaster"), "unitAwareBot with the big weight map");
